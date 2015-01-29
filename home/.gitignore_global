@@ -1,6 +1,8 @@
 # Editor Droppings #
 ####################
 .idea
+*.swp
+*.swo
 
 # OS generated files #
 ######################
