@@ -3,13 +3,13 @@ windows:
   - name: server
     root: ~/workspace/mavenlink
     layout: main-vertical
-    focus: true  
+    focus: true
     panes:
       - commands:
         - lsof -iTCP:3000 | grep LISTEN | tr -s " " | cut -d " " -f 2 | xargs kill -9
         - rm -f .zeus.sock
         - until test -S .zeus.sock; do sleep 1; done
-        - clear  
+        - clear
         - zeus s
       - commands:
         - bundle install
@@ -19,7 +19,7 @@ windows:
         - lsof -iTCP:8888 | grep LISTEN | tr -s " " | cut -d " " -f 2 | xargs kill -9
         - rm -f .zeus.sock
         - until test -S .zeus.sock; do sleep 1; done
-        - clear  
+        - clear
         - zeus rake jasmine
   - name: development
     root: ~/workspace/mavenlink
@@ -27,7 +27,7 @@ windows:
     panes:
       - commands:
         - git status
-      - commands:    
+      - commands:
         - until test -S .zeus.sock; do sleep 1; done
         - clear
         - zeus c
