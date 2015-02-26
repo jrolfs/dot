@@ -35,6 +35,7 @@
 	squash = commit --squash
 	unstage = reset HEAD
 	rum = rebase master@{u}
+	ctags = !.git/hooks/ctags.sh
 [apply]
 	whitespace = nowarn
 [color]
