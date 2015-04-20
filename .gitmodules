@@ -1,6 +1,6 @@
 [submodule "zprezto"]
-path = home/.zprezto
-url = https://github.com/sorin-ionescu/prezto.git
+  path = home/.zprezto
+  url = https://github.com/sorin-ionescu/prezto.git
 [submodule "home/.rbenv/plugins/rbenv-each"]
 	path = home/.rbenv/plugins/rbenv-each
 	url = https://github.com/chriseppstein/rbenv-each
@@ -10,3 +10,6 @@ url = https://github.com/sorin-ionescu/prezto.git
 [submodule "home/.rbenv/plugins/ruby-build"]
 	path = home/.rbenv/plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build
+[submodule "home/.nodenv/plugins/node-build"]
+	path = home/.nodenv/plugins/node-build
+	url = git://github.com/OiNutter/node-build.git
