@@ -27,3 +27,6 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # Key Bindings
 bindkey '^R' history-incremental-search-backward
+
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
