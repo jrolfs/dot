@@ -29,3 +29,6 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
 eval "$(gulp --completion=zsh)"
+
+# MySQL collation
+export COLLATION=utf8_general_ci
