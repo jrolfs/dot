@@ -26,7 +26,6 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 bindkey '^R' history-incremental-search-backward
 
 eval "$(rbenv init -)"
-eval "$(nodenv init -)"
 
 eval "$(gulp --completion=zsh)"
 
