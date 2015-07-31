@@ -21,7 +21,7 @@ windows:
         - until test -S .zeus.sock; do sleep 1; done
         - clear
         - zeus rake jasmine
-  - name: development
+  - name: mavenlink
     root: ~/workspace/mavenlink
     layout: main-vertical
     panes:
