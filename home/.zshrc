@@ -25,9 +25,10 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 # Key Bindings
 bindkey '^R' history-incremental-search-backward
 
+# Completions
 eval "$(rbenv init -)"
-
 eval "$(gulp --completion=zsh)"
+eval "$(npm completion)"
 
 # MySQL collation
 export COLLATION=utf8_general_ci
