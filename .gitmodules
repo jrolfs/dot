@@ -10,6 +10,3 @@
 [submodule "home/.rbenv/plugins/ruby-build"]
 	path = home/.rbenv/plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build
-[submodule "home/.nodenv/plugins/node-build"]
-	path = home/.nodenv/plugins/node-build
-	url = git://github.com/OiNutter/node-build.git
