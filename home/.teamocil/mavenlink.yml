@@ -37,4 +37,4 @@ windows:
     layout: even-horizontal 
     panes:
       - commands:
-      - homeshick cd dotfiles    
+      - homeshick cd dot
