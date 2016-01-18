@@ -46,6 +46,7 @@ path=(
   /usr/local/{bin,sbin}
   /usr/local/Cellar/mysql55/5.5.44/bin
   $HOME/.rbenv/bin
+  $HOME/.pyenv/bin
   $path
 )
 

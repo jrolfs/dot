@@ -27,11 +27,9 @@ bindkey '^R' history-incremental-search-backward
 
 # Completions
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 eval "$(gulp --completion=zsh)"
 eval "$(npm completion)"
 
 # MySQL collation
 export COLLATION=utf8_general_ci
-
-# Aliases
-alias dockerdaemon="bash -c 'clear && DOCKER_HOST=tcp://192.168.99.100:2376 DOCKER_CERT_PATH=/Users/Jamie/.docker/machine/machines/default DOCKER_TLS_VERIFY=1 /bin/zsh'"
