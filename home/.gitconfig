@@ -57,7 +57,7 @@
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[http "https://git.mavenlinkdevstack.com"]
+[http "https://git.app.dev.mavenlink.net"]
 	sslCAInfo = /Users/Jamie/.flynn/ca-certs/default.pem
-[credential "https://git.mavenlinkdevstack.com"]
+[credential "https://git.app.dev.mavenlink.net"]
 	helper = /usr/local/bin/flynn git-credentials
