@@ -61,3 +61,5 @@
 	sslCAInfo = /Users/Jamie/.flynn/ca-certs/default.pem
 [credential "https://git.app.dev.mavenlink.net"]
 	helper = /usr/local/bin/flynn git-credentials
+[init]
+	templatedir = ~/.git_template
