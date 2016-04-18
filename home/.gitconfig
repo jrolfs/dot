@@ -51,6 +51,7 @@
 [user]
 	email = jamie.rolfs@gmail.com
 	name = Jamie Rolfs
+	signingkey = 762AC2F3
 [http "https://git.app.dev.mavenlink.net"]
 	sslCAInfo = /Users/Jamie/.flynn/ca-certs/default.pem
 [credential "https://git.app.dev.mavenlink.net"]
