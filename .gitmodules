@@ -1,9 +1,9 @@
 [submodule "zprezto"]
   path = home/.zprezto
-  url = https://github.com/sorin-ionescu/prezto.git
+  url = git@github.com:jrolfs/prezto.git
 [submodule "home/.rbenv"]
 	path = home/.rbenv
-	url = https://github.com/sstephenson/rbenv.git
+	url = git@github.com:jrolfs/rbenv.git
 [submodule "home/.pyenv"]
 	path = home/.pyenv
-	url = https://github.com/yyuu/pyenv.git
+	url = git@github.com:jrolfs/pyenv.git
