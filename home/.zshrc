@@ -36,3 +36,5 @@ export COLLATION=utf8_general_ci
 
 # Pyenv
 export POWERLINE_PREFIX=$(pip show powerline-status | grep Location | cut -d ':' -f 2 | tr -d ' ')
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
