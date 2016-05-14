@@ -90,10 +90,11 @@ function prompt_jamie_setup {
   # fi
 
   # Define prompts.
-  PROMPT="${_prompt_jamie_colors[3]}%n%f at \
+  PROMPT="
+${_prompt_jamie_colors[3]}%n%f at \
 ${_prompt_jamie_colors[2]}%m%f in \
 ${_prompt_jamie_colors[5]}%~%f \
-"'$git_info[prompt]'" 
+"'$git_info[prompt]'"
 "'$editor_info[keymap]'" "
   RPROMPT='$git_info[rprompt] $ruby_info[version]%(?:: %F{red}⏎%f)'
 }
