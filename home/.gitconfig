@@ -1,22 +1,40 @@
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-	tool = Kaleidoscope
-[difftool]
-	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
-[mergetool]
-	prompt = false
-	keepBackup = false
-[merge]
-	tool = Kaleidoscope
+; User
+
+[user]
+	email = jamie.rolfs@gmail.com
+	name = Jamie Rolfs
+	signingkey = 762AC2F3
+
+[github]
+  user = jrolfs
+
+; Defaults
+
 [push]
 	default = simple
+
+[branch]
+	autosetupmerge = true
+
+[rebase]
+	autosquash = true
+
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = less -FXRS -x2
+
+[apply]
+	whitespace = nowarn
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+
+; Aliases
+
 [alias]
 	st = status
 	di = diff
@@ -35,26 +53,23 @@
 	squash = commit --squash
 	unstage = reset HEAD
 	rum = rebase master@{u}
-	ctags = !.git/hooks/ctags.sh
-[apply]
-	whitespace = nowarn
-[color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-	ui = auto
-[branch]
-	autosetupmerge = true
-[rebase]
-	autosquash = true
-[user]
-	email = jamie.rolfs@gmail.com
-	name = Jamie Rolfs
-	signingkey = 762AC2F3
-[http "https://git.app.dev.mavenlink.net"]
-	sslCAInfo = /Users/Jamie/.flynn/ca-certs/default.pem
-[credential "https://git.app.dev.mavenlink.net"]
-	helper = /usr/local/bin/flynn git-credentials
-[gpg]
-	program = gpg2
+
+
+; Diff
+
+[diff]
+	tool = Kaleidoscope
+[merge]
+	tool = Kaleidoscope
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+	keepBackup = false
