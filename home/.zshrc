@@ -37,4 +37,8 @@ export COLLATION=utf8_general_ci
 # Pyenv
 export POWERLINE_PREFIX=$(pip show powerline-status | grep Location | cut -d ':' -f 2 | tr -d ' ')
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
