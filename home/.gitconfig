@@ -36,6 +36,10 @@
 	status = auto
 	ui = auto
 
+[gpg]
+	program = gpg2
+
+
 ; Aliases
 
 [alias]
