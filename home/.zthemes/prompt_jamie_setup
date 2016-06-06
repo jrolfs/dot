@@ -40,11 +40,11 @@ function prompt_jamie_setup {
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     _prompt_jamie_colors=(
-      "%F{81}"  # Turquoise
-      "%F{166}" # Orange
-      "%F{135}" # Purple
-      "%F{161}" # Hotpink
-      "%F{118}" # Limegreen
+      "%F{14}"
+      "%F{16}"
+      "%F{05}"
+      "%F{13}"
+      "%F{02}"
     )
   else
     _prompt_jamie_colors=(
