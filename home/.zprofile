@@ -47,6 +47,8 @@ path=(
   /usr/local/Cellar/mysql55/5.5.44/bin
   $HOME/.rbenv/bin
   $HOME/.pyenv/bin
+  $HOME/.rbenv/shims
+  $HOME/.pyenv/shims
   $path
 )
 
