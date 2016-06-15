@@ -26,8 +26,6 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 bindkey '^R' history-incremental-search-backward
 
 # Completions
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
 eval "$(gulp --completion=zsh)"
 eval "$(npm completion)"
 
