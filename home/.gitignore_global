@@ -4,6 +4,7 @@
 *.swp
 *.swo
 Session.vim
+.tern-port
 
 # OS generated files #
 ######################
