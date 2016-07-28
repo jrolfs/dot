@@ -2,7 +2,7 @@ name: mavenlink
 windows:
   - name: server
     root: ~/workspace/mavenlink
-    layout: main-vertical
+    layout: tiled
     focus: true
     panes:
       - commands:
@@ -15,6 +15,9 @@ windows:
         - bundle install
         - clear
         - zeus start
+      - commands:
+        - npm install
+        - npm start
       - commands:
         - lsof -iTCP:8888 | grep LISTEN | tr -s " " | cut -d " " -f 2 | xargs kill -9
         - rm -f .zeus.sock
