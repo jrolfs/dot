@@ -16,6 +16,7 @@ windows:
         - clear
         - zeus start
       - commands:
+        - lsof -iTCP:3808 | grep LISTEN | tr -s " " | cut -d " " -f 2 | xargs kill -9
         - npm install
         - npm start
       - commands:
