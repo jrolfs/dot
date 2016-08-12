@@ -10,6 +10,9 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+export GOPATH="${HOME}/workspace/go"
+export PATH="${GOPATH}/bin:${PATH}"
+
 export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 
 type -p rbenv &> /dev/null && eval "$(rbenv init -)"
