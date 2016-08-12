@@ -13,6 +13,8 @@ fi
 export GOPATH="${HOME}/workspace/go"
 export PATH="${GOPATH}/bin:${PATH}"
 
+export GIT_DUET_ROTATE_AUTHOR=1
+
 export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 
 type -p rbenv &> /dev/null && eval "$(rbenv init -)"
