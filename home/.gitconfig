@@ -64,7 +64,11 @@
   fixup = commit --fixup
   squash = commit --squash
   unstage = reset HEAD
-  rum = rebase master@{u}
+  ; git-duet
+  dc = duet-commit
+  dr = duet-revert
+  dm = duet-merge
+  drb = rebase -i --exec 'git duet-commit --amend --reset-author' rum = rebase master@{u}
 
 
 ; Diff
