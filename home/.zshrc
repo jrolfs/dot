@@ -33,7 +33,7 @@ eval "$(npm completion)"
 export COLLATION=utf8_general_ci
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-ocean.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
