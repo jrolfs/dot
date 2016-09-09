@@ -89,5 +89,3 @@
 [mergetool]
   prompt = false
   keepBackup = false
-[commit]
-  gpgsign = true
