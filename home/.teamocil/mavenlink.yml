@@ -22,7 +22,7 @@ windows:
       - commands:
         - lsof -iTCP:8888 | grep LISTEN | tr -s " " | cut -d " " -f 2 | xargs kill -9
         - rm -f .zeus.sock
-        - until test -S .zeus.sock; do sleep 1; done
+        - until test -S .zeus.sock; http "http://localhost:3808/compiled/manifest.json"; do sleep 1; done
         - clear
         - zeus rake jasmine
   - name: mavenlink
