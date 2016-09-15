@@ -46,8 +46,6 @@ path=(
   /usr/local/{bin,sbin}
   $HOME/.rbenv/bin
   $HOME/.pyenv/bin
-  $HOME/.rbenv/shims
-  $HOME/.pyenv/shims
   $path
 )
 
