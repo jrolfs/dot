@@ -44,7 +44,6 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
-  /usr/local/Cellar/mysql55/5.5.44/bin
   $HOME/.rbenv/bin
   $HOME/.pyenv/bin
   $HOME/.rbenv/shims
