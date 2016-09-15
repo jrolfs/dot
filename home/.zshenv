@@ -5,13 +5,16 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Go
+export GOPATH="${HOME}/Development/Go"
+
+
+
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export GOPATH="${HOME}/workspace/go"
-export PATH="${GOPATH}/bin:${PATH}"
 
 export GIT_DUET_ROTATE_AUTHOR=1
 
