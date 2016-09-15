@@ -46,6 +46,7 @@ path=(
   /usr/local/{bin,sbin}
   $HOME/.rbenv/bin
   $HOME/.pyenv/bin
+  $HOME/.nodenv/bin
   $path
 )
 
