@@ -48,7 +48,7 @@ path=(
   $HOME/.rbenv/bin
   $HOME/.pyenv/bin
   $HOME/.nodenv/bin
-  $GOPATH
+  $GOPATH/bin
   $path
 )
 
