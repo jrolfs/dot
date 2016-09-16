@@ -29,8 +29,9 @@ type -p nodenv &> /dev/null && eval "$(nodenv init -)"
 bindkey '^R' history-incremental-search-backward
 
 # Completions
-eval "$(gulp --completion=zsh)"
-eval "$(npm completion)"
+nodenv_global_path="NODENV_VERSION=$(nodenv global)"
+echo "$nodenv_global_path gulp --completion=zsh" | eval
+echo "$nodenv_global_path npm completion" | eval
 
 # MySQL collation
 export COLLATION=utf8_general_ci
