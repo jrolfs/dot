@@ -45,4 +45,3 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-ocean.sh"
 alias vi=nvim
 alias vim=nvim
 
-alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
