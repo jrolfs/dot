@@ -28,11 +28,6 @@ type -p nodenv &> /dev/null && eval "$(nodenv init -)"
 # Key Bindings
 bindkey '^R' history-incremental-search-backward
 
-# Completions
-nodenv_global_path="NODENV_VERSION=$(nodenv global)"
-echo "$nodenv_global_path gulp --completion=zsh" | eval
-echo "$nodenv_global_path npm completion" | eval
-
 # MySQL collation
 export COLLATION=utf8_general_ci
 
@@ -40,8 +35,13 @@ export COLLATION=utf8_general_ci
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-ocean.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+#
+# Aliases
+
+# Neovim
 alias vi=nvim
 alias vim=nvim
 
