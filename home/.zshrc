@@ -49,4 +49,3 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-ocean.sh"
 # Neovim
 alias vi=nvim
 alias vim=nvim
-
