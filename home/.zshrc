@@ -28,6 +28,11 @@ type -p nodenv &> /dev/null && eval "$(nodenv init -)"
 # Key Bindings
 bindkey '^R' history-incremental-search-backward
 
+# Completions
+type -p npm &> /dev/null && eval "$(npm completion)"
+type -p grunt &> /dev/null && eval "$(grunt --completion=zsh)"
+type -p gulp &> /dev/null && eval "$(gulp --completion=zsh)"
+
 # MySQL collation
 export COLLATION=utf8_general_ci
 
