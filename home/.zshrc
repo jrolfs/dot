@@ -22,6 +22,9 @@ fi
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
+# jEnv
+type -p jenv &> /dev/null && eval "$(jenv init -)"
+
 # Key Bindings
 bindkey '^R' history-incremental-search-backward
 

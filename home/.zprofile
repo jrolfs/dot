@@ -47,6 +47,7 @@ path=(
   $HOME/.rbenv/bin
   $HOME/.pyenv/bin
   $HOME/.nodenv/bin
+  $HOME/.jenv/bin
   $GOPATH/bin
   $path
 )

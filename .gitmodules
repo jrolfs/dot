@@ -13,3 +13,6 @@
 [submodule "home/.nodenv"]
 	path = home/.nodenv
 	url = git@github.com:jrolfs/nodenv.git
+[submodule "home/.jenv"]
+	path = home/.jenv
+	url = https://github.com/gcuisinier/jenv.git
