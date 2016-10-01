@@ -105,7 +105,7 @@ ${_prompt_jamie_colors[5]}%~%f \
 "'$editor_info[keymap]'" "
 
   # Right prompt
-  RPROMPT='$git_info[rprompt] \
+  RPROMPT='$(if [ $git_info[rprompt] ]; then echo -e "$git_info[rprompt] | "; fi)\
 $node_info[version] | \
 $ruby_info[version]\
 %(?:: • %F{yellow}%f)'
