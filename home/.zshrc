@@ -22,9 +22,6 @@ fi
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-# Needed until https://github.com/sorin-ionescu/prezto/pull/1178 gets merged 🙏
-type -p nodenv &> /dev/null && eval "$(nodenv init -)"
-
 # Key Bindings
 bindkey '^R' history-incremental-search-backward
 
