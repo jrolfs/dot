@@ -17,6 +17,10 @@ function prompt_jamie_precmd {
     git-info
   fi
 
+  if (( $+functions[node-info] )); then
+    node-info
+  fi
+
   if (( $+functions[python-info] )); then
     python-info
   fi
@@ -79,24 +83,32 @@ function prompt_jamie_setup {
   zstyle ':prezto:module:git:info:untracked' format ' %%B%F{white}◼%f%%b'
   zstyle ':prezto:module:git:info:keys' format 'prompt' '%b' 'rprompt' '%A%B%S%a%d%m%r%U%u'
 
+  # set node-info parameters.
+  zstyle ':prezto:module:node:info:version' format '%F{green} %v%f'
+
   # Set python-info parameters.
-  zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
+  zstyle ':prezto:module:python:info:virtualenv' format '%F{green} %v%f'
 
   # Set ruby-info parameters.
-  zstyle ':prezto:module:ruby:info:version' format '%F{red}(%v)%f'
+  zstyle ':prezto:module:ruby:info:version' format '%F{red} %v%f'
 
   # if [ ${#branch} -ge 30 ]; then
   #   branch="${branch:0:27}...)"
   # fi
 
-  # Define prompts.
+  # Prompt
   PROMPT="
 ${_prompt_jamie_colors[3]}%n%f at \
 ${_prompt_jamie_colors[2]}%m%f in \
 ${_prompt_jamie_colors[5]}%~%f \
 "'$git_info[prompt]'"
 "'$editor_info[keymap]'" "
-  RPROMPT='$git_info[rprompt] $ruby_info[version]%(?:: %F{red}⏎%f)'
+
+  # Right prompt
+  RPROMPT='$(if [ $git_info[rprompt] ]; then echo -e "$git_info[rprompt] | "; fi)\
+$node_info[version] | \
+$ruby_info[version]\
+%(?:: • %F{yellow}%f)'
 }
 
 prompt_jamie_setup "$@"

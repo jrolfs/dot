@@ -1,12 +1,18 @@
 [submodule "zprezto"]
   path = home/.zprezto
-  url = htts://github.com/jrolfs/prezto.git
+  url = git@github.com:jrolfs/prezto.git
 [submodule "home/.rbenv"]
 	path = home/.rbenv
-	url = htts://github.com/jrolfs/rbenv.git
+	url = git@github.com:jrolfs/rbenv.git
 [submodule "home/.pyenv"]
 	path = home/.pyenv
-	url = htts://github.com/jrolfs/pyenv.git
+	url = git@github.com:jrolfs/pyenv.git
 [submodule "home/.config/base16-shell"]
 	path = home/.config/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
+[submodule "home/.nodenv"]
+	path = home/.nodenv
+	url = git@github.com:jrolfs/nodenv.git
+[submodule "home/.jenv"]
+	path = home/.jenv
+	url = https://github.com/gcuisinier/jenv.git

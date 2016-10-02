@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='vi'
-export VISUAL='vi'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
 
 #
@@ -44,9 +44,11 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
-  /usr/local/Cellar/mysql55/5.5.44/bin
   $HOME/.rbenv/bin
   $HOME/.pyenv/bin
+  $HOME/.nodenv/bin
+  $HOME/.jenv/bin
+  $GOPATH/bin
   $path
 )
 

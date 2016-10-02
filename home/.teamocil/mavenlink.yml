@@ -2,7 +2,7 @@ name: mavenlink
 windows:
   - name: server
     root: ~/workspace/mavenlink
-    layout: main-vertical
+    layout: tiled
     focus: true
     panes:
       - commands:
@@ -16,9 +16,13 @@ windows:
         - clear
         - zeus start
       - commands:
+        - lsof -iTCP:3808 | grep LISTEN | tr -s " " | cut -d " " -f 2 | xargs kill -9
+        - npm install
+        - npm start
+      - commands:
         - lsof -iTCP:8888 | grep LISTEN | tr -s " " | cut -d " " -f 2 | xargs kill -9
         - rm -f .zeus.sock
-        - until test -S .zeus.sock; do sleep 1; done
+        - until test -S .zeus.sock; http "http://localhost:3808/compiled/manifest.json"; do sleep 1; done
         - clear
         - zeus rake jasmine
   - name: mavenlink
