@@ -6,6 +6,12 @@
 #
 
 #
+# FZF
+#
+
+export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
+
+#
 # Browser
 #
 
