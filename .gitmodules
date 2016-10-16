@@ -16,3 +16,6 @@
 [submodule "home/.jenv"]
 	path = home/.jenv
 	url = https://github.com/gcuisinier/jenv.git
+[submodule "home/.zcompletions/nix"]
+	path = home/.zcompletions/nix
+	url = https://github.com/spwhitt/nix-zsh-completions

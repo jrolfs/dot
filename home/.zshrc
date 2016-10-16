@@ -11,6 +11,7 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 # Custom Themes
 fpath=($HOME/.zthemes $fpath)
+fpath=($HOME/.zcompletion $fpath)
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
