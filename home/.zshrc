@@ -44,6 +44,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-ocean.sh"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Nix
+[ -e $HOME/.nix-profile/etc/profile.d/nix.sh ] && . $HOME/.nix-profile/etc/profile.d/nix.sh
+
 #
 # Aliases
 
