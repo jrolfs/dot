@@ -1,27 +1,72 @@
 #
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+# zplug
 #
 
-# Completions
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
-fpath=(/usr/local/share/zsh/site-functions $fpath)
+source ~/.zplug/init.zsh
 
-# Custom Themes
-fpath=($HOME/.zthemes $fpath)
-fpath=($HOME/.zcompletion $fpath)
+zplug "jrolfs/prezto", \
+  hook-build:"ln -s $ZPLUG_REPOS/jrolfs/prezto $HOME/.zprezto", \
+  as:plugin, \
+  use:init.zsh
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+zstyle ':prezto:*:*' color 'yes'
 
-# Customize to your needs...
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'history-substring-search' \
+  'directory' \
+  'spectrum' \
+  'git' \
+  'ruby' \
+  'node' \
+  'python' \
+  'utility' \
+  'fasd' \
+  'prompt'
+
+zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:prompt' theme 'jamie'
+
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-completions"
+
+# FZF
+zplug "junegunn/fzf-bin", \
+  from:gh-r, \
+  as:command, \
+  rename-to:fzf, \
+  use:"*darwin*amd64*"
 
 # Homeshick
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+zplug $HOME/.homesick/repos/homeshick, \
+  from:local, \
+  use:homeshick.sh
+
+# Base16 Shell
+zplug $HOME/.config/base16-shell/scripts, \
+  from:local, \
+  use:base16-ocean.sh
+
+# Nix
+zplug $HOME/.nix-profile/etc/profile.d, \
+  from:local, \
+  use:nix.sh
+
+zplug "spwhitt/nix-zsh-completions"
+
+if ! zplug check; then
+  zplug install
+fi
+
+zplug load
+
+#
+# /zplug
+#
+
 
 # jEnv
 type -p jenv &> /dev/null && eval "$(jenv init -)"
@@ -34,15 +79,6 @@ type -p npm &> /dev/null && eval "$(npm completion)"
 type -p grunt &> /dev/null && eval "$(grunt --completion=zsh)"
 type -p gulp &> /dev/null && eval "$(gulp --completion=zsh)"
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-ocean.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Nix
-[ -e $HOME/.nix-profile/etc/profile.d/nix.sh ] && . $HOME/.nix-profile/etc/profile.d/nix.sh
 
 #
 # Aliases

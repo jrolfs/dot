@@ -1,6 +1,6 @@
-[submodule "zprezto"]
-  path = home/.zprezto
-  url = git@github.com:jrolfs/prezto.git
+[submodule "home/.zplug"]
+	path = home/.zplug
+	url = git@github.com:zplug/zplug.git
 [submodule "home/.rbenv"]
 	path = home/.rbenv
 	url = git@github.com:jrolfs/rbenv.git
@@ -16,6 +16,3 @@
 [submodule "home/.jenv"]
 	path = home/.jenv
 	url = https://github.com/gcuisinier/jenv.git
-[submodule "home/.zcompletions/nix"]
-	path = home/.zcompletions/nix
-	url = https://github.com/spwhitt/nix-zsh-completions
