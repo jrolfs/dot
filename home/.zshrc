@@ -41,17 +41,17 @@ zplug "junegunn/fzf-bin", \
   use:"*darwin*amd64*"
 
 # Homeshick
-zplug $HOME/.homesick/repos/homeshick, \
+zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
   use:homeshick.sh
 
 # Base16 Shell
-zplug $HOME/.config/base16-shell/scripts, \
+zplug "$HOME/.config/base16-shell/scripts", \
   from:local, \
   use:base16-ocean.sh
 
 # Nix
-zplug $HOME/.nix-profile/etc/profile.d, \
+zplug "$HOME/.nix-profile/etc/profile.d", \
   from:local, \
   use:nix.sh
 
