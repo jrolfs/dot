@@ -1,29 +1,26 @@
-#
-# FZF
-#
+# Go
+export GOPATH="${HOME}/Development/Go"
 
+# Git Duet
+export GIT_DUET_ROTATE_AUTHOR=1
+
+# GPG/SSH
+export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+
+# FZF
 export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
 
-#
 # Browser
-#
-
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
 
-#
 # Editors
-#
-
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
-#
 # Language
-#
-
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
