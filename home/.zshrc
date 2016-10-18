@@ -53,6 +53,7 @@ zplug "$HOME/.nix-profile/etc/profile.d", \
   use:nix.sh
 
 zplug "spwhitt/nix-zsh-completions"
+zplug "srijanshetty/zsh-pip-completion"
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "zsh-users/zsh-completions"
