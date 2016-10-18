@@ -77,12 +77,4 @@ type -p jenv &> /dev/null && eval "$(jenv init -)"
 # Completions
 type -p gulp &> /dev/null && eval "$(gulp --completion=zsh)"
 
-
-#
-# Aliases
-
-# Neovim
-alias vi=nvim
-alias vim=nvim
-
-alias hs=homeshick
+source ~/.aliases.zsh
