@@ -54,6 +54,7 @@ zplug "$HOME/.nix-profile/etc/profile.d", \
 
 zplug "spwhitt/nix-zsh-completions"
 zplug "srijanshetty/zsh-pip-completion"
+zplug "kuno/npm-zsh-completion"
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "zsh-users/zsh-completions"
@@ -76,7 +77,6 @@ type -p jenv &> /dev/null && eval "$(jenv init -)"
 bindkey '^R' history-incremental-search-backward
 
 # Completions
-type -p npm &> /dev/null && eval "$(npm completion)"
 type -p grunt &> /dev/null && eval "$(grunt --completion=zsh)"
 type -p gulp &> /dev/null && eval "$(gulp --completion=zsh)"
 
