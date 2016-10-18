@@ -18,6 +18,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'directory' \
   'spectrum' \
+  'gpg' \
   'git' \
   'ruby' \
   'node' \
