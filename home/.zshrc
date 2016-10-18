@@ -30,9 +30,6 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'jamie'
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
-zplug "zsh-users/zsh-completions"
-
 # FZF
 zplug "junegunn/fzf-bin", \
   from:gh-r, \
@@ -56,6 +53,9 @@ zplug "$HOME/.nix-profile/etc/profile.d", \
   use:nix.sh
 
 zplug "spwhitt/nix-zsh-completions"
+
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-completions"
 
 if ! zplug check; then
   zplug install
