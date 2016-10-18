@@ -55,6 +55,7 @@ zplug "$HOME/.nix-profile/etc/profile.d", \
 zplug "plugins/pip", from:oh-my-zsh
 zplug "spwhitt/nix-zsh-completions"
 zplug "kuno/npm-zsh-completion"
+zplug "akoenig/gulp.plugin.zsh"
 zplug "yonchu/grunt-zsh-completion"
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
@@ -73,8 +74,5 @@ zplug load
 
 # jEnv
 type -p jenv &> /dev/null && eval "$(jenv init -)"
-
-# Completions
-type -p gulp &> /dev/null && eval "$(gulp --completion=zsh)"
 
 source ~/.aliases.zsh
