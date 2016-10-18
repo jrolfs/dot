@@ -52,8 +52,8 @@ zplug "$HOME/.nix-profile/etc/profile.d", \
   from:local, \
   use:nix.sh
 
+zplug "plugins/pip", from:oh-my-zsh
 zplug "spwhitt/nix-zsh-completions"
-zplug "srijanshetty/zsh-pip-completion"
 zplug "kuno/npm-zsh-completion"
 zplug "yonchu/grunt-zsh-completion"
 
