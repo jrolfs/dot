@@ -74,9 +74,6 @@ zplug load
 # jEnv
 type -p jenv &> /dev/null && eval "$(jenv init -)"
 
-# Key Bindings
-bindkey '^R' history-incremental-search-backward
-
 # Completions
 type -p gulp &> /dev/null && eval "$(gulp --completion=zsh)"
 
