@@ -13,7 +13,6 @@ zstyle ':prezto:*:*' color 'yes'
 
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'terminal' \
   'editor' \
   'history' \
   'history-substring-search' \
