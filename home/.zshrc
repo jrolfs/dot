@@ -54,10 +54,10 @@ zplug "$HOME/.nix-profile/etc/profile.d", \
 
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
+zplug "plugins/gulp", from:oh-my-zsh
 
 zplug "spwhitt/nix-zsh-completions"
 zplug "kuno/npm-zsh-completion"
-zplug "akoenig/gulp.plugin.zsh"
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "zsh-users/zsh-completions"
