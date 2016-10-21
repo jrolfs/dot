@@ -5,9 +5,9 @@
 source ~/.zplug/init.zsh
 
 zplug "jrolfs/prezto", \
-  hook-build:"ln -s $ZPLUG_REPOS/jrolfs/prezto $HOME/.zprezto", \
   as:plugin, \
-  use:init.zsh
+  use:init.zsh, \
+  hook-build:"ln -s $ZPLUG_REPOS/jrolfs/prezto $HOME/.zprezto"
 
 zstyle ':prezto:*:*' color 'yes'
 
