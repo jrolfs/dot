@@ -30,13 +30,6 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'jamie'
 
-# FZF
-zplug "junegunn/fzf-bin", \
-  from:gh-r, \
-  as:command, \
-  rename-to:fzf, \
-  use:"*darwin*amd64*"
-
 # Homeshick
 zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
