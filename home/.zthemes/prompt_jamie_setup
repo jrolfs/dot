@@ -60,6 +60,10 @@ function prompt_jamie_setup {
     )
   fi
 
+  if [[ ! -z "$VIM" ]]; then
+    _prompt_jamie_colors[2]="%F{11}"
+  fi
+
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
   zstyle ':prezto:module:editor:info:keymap:primary' format "⤳"
