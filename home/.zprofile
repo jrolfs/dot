@@ -1,3 +1,5 @@
+source ~/.keys.zsh
+
 # Go
 export GOPATH="${HOME}/Development/Go"
 
