@@ -68,5 +68,3 @@ zplug load
 
 # jEnv
 type -p jenv &> /dev/null && eval "$(jenv init -)"
-
-source ~/.aliases.zsh
