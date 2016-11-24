@@ -48,6 +48,7 @@ zplug "$HOME/.nix-profile/etc/profile.d", \
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
 zplug "plugins/gulp", from:oh-my-zsh
+zplug "plugins/go", from:oh-my-zsh
 
 zplug "spwhitt/nix-zsh-completions"
 zplug "kuno/npm-zsh-completion"
