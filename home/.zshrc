@@ -4,10 +4,17 @@
 
 source ~/.zplug/init.zsh
 
-zplug "jrolfs/prezto", \
+local base16="chriskempson/base16-shell"
+local prezto="jrolfs/prezto"
+
+zplug $base16, \
+  use:"**/*oceanicnext.sh", \
+  hook-load:"source $ZPLUG_REPOS/$base16/scripts/base16-oceanicnext.sh"
+
+zplug $prezto, \
   as:plugin, \
   use:init.zsh, \
-  hook-build:"ln -s $ZPLUG_REPOS/jrolfs/prezto $HOME/.zprezto"
+  hook-build:"ln -s $ZPLUG_REPOS/$prezto $HOME/.zprezto"
 
 zstyle ':prezto:*:*' color 'yes'
 
@@ -30,21 +37,6 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'jamie'
 
-# Homeshick
-zplug "$HOME/.homesick/repos/homeshick", \
-  from:local, \
-  use:homeshick.sh
-
-# Base16 Shell
-zplug "$HOME/.config/base16-shell/scripts", \
-  from:local, \
-  use:base16-ocean.sh
-
-# Nix
-zplug "$HOME/.nix-profile/etc/profile.d", \
-  from:local, \
-  use:nix.sh
-
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
 zplug "plugins/gulp", from:oh-my-zsh
@@ -56,6 +48,16 @@ zplug "kuno/npm-zsh-completion"
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:10
 zplug "zsh-users/zsh-completions"
+
+# Homeshick
+zplug "$HOME/.homesick/repos/homeshick", \
+  from:local, \
+  use:homeshick.sh
+
+# Nix
+zplug "$HOME/.nix-profile/etc/profile.d", \
+  from:local, \
+  use:nix.sh
 
 if ! zplug check; then
   zplug install
