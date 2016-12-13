@@ -1,6 +1,10 @@
 source ~/.keys.zsh
 source ~/.aliases.zsh
 
+# XDG
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CONFIG_HOME="${HOME}/.config"
+
 # Go
 export GOPATH="${HOME}/Development/Go"
 
