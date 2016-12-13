@@ -46,7 +46,7 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "spwhitt/nix-zsh-completions"
 zplug "kuno/npm-zsh-completion"
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:10
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
 
 # Homeshick
