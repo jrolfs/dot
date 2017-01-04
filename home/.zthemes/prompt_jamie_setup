@@ -66,9 +66,9 @@ function prompt_jamie_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format "⤳"
+  zstyle ':prezto:module:editor:info:keymap:primary' format "└→"
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
-  zstyle ':prezto:module:editor:info:keymap:alternate' format "⥄"
+  zstyle ':prezto:module:editor:info:keymap:alternate' format "┕╍"
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
@@ -102,7 +102,7 @@ function prompt_jamie_setup {
 
   # Prompt
   PROMPT="
-${_prompt_jamie_colors[3]}%n%f at \
+┌─ ${_prompt_jamie_colors[3]}%n%f at \
 ${_prompt_jamie_colors[2]}%m%f in \
 ${_prompt_jamie_colors[5]}%~%f \
 "'$git_info[prompt]'"
