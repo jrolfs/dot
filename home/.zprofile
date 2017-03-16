@@ -27,7 +27,10 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
+#
 # Language
+#
+
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
@@ -75,12 +78,4 @@ fi
 # Temporary Files
 #
 
-if [[ ! -d "$TMPDIR" ]]; then
-  export TMPDIR="/tmp/$USER"
-  mkdir -p -m 700 "$TMPDIR"
-fi
-
-TMPPREFIX="${TMPDIR%/}/zsh"
-if [[ ! -d "$TMPPREFIX" ]]; then
-  mkdir -p "$TMPPREFIX"
-fi
+TMPPREFIX="$(mktemp -d)/zsh"
