@@ -31,7 +31,7 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = {
     awl_shared_sbar = "OFF";
-    notifier_on_regex = ".*";
+    notifier_on_regex = "jrolfs";
     notifier_on_privmsg = "1 ";
   };
 };
