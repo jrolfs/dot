@@ -17,9 +17,11 @@ chatnets = {
   };
 };
 
-# channels = (
-#   { name = "#nixos"; chatnet = "Freenode"; autojoin = "yes"; },
-# );
+channels = (
+  { name = "#nixos"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "##nix-darwin"; chatnet = "Freenode"; autojoin = "yes"; }
+);
+
 settings = {
   core = { 
     real_name = "Jamie Rolfs";
