@@ -34,5 +34,6 @@ settings = {
     notifier_on_regex = "jrolfs";
     notifier_on_privmsg = "1 ";
   };
+  "fe-common/core" = { theme = "parenthetical"; };
 };
 statusbar = { default = { }; };
