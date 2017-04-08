@@ -23,10 +23,10 @@ channels = (
 );
 
 settings = {
-  core = { 
+  core = {
     real_name = "Jamie Rolfs";
     user_name = "Jamie";
-    nick = "Jamie";
+    nick = "jrolfs";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = {
