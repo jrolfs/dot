@@ -2,6 +2,7 @@
 
 # GnuPG
 alias gpg=gpg2
+alias gty="gpg-connect-agent updatestartuptty /bye"
 
 # Neovim
 alias vi=nvim
