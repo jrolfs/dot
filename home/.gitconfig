@@ -46,9 +46,6 @@
 [submodule]
   fetchJobs = 4
 
-[remote "upstream"]
-	fetch = +refs/pull/*/head:refs/remotes/upstream/pr/*
-
 
 ; Aliases
 
