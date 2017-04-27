@@ -1,5 +1,6 @@
 source ~/.keys.zsh
 source ~/.aliases.zsh
+source ~/.functions.zsh
 
 #
 # Options
