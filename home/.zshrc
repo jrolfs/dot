@@ -38,6 +38,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'jamie'
 
 zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/gem", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
 zplug "plugins/gulp", from:oh-my-zsh
 zplug "plugins/go", from:oh-my-zsh
