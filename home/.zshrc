@@ -37,6 +37,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'jamie'
 
+zplug "plugins/yarn", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
