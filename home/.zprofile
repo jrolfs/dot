@@ -24,6 +24,9 @@ export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 # FZF
 export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
 
+# Nix
+export NIXPKGS_ALLOW_UNFREE=1
+
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
