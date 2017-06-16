@@ -56,11 +56,6 @@ zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
   use:homeshick.sh
 
-# Nix
-zplug "$HOME/.nix-profile/etc/profile.d", \
-  from:local, \
-  use:nix.sh
-
 if ! zplug check; then
   zplug install
 fi
