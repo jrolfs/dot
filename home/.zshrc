@@ -1,3 +1,14 @@
+source ~/.keys.zsh
+source ~/.aliases.zsh
+source ~/.platform.zsh
+
+# jenv
+type -p jenv &> /dev/null && eval "$(jenv init -)"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 #
 # zplug
 #
@@ -65,10 +76,3 @@ zplug load
 #
 # /zplug
 #
-
-
-# jEnv
-type -p jenv &> /dev/null && eval "$(jenv init -)"
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
