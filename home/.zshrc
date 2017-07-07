@@ -15,16 +15,14 @@ type -p jenv &> /dev/null && eval "$(jenv init -)"
 
 source ~/.zplug/init.zsh
 
-local prezto="sorin-ionescu/prezto"
-
 zplug "chriskempson/base16-shell", \
   use:"**/*oceanicnext.sh", \
   defer:3
 
-zplug $prezto, \
+zplug "sorin-ionescu/prezto", \
   as:plugin, \
   use:init.zsh, \
-  hook-build:"ln -s $ZPLUG_REPOS/$prezto $HOME/.zprezto"
+  hook-build:"pwd | xargs -I {} ln -fs {} $HOME/.zprezto"
 
 zstyle ':prezto:*:*' color 'yes'
 
