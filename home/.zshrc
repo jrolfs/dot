@@ -56,6 +56,7 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "spwhitt/nix-zsh-completions"
 zplug "kuno/npm-zsh-completion"
 zplug "docker/compose", use:contrib/completion/zsh
+zplug "Homebrew/brew", use:completions/zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
