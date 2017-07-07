@@ -27,6 +27,7 @@ typeset -gU cdpath fpath mailpath path
 fpath+=(
   $HOME/.zthemes
   $HOME/.homesick/repos/homeshick/completions
+  $HOME/.zsh/completions
 )
 
 # Executable search path
