@@ -24,6 +24,10 @@ zplug "sorin-ionescu/prezto", \
   use:init.zsh, \
   hook-build:"pwd | xargs -I {} ln -fs {} $HOME/.zprezto"
 
+zplug "$HOME/.homesick/repos/homeshick", \
+  from:local, \
+  use:homeshick.sh
+
 zstyle ':prezto:*:*' color 'yes'
 
 zstyle ':prezto:load' pmodule \
@@ -59,14 +63,11 @@ zplug "docker/compose", use:contrib/completion/zsh
 zplug "Homebrew/brew", use:completions/zsh
 zplug "github/hub", \
   hook-build:"pwd | xargs -I {} ln -fs {}/etc/hub.zsh_completion $HOME/.zsh/completions/_hub"
+zplug "andsens/homeshick", \
+  hook-build:"pwd | xargs -I {} ln -fs {}/completions/_homeshick $HOME/.zsh/completions/_homeshick"
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
-
-# Homeshick
-zplug "$HOME/.homesick/repos/homeshick", \
-  from:local, \
-  use:homeshick.sh
 
 if ! zplug check; then
   zplug install
