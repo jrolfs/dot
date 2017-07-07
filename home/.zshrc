@@ -57,6 +57,8 @@ zplug "spwhitt/nix-zsh-completions"
 zplug "kuno/npm-zsh-completion"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "Homebrew/brew", use:completions/zsh
+zplug "github/hub", \
+  hook-build:"pwd | xargs -I {} ln -fs {}/etc/hub.zsh_completion $HOME/.zsh/completions/_hub"
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
