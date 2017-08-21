@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 # GnuPG
-alias gpg=gpg2
 alias gty="gpg-connect-agent updatestartuptty /bye"
 
 # Neovim

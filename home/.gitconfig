@@ -41,7 +41,7 @@
   ui = auto
 
 [gpg]
-  program = gpg2
+  program = gpg
 
 [submodule]
   fetchJobs = 4
