@@ -9,3 +9,6 @@ alias vim=nvim
 
 # Homeshick
 alias hs=homeshick
+
+# Fasd
+alias jj="fasd_cd -tdi"
