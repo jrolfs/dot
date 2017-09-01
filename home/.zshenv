@@ -22,7 +22,7 @@ export GIT_DUET_ROTATE_AUTHOR=1
 export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 
 # FZF
-export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
