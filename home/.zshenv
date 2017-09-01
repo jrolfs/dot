@@ -37,5 +37,9 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
     $HOME/.jenv/{bin,shims}
   )
 
+  eval "$(rbenv init -)"
+  eval "$(pyenv init -)"
+  eval "$(nodenv init -)"
+
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi

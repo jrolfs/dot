@@ -1,3 +1,13 @@
+source ~/.keys.zsh
+source ~/.aliases.zsh
+source ~/.platform.zsh
+
+# jenv
+type -p jenv &> /dev/null && eval "$(jenv init -)"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
