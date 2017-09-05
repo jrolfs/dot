@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # GnuPG
 alias gty="gpg-connect-agent updatestartuptty /bye"
 
