@@ -23,7 +23,6 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'editor' \
   'history' \
-  'history-substring-search' \
   'directory' \
   'spectrum' \
   'gpg' \
@@ -33,6 +32,9 @@ zstyle ':prezto:load' pmodule \
   'python' \
   'utility' \
   'fasd' \
+  'autosuggestions' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 zstyle ':prezto:module:editor' key-bindings 'vi'
