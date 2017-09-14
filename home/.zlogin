@@ -16,4 +16,11 @@
     print
   fi
 
+  #
+  # fzf
+
+  local fzf=$HOME/.fzf.zsh
+
+  [ -f $fzf ] && source $fzf
+
 } >&2

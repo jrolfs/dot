@@ -1,12 +1,6 @@
-source ~/.keys.zsh
-source ~/.aliases.zsh
-source ~/.platform.zsh
-
-# jenv
-type -p jenv &> /dev/null && eval "$(jenv init -)"
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $HOME/.keys.zsh
+source $HOME/.aliases.zsh
+source $HOME/.platform.zsh
 
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -17,6 +11,10 @@ fi
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
+
+#
+# jenv
+type -p jenv &> /dev/null && eval "$(jenv init -)"
 
 #
 # Language
