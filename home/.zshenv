@@ -23,23 +23,25 @@ export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 
 # FZF
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_TMUX=1
+export FZF_TMUX_HEIGHT='50%'
 
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
 
-
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  path+=(
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+
+  path=(
     $HOME/.rbenv/{bin,shims}
     $HOME/.pyenv/{bin,shims}
     $HOME/.nodenv/{bin,shims}
     $HOME/.jenv/{bin,shims}
+    $path
   )
 
   eval "$(rbenv init -)"
   eval "$(pyenv init -)"
   eval "$(nodenv init -)"
-
-  source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
