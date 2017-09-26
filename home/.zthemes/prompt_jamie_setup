@@ -96,6 +96,20 @@ function prompt_jamie_setup {
   # Set ruby-info parameters.
   zstyle ':prezto:module:ruby:info:version' format '%F{red} %v%f'
 
+  zstyle ':prezto:module:syntax-highlighting' highlighters \
+    'main' \
+    'brackets' \
+    'pattern' \
+    'cursor' \
+    'root'
+
+  zstyle ':prezto:module:syntax-highlighting' styles \
+    'builtin' 'bg=blue' \
+    'command' 'bg=blue' \
+    'function' 'bg=blue'
+
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
   # if [ ${#branch} -ge 30 ]; then
   #   branch="${branch:0:27}...)"
   # fi
