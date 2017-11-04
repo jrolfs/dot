@@ -8,6 +8,8 @@ setopt HIST_IGNORE_SPACE
 # Environment
 #
 
+export KEYTIMEOUT=1
+
 # XDG
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_CONFIG_HOME="${HOME}/.config"
