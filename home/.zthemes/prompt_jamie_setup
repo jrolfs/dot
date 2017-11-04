@@ -205,7 +205,7 @@ function prompt_jamie_setup {
   prompt_jamie_reset_git
 
   _prompt_jamie_first_line='
-··· ${_prompt_jamie_colors[3]}%n%f at \
+λ ${_prompt_jamie_colors[3]}%n%f at \
 ${_prompt_jamie_colors[2]}%m%f in \
 ${_prompt_jamie_colors[5]}%~%f \
 $([ $_prompt_jamie_git ] && echo -e " $_prompt_jamie_git")'
@@ -213,8 +213,8 @@ $([ $_prompt_jamie_git ] && echo -e " $_prompt_jamie_git")'
   _prompt_jamie_second_line='
 $editor_info[keymap]'
 
-  _prompt_jamie_right='$([ $_prompt_jamie_git_right ] && echo -e "$_prompt_jamie_git_right 〜 ") \
-$node_info[version] | \
+  _prompt_jamie_right='$([ $_prompt_jamie_git_right ] && echo -e " $_prompt_jamie_git_right 〜 ") \
+$node_info[version] · \
 $ruby_info[version]\
 %(?:: • %F{yellow}%f)'
 
