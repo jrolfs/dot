@@ -16,17 +16,22 @@
 #   http://i.imgur.com/HyRvv.png
 #
 
+function prompt_jamie_calculate_truncation {
+  local zero='%([BSUbfksu]|([FK]|){*})'
+  local formatted=${(S%%)${(e)_prompt_jamie_first_line}//$~zero}
+  local length=${#formatted}
+  local overflow=$(($COLUMNS - $length))
+  local git_length=${#${(S%%)_prompt_jamie_git//$~zero}}
+
+  if [[ $overflow -lt 0 ]]; then
+    (( _prompt_jamie_truncate = $git_length + $overflow ))
+  fi
+}
 
 #
 # Prompt hook
 
 function prompt_jamie_precmd {
-  local zero='%([BSUbfksu]|([FK]|){*})'
-  local length=${#${(S%%)${(e)_prompt_jamie_first_line}//$~zero}}
-  local fill_count=$((($COLUMNS - $length) / 2))
-
-  _prompt_jamie_fill=$(printf '⋯ %.0s' {1..$fill_count})
-
   if (( $+functions[node-info] )); then
     node-info
   fi
@@ -53,6 +58,8 @@ function prompt_jamie_precmd {
       _jamie_current_git_root=$new_git_root
     fi
   fi
+
+  prompt_jamie_calculate_truncation
 
   # Compute slow commands in the background.
   async_job async_jamie_git prompt_jamie_async_git "$PWD"
