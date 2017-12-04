@@ -61,6 +61,8 @@ function prompt_jamie_precmd {
 
   prompt_jamie_calculate_truncation
 
+  print ""
+
   # Compute slow commands in the background.
   async_job async_jamie_git prompt_jamie_async_git "$PWD"
  }
@@ -242,8 +244,7 @@ function prompt_jamie_setup {
 
   prompt_jamie_reset_git
 
-  _prompt_jamie_first_line='
-λ ${_prompt_jamie_colors[3]}%n%f at \
+  _prompt_jamie_first_line='λ ${_prompt_jamie_colors[3]}%n%f at \
 ${_prompt_jamie_colors[2]}%m%f in \
 ${_prompt_jamie_colors[5]}%~%f \
 $([ $_prompt_jamie_git ] && echo -e " $_prompt_jamie_git")'
