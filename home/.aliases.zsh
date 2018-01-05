@@ -10,3 +10,7 @@ alias hs=homeshick
 
 # Fasd
 alias jj="fasd_cd -tdi"
+
+# Git
+
+alias gl1="git log --pretty=oneline"
