@@ -47,6 +47,9 @@ function prompt_jamie_precmd {
   # Kill the old process of slow commands if it is still running.
   async_flush_jobs async_jamie_git
 
+  # Format current directory
+  _prompt_jamie_pwd=$(prompt-pwd)
+
   # Handle updating git data. We also clear the git prompt data if we're in a
   # different git root now.
   if (( $+functions[git-dir] )); then
@@ -147,6 +150,8 @@ function prompt_jamie_setup {
 
   prompt_opts=(cr percent subst)
 
+  _prompt_jamie_pwd=''
+
   _prompt_jamie_precmd_async_pid=0
   _prompt_jamie_precmd_async_data=$(mktemp "${TMPDIR:-/tmp}/jamie-prompt-async-XXXXXXXXXX")
 
@@ -181,7 +186,7 @@ function prompt_jamie_setup {
   fi
 
   # Set prompt options
-  zstyle ':prezto:module:prompt' pwd-length 'short'
+  zstyle ':prezto:module:prompt' pwd-length 'long'
 
   # Set editor-info options
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
@@ -246,7 +251,7 @@ function prompt_jamie_setup {
 
   _prompt_jamie_first_line='λ ${_prompt_jamie_colors[3]}%n%f at \
 ${_prompt_jamie_colors[2]}%m%f in \
-${_prompt_jamie_colors[5]}%~%f \
+${_prompt_jamie_colors[5]}${_prompt_jamie_pwd}%f \
 $([ $_prompt_jamie_git ] && echo -e " $_prompt_jamie_git")'
 
   _prompt_jamie_second_line='
