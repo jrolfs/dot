@@ -1,9 +1,20 @@
 # GnuPG
 alias gty="gpg-connect-agent updatestartuptty /bye"
 
-# Neovim
+# Editors
 alias vi=nvim
 alias vim=nvim
+
+function exists {
+  return $(command -v $1 >&/dev/null 2>&1)
+}
+
+if exists 'code-insiders'; then
+  exists 'code' && alias code-stable=code
+  alias code=code-insiders
+fi
+
+unset -f exists # ¯\_(ツ)_/¯
 
 # Homeshick
 alias hs=homeshick
