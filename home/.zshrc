@@ -48,9 +48,13 @@ zplug "plugins/gulp", from:oh-my-zsh
 zplug "plugins/go", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 
-zplug "jrolfs/fzf", \
-  at:"no-path" \
-  hook-build:"./install --key-bindings --completion --no-update-rc --no-fish --no-bash --no-path"
+zplug "jrolfs/fzf", hook-build:"./install \
+    --key-bindings \
+    --completion \
+    --no-update-rc \
+    --no-fish \
+    --no-bash \
+    --no-path"
 
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "Homebrew/brew", use:completions/zsh
