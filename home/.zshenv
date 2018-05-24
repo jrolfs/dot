@@ -14,6 +14,10 @@ export KEYTIMEOUT=1
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_CONFIG_HOME="${HOME}/.config"
 
+# Dotfiles
+export HOMESHICK_KINGDOM="${HOMESHICK_DIR:-$HOME/.homesick/repos}"
+export HS_KINGDOM=$HOMESHICK_KINGDOM
+
 # Go
 export GOPATH="${HOME}/Development/Go"
 
