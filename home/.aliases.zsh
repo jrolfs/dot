@@ -23,5 +23,4 @@ alias hs=homeshick
 alias jj="fasd_cd -tdi"
 
 # Git
-
 alias gl1="git log --pretty=oneline"
