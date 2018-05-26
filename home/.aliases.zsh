@@ -21,10 +21,10 @@ function mxd {
 
 unset -f exists # ¯\_(ツ)_/¯
 
-# Homeshick
+# homeshick
 alias hs=homeshick
 
-# Fasd
+# fasd
 alias jj="fasd_cd -tdi"
 
 # Git
