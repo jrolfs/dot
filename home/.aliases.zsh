@@ -14,6 +14,11 @@ if exists 'code-insiders'; then
   alias code=code-insiders
 fi
 
+# tmux
+function mxd {
+  tmux rename-window "$(basename $(pwd))"
+}
+
 unset -f exists # ¯\_(ツ)_/¯
 
 # Homeshick
