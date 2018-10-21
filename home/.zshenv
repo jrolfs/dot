@@ -44,6 +44,7 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
     $HOME/.pyenv/{bin,shims}
     $HOME/.nodenv/{bin,shims}
     $HOME/.jenv/{bin,shims}
+    $HOME/.emacs.d/bin
     $path
   )
 

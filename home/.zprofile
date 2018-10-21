@@ -40,6 +40,7 @@ fpath+=(
 # Executable search path
 path=(
   /usr/local/{bin,sbin}
+  $HOME/.emacs.d/bin
   $HOME/.jenv/bin
   $GOPATH/bin
   $path
