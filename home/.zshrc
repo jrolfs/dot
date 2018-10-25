@@ -48,7 +48,7 @@ zplug "plugins/gulp", from:oh-my-zsh
 zplug "plugins/go", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 
-zplug "jrolfs/fzf", hook-build:"./install \
+zplug "jrolfs/fzf", at:"no-path" hook-build:"./install \
     --key-bindings \
     --completion \
     --no-update-rc \
