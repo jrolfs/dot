@@ -75,3 +75,16 @@ zplug load
 #
 # /zplug
 #
+
+
+#
+# OS specific configuration
+#
+
+os_init="${HOME}/.zshrc.$(uname | tr '[:upper:]' '[:lower:]')"
+
+if [ -f $os_init ]; then
+  source $os_init
+fi
+
+unset os_init
