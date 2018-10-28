@@ -40,7 +40,10 @@ fpath+=(
 path=(
   /usr/local/{bin,sbin}
   $HOME/.emacs.d/bin
-  $HOME/.jenv/bin
+  $JENV_ROOT/bin
+  $NODENV_ROOT/bin
+  $PYENV_ROOT/bin
+  $RBENV_ROOT/bin
   $GOPATH/bin
   $path
 )

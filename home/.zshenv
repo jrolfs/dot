@@ -36,15 +36,21 @@ export FZF_TMUX_HEIGHT='50%'
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
 
+# *env
+export JENV_ROOT="${XDG_DATA_HOME}/jenv"
+export NODENV_ROOT="${XDG_DATA_HOME}/nodenv"
+export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
+export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
+
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 
   path=(
-    $HOME/.rbenv/{bin,shims}
-    $HOME/.pyenv/{bin,shims}
-    $HOME/.nodenv/{bin,shims}
-    $HOME/.jenv/{bin,shims}
+    $RBENV_ROOT/{bin,shims}
+    $PYENV_ROOT/{bin,shims}
+    $NODENV_ROOT/{bin,shims}
+    $JENV_ROOT/{bin,shims}
     $HOME/.emacs.d/bin
     $path
   )
