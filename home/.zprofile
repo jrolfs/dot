@@ -1,5 +1,5 @@
-source $HOME/.keys.zsh
-source $HOME/.aliases.zsh
+source $XDG_CONFIG_HOME/zsh/keys.zsh
+source $XDG_CONFIG_HOME/zsh/aliases.zsh
 
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then
