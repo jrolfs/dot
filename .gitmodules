@@ -1,15 +1,15 @@
 [submodule "home/.zplug"]
 	path = home/.zplug
 	url = git@github.com:zplug/zplug.git
-[submodule ".nodenv"]
-	path = .nodenv
-	url = git@github.com:jrolfs/nodenv.git
-[submodule ".rbenv"]
-	path = .rbenv
-	url = git@github.com:jrolfs/rbenv.git
-[submodule ".pyenv"]
-	path = .pyenv
-	url = git@github.com:jrolfs/pyenv.git
-[submodule ".jenv"]
-	path = .jenv
+[submodule "jenv"]
+	path = jenv
 	url = https://github.com/gcuisinier/jenv.git
+[submodule "rbenv"]
+	path = rbenv
+	url = git@github.com:jrolfs/rbenv.git
+[submodule "nodenv"]
+	path = nodenv
+	url = git@github.com:jrolfs/nodenv.git
+[submodule "pyenv"]
+	path = pyenv
+	url = git@github.com:pyenv/pyenv.git
