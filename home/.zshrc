@@ -72,9 +72,9 @@ zplug "jrolfs/fzf", at:"no-path" hook-build:"./install \
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "Homebrew/brew", use:completions/zsh
 zplug "github/hub", \
-  hook-build:"pwd | xargs -I {} ln -fs {}/etc/hub.zsh_completion $HOME/.zsh/completions/_hub"
+  hook-build:"ln -s $(pwd)/etc/hub.zsh_completion $ZSH_EXTRA_COMPLETIONS/_hub"
 zplug "andsens/homeshick", \
-  hook-build:"pwd | xargs -I {} ln -fs {}/completions/_homeshick $HOME/.zsh/completions/_homeshick"
+  hook-build:"ln -s $(pwd)/completions/_homeshick $ZSH_EXTRA_COMPLETIONS/_homeshick"
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"

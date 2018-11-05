@@ -18,6 +18,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 # Dotfiles
 export HOMESHICK_KINGDOM="${HOMESHICK_DIR:-$HOME/.homesick/repos}"
 export HS_KINGDOM=$HOMESHICK_KINGDOM
+export ZSH_EXTRA_COMPLETIONS="${XDG_CONFIG_HOME}/zsh/completions"
 
 # Go
 export GOPATH="${HOME}/Development/Go"

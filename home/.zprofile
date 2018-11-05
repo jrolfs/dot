@@ -32,8 +32,8 @@ typeset -gU cdpath fpath mailpath path
 
 # ZSH function search path
 fpath+=(
-  $HOME/.zthemes
-  $HOME/.zsh/completions
+  $XDG_CONFIG_HOME/zsh/themes
+  $XDG_CONFIG_HOME/zsh/completions
 )
 
 # Executable search path
