@@ -30,30 +30,6 @@ zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
   use:homeshick.sh
 
-zstyle ':prezto:*:*' color 'yes'
-
-zstyle ':prezto:load' pmodule \
-  'environment' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'gpg' \
-  'git' \
-  'ruby' \
-  'node' \
-  'python' \
-  'utility' \
-  'fasd' \
-  'autosuggestions' \
-  'syntax-highlighting' \
-  'history-substring-search' \
-  'prompt'
-
-zstyle ':prezto:module:editor' key-bindings 'vi'
-zstyle ':prezto:module:prompt' theme 'jamie'
-zstyle ':completion:*' menu select
-
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
@@ -88,3 +64,5 @@ zplug load
 #
 # /zplug
 #
+
+[ -f $os_init ] && source "$XDG_CONFIG_HOME/zsh/prezto.zsh"
