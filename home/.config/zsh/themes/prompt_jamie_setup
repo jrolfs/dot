@@ -162,80 +162,67 @@ function prompt_jamie_setup {
   # Add prompt hook
   add-zsh-hook precmd prompt_jamie_precmd
 
-  # Use extended color pallete if available.
-  if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    _prompt_jamie_colors=(
-      "%F{14}"
-      "%F{16}"
-      "%F{05}"
-      "%F{13}"
-      "%F{02}"
-    )
-  else
-    _prompt_jamie_colors=(
-      "%F{cyan}"
-      "%F{yellow}"
-      "%F{magenta}"
-      "%F{red}"
-      "%F{green}"
-    )
-  fi
+  black="%F{0}"
+  bright_black="%F{8}"
 
-  if [[ ! -z "$VIM" ]]; then
-    _prompt_jamie_colors[2]="%F{11}"
-  fi
+  red="%F{1}"
+  bright_red="%F{9}"
+  scary_red="%F{168}"
+  dark_red="%F{52}"
 
-  # Set prompt options
-  zstyle ':prezto:module:prompt' pwd-length 'long'
+  green="%F{2}"
+  bright_green="%F{10}"
+
+  yellow="%F{3}"
+  bright_yellow="%F{11}"
+
+  blue="%F{4}"
+  bright_blue="%F{12}"
+
+  magenta="%F{5}"
+  bright_magenta="%F{13}"
+
+  cyan="%F{6}"
+  bright_cyan="%F{14}"
+
+  white="%F{7}"
+  bright_white="%F{15}"
+
+  teal="%uF{73}"
 
   # Set editor-info options
-  zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
+  zstyle ':prezto:module:editor:info:completing' format "%B${red}...%f%b"
   zstyle ':prezto:module:editor:info:keymap:primary' format "• "
-  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
+  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format " ${red}♺%f"
   zstyle ':prezto:module:editor:info:keymap:alternate' format "∘ "
 
   # Set git-info options
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:action' format " :%%B${_prompt_jamie_colors[2]}%s%f%%b"
-  zstyle ':prezto:module:git:info:added' format " %%B%${_prompt_jamie_colors[5]}%a%f%%b"
-  zstyle ':prezto:module:git:info:ahead' format " %%B${_prompt_jamie_colors[2]}%A%f%%b"
-  zstyle ':prezto:module:git:info:behind' format " %%B${_prompt_jamie_colors[2]}%B%f%%b"
-  zstyle ':prezto:module:git:info:branch' format "${_prompt_jamie_colors[1]}%$_prompt_jamie_truncate<...<%b%<<%f"
-  zstyle ':prezto:module:git:info:commit' format ":%${_prompt_jamie_colors[5]}%.7c%f"
-  zstyle ':prezto:module:git:info:deleted' format " %%B${_prompt_jamie_colors[4]}%d%f%%b"
-  zstyle ':prezto:module:git:info:modified' format ' %%B%F{blue}%m%f%%b'
-  zstyle ':prezto:module:git:info:position' format ":${_prompt_jamie_colors[4]}%p%f"
-  zstyle ':prezto:module:git:info:renamed' format ' %%B%F{magenta}%r%f%%b'
-  zstyle ':prezto:module:git:info:stashed' format " %%B${_prompt_jamie_colors[1]}%S%f%%b"
-  zstyle ':prezto:module:git:info:unmerged' format " %%B${_prompt_jamie_colors[2]}%U%f%%b"
-  zstyle ':prezto:module:git:info:untracked' format ' %%B%F{white}%u%f%%b'
+  zstyle ':prezto:module:git:info:action' format " :%%B${bright_magenta}%s%f%%b"
+  zstyle ':prezto:module:git:info:added' format " %%B%${cyan}%a%f%%b"
+  zstyle ':prezto:module:git:info:ahead' format " %%B${bright_magenta}%A%f%%b"
+  zstyle ':prezto:module:git:info:behind' format " %%B${bright_magenta}%B%f%%b"
+  zstyle ':prezto:module:git:info:branch' format "${bright_blue}%$_prompt_jamie_truncate<...<%b%<<%f"
+  zstyle ':prezto:module:git:info:commit' format ":%${bright_magenta}%.7c%f"
+  zstyle ':prezto:module:git:info:deleted' format " %%B${red}%d%f%%b"
+  zstyle ':prezto:module:git:info:modified' format " %%B${blue}%m%f%%b"
+  zstyle ':prezto:module:git:info:position' format ":${blue}%p%f"
+  zstyle ':prezto:module:git:info:renamed' format ' %%B${magenta}%r%f%%b'
+  zstyle ':prezto:module:git:info:stashed' format " %%B${bright_yellow}%S%f%%b"
+  zstyle ':prezto:module:git:info:unmerged' format " %%B${magenta}%U%f%%b"
+  zstyle ':prezto:module:git:info:untracked' format " %%B${white}%u%f%%b"
   zstyle ':prezto:module:git:info:keys' format \
     'prompt' '%b' \
     'rprompt' '%A%B%a%d%m%r%U%u%S'
 
   # Set node-info options
-  zstyle ':prezto:module:node:info:version' format '%F{green} %v%f'
+  zstyle ':prezto:module:node:info:version' format "${bright_green} %v%f"
 
   # Set python-info options
-  zstyle ':prezto:module:python:info:virtualenv' format '%F{green} %v%f'
+  zstyle ':prezto:module:python:info:virtualenv' format "${bright_green} %v%f"
 
   # Set ruby-info options
-  zstyle ':prezto:module:ruby:info:version' format '%F{red} %v%f'
-
-  # Set syntax-highlighting options
-  zstyle ':prezto:module:syntax-highlighting' highlighters \
-    'main' \
-    'brackets' \
-    'pattern' \
-    'cursor' \
-    'root'
-
-  zstyle ':prezto:module:syntax-highlighting' styles \
-    'builtin' 'bg=blue' \
-    'command' 'bg=blue' \
-    'function' 'bg=blue'
-
-  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+  zstyle ':prezto:module:ruby:info:version' format "${red} %v%f"
 
   # Get the async worker set up
   async_start_worker async_jamie_git -n
@@ -249,9 +236,9 @@ function prompt_jamie_setup {
 
   prompt_jamie_reset_git
 
-  _prompt_jamie_first_line='λ ${_prompt_jamie_colors[3]}%n%f at \
-${_prompt_jamie_colors[2]}%m%f in \
-${_prompt_jamie_colors[5]}${_prompt_jamie_pwd}%f \
+  _prompt_jamie_first_line='λ ${bright_magenta}%n%f at \
+${bright_yellow}%m%f in \
+${bright_cyan}${_prompt_jamie_pwd}%f \
 $([ $_prompt_jamie_git ] && echo -e " $_prompt_jamie_git")'
 
   _prompt_jamie_second_line='
@@ -260,14 +247,14 @@ $editor_info[keymap]'
   _prompt_jamie_right='$([ $_prompt_jamie_git_right ] && echo -e " $_prompt_jamie_git_right 〜 ") \
 $node_info[version] · \
 $ruby_info[version]\
-%(?:: • %F{yellow}%f)'
+%(?:: • ${yellow}👎%f)'
 
   PROMPT=${_prompt_jamie_first_line}
   PROMPT+=${_prompt_jamie_second_line}
 
   RPROMPT="$_prompt_jamie_right"
 
-  SPROMPT='%F{red}%R%f ➟ %F{green}%r%f 🤔  ? '
+  SPROMPT="${bright_red}%R%f ➟ ${bright_green}%r%f 🤔  ? "
 }
 
 prompt_jamie_setup "$@"
