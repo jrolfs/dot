@@ -1,25 +1,16 @@
+preztorc="${XDG_CONFIG_HOME}/zsh/prezto.zsh"
+platformrc="${HOME}/.zshrc.$(uname | tr '[:upper:]' '[:lower:]')"
+
+[[ -f $preztorc ]] && source $preztorc
+[[ -f $platformrc ]] && source $platformrc
+
+unset preztorc platformrc
 
 #
-# OS specific configuration
-#
-
-os_init="${HOME}/.zshrc.$(uname | tr '[:upper:]' '[:lower:]')"
-
-if [ -f $os_init ]; then
-  source $os_init
-fi
-
-unset os_init
-
-#
-# zplug
+# <zplug>
 #
 
 source ~/.zplug/init.zsh
-
-zplug "chriskempson/base16-shell", \
-  use:"**/*oceanicnext.sh", \
-  defer:3
 
 zplug "sorin-ionescu/prezto", \
   as:plugin, \
@@ -37,22 +28,11 @@ zplug "plugins/gulp", from:oh-my-zsh
 zplug "plugins/go", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 
-zplug "jrolfs/fzf", at:"no-path" hook-build:"./install \
-    --key-bindings \
-    --completion \
-    --no-update-rc \
-    --no-fish \
-    --no-bash \
-    --no-path"
-
+zplug "amar1729/chunkwm-zsh-completions"
+zplug "andsens/homeshick", use:completions
 zplug "docker/compose", use:contrib/completion/zsh
-zplug "Homebrew/brew", use:completions/zsh
-zplug "github/hub", \
-  hook-build:"ln -s $(pwd)/etc/hub.zsh_completion $ZSH_EXTRA_COMPLETIONS/_hub"
-zplug "andsens/homeshick", \
-  hook-build:"ln -s $(pwd)/completions/_homeshick $ZSH_EXTRA_COMPLETIONS/_homeshick"
+zplug "homebrew/brew", use:completions/zsh
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
 
 if ! zplug check; then
@@ -62,7 +42,5 @@ fi
 zplug load
 
 #
-# /zplug
+# </zplug>
 #
-
-[ -f $os_init ] && source "$XDG_CONFIG_HOME/zsh/prezto.zsh"
