@@ -34,6 +34,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_TMUX=1
 export FZF_TMUX_HEIGHT='50%'
 
+export SKIM_DEFAULT_COMMAND="fd --type f --hidden"
+
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
 

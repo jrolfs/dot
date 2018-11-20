@@ -11,7 +11,6 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
-#
 # jenv
 type -p jenv &> /dev/null && eval "$(jenv init -)"
 
