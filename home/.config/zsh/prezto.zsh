@@ -20,6 +20,7 @@ zstyle ':prezto:load' pmodule \
 
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'jamie'
+zstyle ':prezto:module:prompt' pwd-length 'short'
 zstyle ':completion:*' menu select
 
 zstyle ':prezto:module:syntax-highlighting' highlighters \
