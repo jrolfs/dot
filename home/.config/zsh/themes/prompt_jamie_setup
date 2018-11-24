@@ -207,7 +207,7 @@ function prompt_jamie_setup {
   zstyle ':prezto:module:git:info:deleted' format " %%B${red}%d%f%%b"
   zstyle ':prezto:module:git:info:modified' format " %%B${blue}%m%f%%b"
   zstyle ':prezto:module:git:info:position' format ":${blue}%p%f"
-  zstyle ':prezto:module:git:info:renamed' format ' %%B${magenta}%r%f%%b'
+  zstyle ':prezto:module:git:info:renamed' format " %%B${magenta}%r%f%%b"
   zstyle ':prezto:module:git:info:stashed' format " %%B${bright_yellow}%S%f%%b"
   zstyle ':prezto:module:git:info:unmerged' format " %%B${magenta}%U%f%%b"
   zstyle ':prezto:module:git:info:untracked' format " %%B${white}%u%f%%b"
