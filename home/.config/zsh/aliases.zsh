@@ -45,6 +45,8 @@ function lpwd {
   zstyle -g current-pwd-length ':prezto:module:prompt' pwd-length
 }
 
+function skim { nvim $(sk); }
+
 
 # Clean up `exists` helper
 unset -f exists # ¯\_(ツ)_/¯
