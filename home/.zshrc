@@ -17,6 +17,11 @@ zplug "sorin-ionescu/prezto", \
   use:init.zsh, \
   hook-build:"pwd | xargs -I {} ln -fs {} $HOME/.zprezto"
 
+zplug "$XDG_CONFIG_HOME/zsh", \
+  from:local, \
+  use:completion.zsh, \
+  defer:2
+
 zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
   use:homeshick.sh
