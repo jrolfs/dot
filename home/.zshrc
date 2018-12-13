@@ -17,6 +17,10 @@ zplug "sorin-ionescu/prezto", \
   use:init.zsh, \
   hook-build:"pwd | xargs -I {} ln -fs {} $HOME/.zprezto"
 
+zplug "belak/prezto-contrib", \
+  as:plugin, \
+  hook-build:"pwd | xargs -I {} ln -fs {} $HOME/.zprezto/contrib"
+
 zplug "$XDG_CONFIG_HOME/zsh", \
   from:local, \
   use:completion.zsh, \
