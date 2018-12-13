@@ -16,6 +16,7 @@ zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'syntax-highlighting' \
   'history-substring-search' \
+  'contrib-prompt' \
   'prompt'
 
 zstyle ':prezto:module:editor' key-bindings 'vi'
