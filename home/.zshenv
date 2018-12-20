@@ -20,8 +20,14 @@ export HOMESHICK_KINGDOM="${HOMESHICK_DIR:-$HOME/.homesick/repos}"
 export HS_KINGDOM=$HOMESHICK_KINGDOM
 export ZSH_EXTRA_COMPLETIONS="${XDG_CONFIG_HOME}/zsh/completions"
 
+export ORGANIZATION="OpenTable"
+export DEVELOPMENT="${HOME}/Development"
+export SOURCES="${DEVELOPMENT}/Sources"
+export WORK_HOME="${DEVELOPMENT}/${ORGANIZATION}"
+export PERSONAL_HOME="${DEVELOPMENT}/${ORGANIZATION}"
+
 # Go
-export GOPATH="${HOME}/Development/Go"
+export GOPATH="${DEVELOPMENT}/Go"
 
 # Git Duet
 export GIT_DUET_ROTATE_AUTHOR=1
