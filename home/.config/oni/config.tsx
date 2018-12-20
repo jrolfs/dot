@@ -1,4 +1,15 @@
-module.exports = {
+import * as React from "react";
+import * as Oni from "oni-api";
+
+export const activate = (oni: Oni.Plugin.Api) => {
+  console.log("config activated");
+};
+
+export const deactivate = (oni: Oni.Plugin.Api) => {
+  console.log("config deactivated");
+};
+
+export const configuration = {
   "oni.useDefaultConfig": false,
   "oni.loadInitVim": true,
 
@@ -15,6 +26,8 @@ module.exports = {
 
   "editor.clipboard.enabled": false,
 
+  "editor.renderer": "canvas",
+
   "editor.quickInfo.enabled": true,
   "editor.quickInfo.delay": 500,
 
@@ -23,26 +36,25 @@ module.exports = {
   "editor.formatting.formatOnSwitchToNormalMode": false,
 
   "editor.fontLigatures": true,
-  "editor.fontSize": "12px",
-  "editor.fontFamily": "FuraCode Nerd Font",
+  "editor.fontSize": "13px",
+  "editor.fontFamily": "Operator Mono SSm Lig",
 
   "editor.quickOpen.execCommand": null,
 
   "editor.scrollBar.visible": false,
 
-  "editor.fullScreenOnStart" : false,
+  "editor.fullScreenOnStart": false,
 
   "editor.cursorLine": true,
-  "editor.cursorLineOpacity" : 0.1,
+  "editor.cursorLineOpacity": 0.1,
 
   "editor.cursorColumn": false,
   "editor.cursorColumnOpacity": 0.1,
 
   "environment.additionalPaths": [],
 
-  "statusbar.enabled": true,
-  "statusbar.fontSize": "12px",
+  "statusbar.enabled": false,
 
   "tabs.enabled": true,
-  "tabs.showVimTabs": true,
+  "tabs.showVimTabs": true
 };
