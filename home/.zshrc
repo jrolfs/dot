@@ -26,6 +26,10 @@ zplug "$XDG_CONFIG_HOME/zsh", \
   use:completion.zsh, \
   defer:2
 
+zplug "lotabout/skim", \
+  use:shell/key-bindings.zsh \
+  defer:2
+
 zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
   use:homeshick.sh
