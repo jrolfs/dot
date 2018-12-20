@@ -192,9 +192,9 @@ function prompt_jamie_setup {
 
   # Set editor-info options
   zstyle ':prezto:module:editor:info:completing' format "%B${red}...%f%b"
-  zstyle ':prezto:module:editor:info:keymap:primary' format "• "
+  zstyle ':prezto:module:editor:info:keymap:primary' format "▸ "
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format " ${red}♺%f"
-  zstyle ':prezto:module:editor:info:keymap:alternate' format "∘ "
+  zstyle ':prezto:module:editor:info:keymap:alternate' format "${bright_cyan}›%f "
 
   # Set git-info options
   zstyle ':prezto:module:git:info' verbose 'yes'
