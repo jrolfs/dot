@@ -26,6 +26,8 @@ export SOURCES="${DEVELOPMENT}/Sources"
 export WORK_HOME="${DEVELOPMENT}/${ORGANIZATION}"
 export PERSONAL_HOME="${DEVELOPMENT}/${ORGANIZATION}"
 
+export SYNC="${HOME}/Sync"
+
 # Go
 export GOPATH="${DEVELOPMENT}/Go"
 
