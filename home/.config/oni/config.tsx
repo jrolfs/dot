@@ -27,6 +27,7 @@ export const configuration = {
   "editor.clipboard.enabled": false,
 
   "editor.renderer": "canvas",
+  "editor.split.mode": "oni",
 
   "editor.quickInfo.enabled": true,
   "editor.quickInfo.delay": 500,
