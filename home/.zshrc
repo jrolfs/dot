@@ -34,6 +34,9 @@ zplug "lotabout/skim", \
   use:shell/key-bindings.zsh \
   defer:2
 
+zplug "tridactyl/tridactyl", \
+  hook-build:"source ./native/install.sh"
+
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
