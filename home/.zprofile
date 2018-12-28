@@ -1,5 +1,6 @@
-source $XDG_CONFIG_HOME/zsh/keys.zsh
-source $XDG_CONFIG_HOME/zsh/aliases.zsh
+setopt extendedglob
+
+for config in $XDG_CONFIG_HOME/zsh/(^(prezto|completion)).zsh; source $config
 
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then
