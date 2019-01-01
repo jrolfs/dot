@@ -7,9 +7,8 @@ sanitise tridactyllocal tridactylsync
 "
 " Settings
 
-" Sane hinting mode
 set hintfiltermode vimperator-reflow
-set hintnames numeric
+set hintuppercase false
 
 " Make Tridactyl work on more sites at the expense of some security
 set csp clobber
