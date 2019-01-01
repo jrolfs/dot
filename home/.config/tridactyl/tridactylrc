@@ -7,6 +7,10 @@ sanitise tridactyllocal tridactylsync
 "
 " Settings
 
+colorscheme dark
+
+set allowautofocus false
+
 set hintfiltermode vimperator-reflow
 set hintuppercase false
 
