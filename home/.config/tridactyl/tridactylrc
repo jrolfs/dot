@@ -40,3 +40,29 @@ bindurl reddit.com gu urlparent 4
 
 " Allow Ctrl-a to select all in the commandline
 unbind --mode=ex <C-a>
+
+
+"
+" Containers
+
+" containercreate work orange chill
+
+"
+" Contained
+
+" work
+
+aucon adp\.com work
+
+" social
+
+aucon facebook\.com  social
+aucon messenger\.com social
+
+" travel
+aucon airbnb\.com travel
+
+" shopping
+aucon amazon\.com           shopping
+aucon instacart\.com        shopping
+aucon vixpaulahermanny\.com shopping
