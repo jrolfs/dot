@@ -14,8 +14,10 @@ set allowautofocus false
 set hintfiltermode vimperator-reflow
 set hintuppercase false
 
-" Make Tridactyl work on more sites at the expense of some security
+set tabopencontaineraware true
+
 set csp clobber
+
 fixamo_quiet
 
 
@@ -31,7 +33,7 @@ bind K tabnext
 bind ;c hint -c [class*="expand"],[class="togg"]
 
 " Git{Hub,Lab} git clone via SSH yank
-bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+bind yg composite js "gfc -o upstream " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
 
 " Make gu take you back to subreddit from comments
 bindurl reddit.com gu urlparent 4
