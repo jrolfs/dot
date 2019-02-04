@@ -30,10 +30,6 @@ zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
   use:homeshick.sh
 
-zplug "lotabout/skim", \
-  use:shell/key-bindings.zsh \
-  defer:2
-
 zplug "tridactyl/tridactyl", \
   hook-build:"source ./native/install.sh"
 
@@ -50,6 +46,10 @@ zplug "docker/compose", use:contrib/completion/zsh
 zplug "homebrew/brew", use:completions/zsh
 
 zplug "zsh-users/zsh-completions"
+
+zplug "lotabout/skim", \
+  use:shell/key-bindings.zsh \
+  defer:3
 
 if ! zplug check; then
   zplug install
