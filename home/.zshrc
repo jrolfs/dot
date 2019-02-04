@@ -31,7 +31,7 @@ zplug "$HOME/.homesick/repos/homeshick", \
   use:homeshick.sh
 
 zplug "tridactyl/tridactyl", \
-  hook-build:"source ./native/install.sh"
+  hook-build:"source ./native/install.sh > /dev/null 2>&1"
 
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
