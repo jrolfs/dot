@@ -13,3 +13,6 @@
 [submodule "pyenv"]
 	path = pyenv
 	url = git@github.com:pyenv/pyenv.git
+[submodule "paw-rest-client"]
+	path = paw-rest-client
+	url = git@github.com:opentable/paw-rest-client.git
