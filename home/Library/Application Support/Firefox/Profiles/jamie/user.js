@@ -35,3 +35,8 @@ user_pref("browser.pageActions.persistedActions", `
     "idsInUrlbar": []
   }
 `);
+
+//
+// Security
+
+user_pref("security.webauth.u2f", true);
