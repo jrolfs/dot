@@ -23,8 +23,7 @@ zplug "belak/prezto-contrib", \
 
 zplug "$XDG_CONFIG_HOME/zsh", \
   from:local, \
-  use:completion.zsh, \
-  defer:2
+  use:"*.zsh"
 
 zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
@@ -48,8 +47,7 @@ zplug "homebrew/brew", use:completions/zsh
 zplug "zsh-users/zsh-completions"
 
 zplug "lotabout/skim", \
-  use:shell/key-bindings.zsh \
-  defer:3
+  use:shell/key-bindings.zsh
 
 if ! zplug check; then
   zplug install
