@@ -49,7 +49,8 @@ zplug "homebrew/brew", use:completions/zsh
 zplug "zsh-users/zsh-completions"
 
 zplug "lotabout/skim", \
-  use:shell/key-bindings.zsh
+  use:shell/key-bindings.zsh \
+  defer:3
 
 if ! zplug check; then
   zplug install
