@@ -32,12 +32,14 @@ zplug "$HOME/.homesick/repos/homeshick", \
 zplug "tridactyl/tridactyl", \
   hook-build:"source ./native/install.sh > /dev/null 2>&1"
 
-zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
+zplug "plugins/github", from:oh-my-zsh
+zplug "plugins/go", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
 zplug "plugins/gulp", from:oh-my-zsh
-zplug "plugins/go", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/mosh", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh
 
 zplug "amar1729/chunkwm-zsh-completions"
 zplug "andsens/homeshick", use:completions
