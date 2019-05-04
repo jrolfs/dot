@@ -39,6 +39,7 @@ zplug "plugins/grunt", from:oh-my-zsh
 zplug "plugins/gulp", from:oh-my-zsh
 zplug "plugins/mosh", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/thefuck", from:oh-my-zsh
 
 zplug "amar1729/chunkwm-zsh-completions"
 zplug "andsens/homeshick", use:completions
