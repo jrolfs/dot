@@ -32,3 +32,5 @@ function add-fork {
 
   git remote add $target_remote $target_url
 }
+
+unset exists
