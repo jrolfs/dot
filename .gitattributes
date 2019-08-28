@@ -3,3 +3,4 @@ home/.config/zsh/keys.zsh filter=git-crypt diff=git-crypt
 home/.config/rclone/rclone.conf filter=git-crypt diff=git-crypt
 home/.npmrcs/* filter=git-crypt diff=git-crypt
 home/.config/tridactyl/tridactylrc filter=git-crypt diff=git-crypt
+home/.travis/config.yml filter=git-crypt diff=git-crypt

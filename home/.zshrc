@@ -29,6 +29,11 @@ zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
   use:homeshick.sh
 
+zplug "$HOME/.travis", \
+  from:local, \
+  defer:3, \
+  use:travis.sh
+
 zplug "tridactyl/tridactyl", \
   hook-build:"source ./native/install.sh > /dev/null 2>&1"
 
