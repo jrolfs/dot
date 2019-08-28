@@ -8,3 +8,5 @@ alias hs=homeshick
 alias jj="fasd_cd -tdi"
 
 alias gl1="git log --pretty=oneline"
+
+alias cz=git-cz
