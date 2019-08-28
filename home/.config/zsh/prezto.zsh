@@ -24,6 +24,8 @@ zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 zstyle ':prezto:module:prompt' pwd-length 'short'
 zstyle ':completion:*' menu select
 
+zstyle ':prezto:module:editor:info:completing' format "%B%216F…%f%b"
+
 zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
   'brackets' \
