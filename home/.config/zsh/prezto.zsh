@@ -35,10 +35,10 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'root'
 
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin' 'fg=4,underline' \
-  'command' 'fg=151,bold' \
-  'function' 'fg=116,bold' \
-  'alias' 'fg=63,bold' \
-  'suffix-alias' 'fg=69,underline' \
+  'unknown-token' 'fg=1' \
+  'alias' 'fg=14' \
+  'builtin' 'fg=4' \
+  'command' 'fg=151' \
+  'function' 'fg=11' \
   'single-hyphen-option' 'fg=247,bold' \
   'double-hyphen-option' 'fg=247,bold'
