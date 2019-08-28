@@ -79,7 +79,7 @@
 [diff]
   tool = ksdiff
 [merge]
-  tool = ksdiff
+  tool = smerge
 
 [difftool "ksdiff"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -93,13 +93,8 @@
   prompt = false
   keepBackup = false
 
-[difftool "nvim"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-  prompt = false
-
-[mergetool "nvim"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[mergetool "smerge"]
+  cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
   trustExitCode = true
 [mergetool]
   prompt = false
