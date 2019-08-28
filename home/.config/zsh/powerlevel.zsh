@@ -51,10 +51,10 @@ fi
       virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       anaconda                # conda environment (https://conda.io/)
       pyenv                   # python environment (https://github.com/pyenv/pyenv)
-      # nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
-      nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
+      nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
+      # nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
       # nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-      node_version          # node.js version
+      # node_version          # node.js version
       # go_version            # golang version
       rbenv                 # ruby version from rbenv (https://github.com/rbenv/rbenv)
       kubecontext             # current kubernetes context (https://kubernetes.io/)
@@ -452,7 +452,7 @@ fi
   # Nodenv color.
   typeset -g POWERLEVEL9K_NODENV_FOREGROUND=10
   # Don't show node version if it's the same as global: $(nodenv version-name) == $(nodenv global).
-  typeset -g POWERLEVEL9K_NODENV_PROMPT_ALWAYS_SHOW=true
+  typeset -g POWERLEVEL9K_NODENV_PROMPT_ALWAYS_SHOW=false
   # Custom icon.
   typeset -g POWERLEVEL9K_NODENV_VISUAL_IDENTIFIER_EXPANSION=''
 
@@ -460,7 +460,7 @@ fi
   # Nvm color.
   typeset -g POWERLEVEL9K_NVM_FOREGROUND=10
   # Custom icon.
-  # typeset -g POWERLEVEL9K_NVM_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_NVM_VISUAL_IDENTIFIER_EXPANSION=''
 
   ############[ nodeenv: node.js environment (https://github.com/ekalinin/nodeenv) ]############
   # Nodeenv color.
