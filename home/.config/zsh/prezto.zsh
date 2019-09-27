@@ -18,12 +18,15 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'prompt'
 
-zstyle ':prezto:module:editor' key-bindings 'vi'
-zstyle ':prezto:module:prompt' theme 'powerlevel10k'
-zstyle ':prezto:module:prompt' pwd-length 'short'
 zstyle ':completion:*' menu select
 
+zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:editor:info:completing' format "%B%216F…%f%b"
+
+zstyle ':prezto:module:prompt' pwd-length 'short'
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
+
+zstyle ':prezto:module:utility' safe-ops 'no'
 
 zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
