@@ -55,6 +55,8 @@ zplug "homebrew/brew", use:completions/zsh
 
 zplug "zsh-users/zsh-completions"
 
+zplug "joshdick/dntw", use:dntw.sh
+
 zplug "lotabout/skim", \
   use:shell/key-bindings.zsh \
   defer:3

@@ -1,3 +1,21 @@
+
+#
+# "DNTW"
+# See: https://github.com/joshdick/dntw
+# If you need to bypass this function and run the real `nvim`
+# for some reason, just run `command nvim` instead.
+function nvim () {
+  if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+    # If we typed "nvim" while inside the integrated Visual Studio Code terminal,
+    # open the file in Code instead.
+    code "$@"
+  else
+    # Invoke `dntw_edit` with an explicit `$DNTW_NVIM_CMD` since this function's
+    # name conflicts with the real `nvim`.
+    DNTW_NVIM_CMD=/run/current-system/sw/bin/nvim dntw_edit "$@"
+  fi
+}
+
 function ct {
   cat $1 && echo '\r'
 }
