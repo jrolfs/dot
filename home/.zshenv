@@ -33,6 +33,8 @@ export GOPATH="${DEVELOPER}/Go"
 
 # Git Duet
 export GIT_DUET_ROTATE_AUTHOR=1
+export GIT_DUET_CO_AUTHORED_BY=1
+export GIT_DUET_AUTHORS_FILE="${XDG_CONFIG_HOME}/git/authors.yml"
 
 # GPG/SSH
 export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
