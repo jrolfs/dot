@@ -81,6 +81,11 @@
 [merge]
   tool = smerge
 
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
 [difftool "ksdiff"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
