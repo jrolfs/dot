@@ -46,7 +46,6 @@ zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/pod", from:oh-my-zsh
 zplug "plugins/thefuck", from:oh-my-zsh
 
-zplug "amar1729/chunkwm-zsh-completions"
 zplug "andsens/homeshick", use:completions
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "homebrew/brew", use:completions/zsh
