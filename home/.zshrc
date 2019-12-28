@@ -41,7 +41,6 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
 zplug "plugins/go", from:oh-my-zsh
 zplug "plugins/grunt", from:oh-my-zsh
-zplug "plugins/gulp", from:oh-my-zsh
 zplug "plugins/mosh", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/pod", from:oh-my-zsh
