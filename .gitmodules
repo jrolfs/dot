@@ -12,4 +12,4 @@
 	url = git@github.com:jrolfs/nodenv.git
 [submodule "pyenv"]
 	path = pyenv
-	url = git@github.com:pyenv/pyenv.git
+	url = git@github.com:jrolfs/pyenv.git

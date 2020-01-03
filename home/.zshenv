@@ -71,4 +71,6 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   eval "$(rbenv init -)"
   eval "$(pyenv init -)"
   eval "$(nodenv init -)"
+
+  eval "$(pyenv virtualenv-init -)"
 fi

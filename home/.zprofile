@@ -12,9 +12,6 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
-# jenv
-type -p jenv &> /dev/null && eval "$(jenv init -)"
-
 #
 # Language
 #
@@ -47,6 +44,12 @@ path=(
   $GOPATH/bin
   $path
 )
+
+# jenv
+type -p jenv &> /dev/null && eval "$(jenv init -)"
+
+# pyenv-virtualenv
+type -p pyenv &> /dev/null && eval "$(pyenv virtualenv-init -)"
 
 #
 # Less
