@@ -4,5 +4,6 @@ function exists {
 
 exists kitty && kitty + complete setup zsh | source /dev/stdin
 exists codefresh && codefresh completion zsh | source /dev/stdin
+exists gh && gh completion -s zsh >! $XDG_CONFIG_HOME/zsh/completions/_gh
 
 unset exists
