@@ -54,9 +54,12 @@ zplug "zsh-users/zsh-completions"
 
 zplug "joshdick/dntw", use:dntw.sh
 
-zplug "lotabout/skim", \
-  use:shell/key-bindings.zsh \
-  defer:3
+zplug "cantino/mcfly", at:zsh, use:mcfly.zsh
+zplug "cantino/mcfly", \
+  at:zsh, \
+  as:command, \
+  use:"target/release/mcfly", \
+  hook-build:"cargo install --path ."
 
 if ! zplug check; then
   zplug install
