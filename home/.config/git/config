@@ -81,6 +81,12 @@
 [merge]
   tool = smerge
 
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false
+  keepBackup = false
+
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 [difftool "vscode"]
@@ -88,19 +94,11 @@
 
 [difftool "ksdiff"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-  prompt = false
 
 [mergetool "ksdiff"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
-[mergetool]
-  prompt = false
-  keepBackup = false
 
 [mergetool "smerge"]
   cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
   trustExitCode = true
-[mergetool]
-  prompt = false
-  keepBackup = false
