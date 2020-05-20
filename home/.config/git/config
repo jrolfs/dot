@@ -102,3 +102,10 @@
 [mergetool "smerge"]
   cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
   trustExitCode = true
+
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+[mergetool "splice"]
+  cmd = nvim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c \"SpliceInit\"
+  trustExitCode = true
