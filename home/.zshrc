@@ -52,8 +52,6 @@ zplug "homebrew/brew", use:completions/zsh
 
 zplug "zsh-users/zsh-completions"
 
-zplug "joshdick/dntw", use:dntw.sh
-
 zplug "cantino/mcfly", at:zsh, use:mcfly.zsh, defer:3
 zplug "cantino/mcfly", \
   at:zsh, \
