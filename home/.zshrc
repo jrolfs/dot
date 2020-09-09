@@ -44,7 +44,6 @@ zplug "plugins/grunt", from:oh-my-zsh
 zplug "plugins/mosh", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/pod", from:oh-my-zsh
-zplug "plugins/thefuck", from:oh-my-zsh
 
 zplug "andsens/homeshick", use:completions
 zplug "docker/compose", use:contrib/completion/zsh
