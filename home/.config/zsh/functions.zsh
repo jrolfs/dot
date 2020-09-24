@@ -29,4 +29,8 @@ function add-fork {
   git remote add $target_remote $target_url
 }
 
+function kill-port {
+  lsof -iTCP:$1 | grep LISTEN | awk '{ print $2 }' | xargs kill $2
+}
+
 unset exists
