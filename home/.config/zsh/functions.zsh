@@ -1,19 +1,10 @@
 
-function ct {
-  cat $1 && echo '\r'
-}
-
 function exists {
   return $(command -v $1 >&/dev/null 2>&1)
 }
 
 function mxd {
   tmux rename-window "$(basename $(pwd))"
-}
-
-
-function nix-search {
-  nix-env -qa ".*$1.*"
 }
 
 function nix-rip {
