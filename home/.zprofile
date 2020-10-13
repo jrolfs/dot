@@ -36,7 +36,6 @@ fpath+=(
 # Executable search path
 path=(
   /usr/local/{bin,sbin}
-  $HOME/.emacs.d/bin
   $JENV_ROOT/bin
   $NODENV_ROOT/bin
   $PYENV_ROOT/bin

@@ -63,7 +63,6 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
     $PYENV_ROOT/{bin,shims}
     $NODENV_ROOT/{bin,shims}
     $JENV_ROOT/{bin,shims}
-    $HOME/.emacs.d/bin
     $path
   )
 
