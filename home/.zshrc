@@ -52,11 +52,6 @@ zplug "homebrew/brew", use:completions/zsh
 zplug "zsh-users/zsh-completions"
 
 zplug "cantino/mcfly", at:zsh, use:mcfly.zsh, defer:3
-zplug "cantino/mcfly", \
-  at:zsh, \
-  as:command, \
-  use:"target/release/mcfly", \
-  hook-build:"cargo install --path ."
 
 if ! zplug check; then
   zplug install
