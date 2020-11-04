@@ -2,11 +2,6 @@ setopt extendedglob
 
 for config in $XDG_CONFIG_HOME/zsh/(^(prezto|completion)).zsh; source $config
 
-# Browser
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-fi
-
 # Editors
 export EDITOR='nvim'
 export VISUAL='nvim'
