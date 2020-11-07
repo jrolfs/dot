@@ -50,7 +50,7 @@ zplug "homebrew/brew", use:completions/zsh
 
 zplug "zsh-users/zsh-completions"
 
-zplug "cantino/mcfly", at:zsh, use:mcfly.zsh, defer:3
+zplug "cantino/mcfly", use:mcfly.zsh, defer:3
 
 if ! zplug check; then
   zplug install
