@@ -19,3 +19,5 @@ if command -v exa >&/dev/null 2>&1; then
   alias la="exa --icons -al"
   alias ls="exa --icons -G"
 fi
+
+alias icat="kitty +kitten icat"
