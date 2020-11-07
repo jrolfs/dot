@@ -61,5 +61,3 @@ zplug load
 #
 # </zplug>
 #
-
-eval "$(starship init zsh)"
