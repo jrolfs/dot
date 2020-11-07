@@ -16,3 +16,6 @@
 [submodule "home/.config/kitty/themes/gruvbox-material"]
 	path = home/.config/kitty/themes/gruvbox-material
 	url = git@github.com:rsaihe/gruvbox-material-kitty.git
+[submodule "asdf"]
+	path = asdf
+	url = git@github.com:asdf-vm/asdf.git
