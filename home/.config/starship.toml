@@ -55,7 +55,7 @@ $character
 """
 
 #
-# Prompt
+# ---------- Prompt ----------------------------------------
 
 # Battery
 
@@ -67,7 +67,14 @@ discharging_symbol = "💀"
 [[battery.display]]
 threshold = 50
 
+# Character
+[character]
+success_symbol = "[▸](green)"
+error_symbol = "[≯](red)"
+vicmd_symbol = "[≶](green)"
+
 # Directory
+
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
@@ -81,7 +88,7 @@ symbol = " "
 
 
 #
-# Context
+# ---------- Context ---------------------------------------
 
 [package]
 disabled = true
@@ -91,8 +98,17 @@ disabled = true
 
 
 #
-# Languages
+# ---------- Languages -------------------------------------
 
 [nodejs]
 style = "green"
 symbol = " "
+
+#
+# ---------- System ----------------------------------------
+
+[memory_usage]
+disabled = true
+threshold = 75
+symbol = " "
+style = "dimmed green"
