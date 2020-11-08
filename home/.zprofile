@@ -26,25 +26,18 @@ typeset -gU cdpath fpath mailpath path
 fpath+=(
   $XDG_CONFIG_HOME/zsh/themes
   $XDG_CONFIG_HOME/zsh/completions
+  $ASDF_DATA_DIR/completions
 )
 
 # Executable search path
 path=(
   /usr/local/{bin,sbin}
   $HOME/.cargo/bin
-  $JENV_ROOT/bin
-  $NODENV_ROOT/bin
-  $PYENV_ROOT/bin
-  $RBENV_ROOT/bin
   $GOPATH/bin
   $path
 )
 
-# jenv
-type -p jenv &> /dev/null && eval "$(jenv init -)"
-
-# pyenv-virtualenv
-type -p pyenv &> /dev/null && eval "$(pyenv virtualenv-init -)"
+source "${ASDF_DATA_DIR}/asdf.sh"
 
 #
 # Less

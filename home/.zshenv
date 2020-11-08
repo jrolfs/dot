@@ -48,27 +48,18 @@ export SKIM_DEFAULT_COMMAND="fd --type f --hidden"
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
 
-# *env
-export JENV_ROOT="${XDG_DATA_HOME}/jenv"
-export NODENV_ROOT="${XDG_DATA_HOME}/nodenv"
-export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
-export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
+export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
+export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/config"
+
+export ASDF_NPM_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME}/asdf/default-npm-packages"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 
   path=(
-    $RBENV_ROOT/{bin,shims}
-    $PYENV_ROOT/{bin,shims}
-    $NODENV_ROOT/{bin,shims}
-    $JENV_ROOT/{bin,shims}
     $path
   )
 
-  eval "$(rbenv init -)"
-  eval "$(pyenv init -)"
-  eval "$(nodenv init -)"
-
-  eval "$(pyenv virtualenv-init -)"
+  source "${ASDF_DATA_DIR}/asdf.sh"
 fi
