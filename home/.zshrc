@@ -61,3 +61,7 @@ zplug load
 #
 # </zplug>
 #
+
+if [[ -v STARSHIP_ENABLED ]] then
+  eval "$(starship init zsh)"
+fi
