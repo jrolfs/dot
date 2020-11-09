@@ -34,6 +34,14 @@ truncate_to_repo = true
 style = "purple"
 symbol = " "
 
+[git_state]
+format = '[$state( $progress_current/$progress_total)]($style) '
+cherry_pick = "[🍒 picking](bold red)"
+rebase = "[↑ rebasing](bold yellow)"
+merge = "[→ merging](bold cyan)"
+bisect = "[↕ bisecting](bold yellow)"
+style = "yellow"
+
 
 #
 # ---------- Context ---------------------------------------
