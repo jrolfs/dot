@@ -21,3 +21,5 @@ if command -v exa >&/dev/null 2>&1; then
 fi
 
 alias icat="kitty +kitten icat"
+
+alias heic2jpg="fd --regex '(?i)heic' -x sips -s format jpeg {/} --out {/.}.jpg"
