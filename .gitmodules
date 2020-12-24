@@ -4,9 +4,6 @@
 [submodule "jenv"]
 	path = jenv
 	url = https://github.com/gcuisinier/jenv.git
-[submodule "rbenv"]
-	path = rbenv
-	url = git@github.com:jrolfs/rbenv.git
 [submodule "nodenv"]
 	path = nodenv
 	url = git@github.com:jrolfs/nodenv.git
