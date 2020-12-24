@@ -10,9 +10,6 @@
 [submodule "nodenv"]
 	path = nodenv
 	url = git@github.com:jrolfs/nodenv.git
-[submodule "pyenv"]
-	path = pyenv
-	url = git@github.com:jrolfs/pyenv.git
 [submodule "home/.config/kitty/themes/gruvbox-material"]
 	path = home/.config/kitty/themes/gruvbox-material
 	url = git@github.com:rsaihe/gruvbox-material-kitty.git
