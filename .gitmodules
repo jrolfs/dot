@@ -4,9 +4,6 @@
 [submodule "jenv"]
 	path = jenv
 	url = https://github.com/gcuisinier/jenv.git
-[submodule "nodenv"]
-	path = nodenv
-	url = git@github.com:jrolfs/nodenv.git
 [submodule "home/.config/kitty/themes/gruvbox-material"]
 	path = home/.config/kitty/themes/gruvbox-material
 	url = git@github.com:rsaihe/gruvbox-material-kitty.git
