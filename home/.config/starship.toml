@@ -52,6 +52,11 @@ disabled = true
 [gcloud]
 disabled = true
 
+[nix_shell]
+impure_msg = "[⚠](bold red)"
+pure_msg = "[λ](bold green)"
+format = 'via [❄️ ($name·$state )](bold blue) '
+
 
 #
 # ---------- Languages -------------------------------------
