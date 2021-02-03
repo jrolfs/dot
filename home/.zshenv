@@ -2,7 +2,11 @@
 # Options
 #
 
-setopt HIST_IGNORE_SPACE
+setopt bang_hist
+setopt extended_history
+setopt hist_ignore_space
+setopt hist_verify
+setopt share_history
 
 #
 # Environment
