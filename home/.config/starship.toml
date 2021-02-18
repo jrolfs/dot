@@ -64,7 +64,10 @@ format = 'via [❄️ ($name·$state )](bold blue) '
 
 [nodejs]
 style = "green"
-symbol = " "
+symbol = " "
+
+[ruby]
+symbol = " "
 
 #
 # ---------- System ----------------------------------------
