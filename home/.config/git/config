@@ -49,6 +49,9 @@
 [submodule]
   fetchJobs = 4
 
+[trailer]
+	ifexists = addIfDifferent
+
 
 ; Aliases
 
