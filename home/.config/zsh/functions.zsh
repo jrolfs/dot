@@ -33,4 +33,6 @@ function kill-port {
   lsof -iTCP:$1 | grep LISTEN | awk '{ print $2 }' | xargs kill $2
 }
 
-unset exists
+function yarn-latest {
+  yarn info "$1" --json | jq --raw-output '.data.versions[-1]'
+}
