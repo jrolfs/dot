@@ -28,3 +28,9 @@ function kill-port {
 function yarn-latest {
   yarn info "$1" --json | jq --raw-output '.data.versions[-1]'
 }
+
+function gh-rr {
+  for f in $(gh run list --workflow $1.yml | grep failure | awk '{ print $(NF-2) }'); do
+    gh run rerun $f;
+  done
+}
