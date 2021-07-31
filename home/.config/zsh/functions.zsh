@@ -34,3 +34,11 @@ function gh-rr {
     gh run rerun $f;
   done
 }
+
+function git-stash-drop {
+  if [[ "$1" =~ ^[0-9]+$ ]] && ! [ $2 ]; then
+    git stash drop "stash@{$1}"
+  else
+    git stash drop "$@"
+  fi
+}
