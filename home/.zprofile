@@ -31,6 +31,7 @@ fpath+=(
 
 # Executable search path
 path=(
+  /opt/homebrew/bin
   /usr/local/{bin,sbin}
   $HOME/.cargo/bin
   $GOPATH/bin
