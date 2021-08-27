@@ -52,10 +52,14 @@ export SKIM_DEFAULT_COMMAND="fd --type f --hidden"
 # Nix
 export NIXPKGS_ALLOW_UNFREE=1
 
+# Asdf
 export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/config"
 
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME}/asdf/default-npm-packages"
+
+export NODEJS_CONFIGURE_OPTIONS="--with-intl=full-icu --download=all"
+export NODEJS_CHECK_SIGNATURES="no"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
