@@ -44,6 +44,21 @@ merge = "[→ merging](bold cyan)"
 bisect = "[↕ bisecting](bold yellow)"
 style = "yellow"
 
+[git_status]
+format = '([\[[$conflicted$stashed$deleted$renamed$modified$staged$untracked$ahead_behind](bold red)\]]($style) )'
+style = "red"
+ahead = "⇡"
+behind = "⇣"
+conflicted = "≠"
+deleted = "×"
+diverged = "↕"
+modified = "◗"
+renamed = "»"
+staged = "+"
+stashed = "⤓"
+untracked = "?"
+# up_to_date = "✓"
+
 
 #
 # ---------- Context ---------------------------------------
