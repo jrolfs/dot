@@ -34,6 +34,7 @@ truncate_to_repo = true
 style = "purple"
 symbol = " "
 truncation_length = 30
+format = "on [$symbol$branch]($style) "
 
 [git_state]
 format = '[$state( $progress_current/$progress_total)]($style) '
