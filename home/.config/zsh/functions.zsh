@@ -42,3 +42,11 @@ function git-stash-drop {
     git stash drop "$@"
   fi
 }
+
+function unreleased {
+  git log --pretty=oneline $(curl -s https://web-react.$1.4hover.app/health | jq -r '.releaseID')..$2
+}
+
+function unreleased-gh {
+  echo "https://github.com/hoverinc/web-react/compare/$(curl -s https://web-react.$1.4hover.app/health | jq -r '.releaseID')..$2" | pbcopy
+}
