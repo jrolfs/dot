@@ -57,6 +57,7 @@ export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/config"
 
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME}/asdf/default-npm-packages"
+export ASDF_GEM_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME}/asdf/default-gems"
 
 export NODEJS_CONFIGURE_OPTIONS="--with-intl=full-icu --download=all"
 export NODEJS_CHECK_SIGNATURES="no"
