@@ -1,12 +1,3 @@
-yarn
-
-codefresh
-fileicon
-
-npmrc
-
-neovim
-
 alfred-awe
 alfred-caniuse
 alfred-do-not-disturb
@@ -17,3 +8,8 @@ alfred-npms
 alfred-polyglot
 alfred-tidy
 alfred-updater
+codefresh
+fileicon
+neovim
+npmrc
+yarn
