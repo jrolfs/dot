@@ -125,6 +125,15 @@
   trustExitCode = true
 
 
+; Filters
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+
 ; Delta
 
 [delta]
@@ -144,3 +153,4 @@
     line-numbers-right-style = cyan
     line-numbers-minus-style = 124
     line-numbers-plus-style = 28
+
