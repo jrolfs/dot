@@ -34,6 +34,7 @@ zplug "$HOME/.travis", \
   defer:3, \
   use:travis.sh
 
+zplug "wulfgarpro/history-sync", as:plugin
 
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
