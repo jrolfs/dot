@@ -30,6 +30,14 @@ export SOURCES="${DEVELOPER}/Sources"
 export WORK_HOME="${DEVELOPER}/${ORGANIZATION}"
 export PERSONAL_HOME="${DEVELOPER}/${ORGANIZATION}"
 
+# History Sync
+export ZSH_HISTORY_FILE_NAME=".zsh_history"
+export ZSH_HISTORY_FILE="${HOME}/${ZSH_HISTORY_FILE_NAME}"
+export ZSH_HISTORY_PROJ="${XDG_DATA_HOME}/history"
+export ZSH_HISTORY_FILE_ENC_NAME="zsh_history"
+export ZSH_HISTORY_FILE_ENC="${ZSH_HISTORY_PROJ}/${ZSH_HISTORY_FILE_ENC_NAME}"
+export ZSH_HISTORY_COMMIT_MSG="sync($(hostname | tr '[:upper:]' '[:lower:]')): $(date +'%A, %B %d %Y @ %T')"
+
 export SYNC="${HOME}/Sync"
 
 # Go
