@@ -34,8 +34,6 @@ zplug "$HOME/.travis", \
   defer:3, \
   use:travis.sh
 
-zplug "tridactyl/tridactyl", \
-  hook-build:"source ./native/install.sh > /dev/null 2>&1"
 
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
