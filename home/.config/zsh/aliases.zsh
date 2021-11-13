@@ -9,6 +9,8 @@ alias gl1="git log --pretty=oneline"
 alias gRP=git-prune-local
 alias gry="git add yarn.lock && git rebase --continue"
 alias gsxx=git-stash-drop
+# Unique commits from current branch
+alias gcu="git log --pretty=oneline --no-merges \"^\$(git-branch-current)\""
 
 # Navigation
 
