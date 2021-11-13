@@ -13,7 +13,7 @@ charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
 [[battery.display]]
-threshold = 50
+threshold = 15
 
 # Character
 [character]
