@@ -35,7 +35,7 @@ zplug "$HOME/.travis", \
   use:travis.sh
 
 # zplug "wulfgarpro/history-sync", as:plugin
-zplug "jrolfs/history-sync", as:plugin, at:override-environment
+zplug "jrolfs/history-sync", as:plugin, at:main
 
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
