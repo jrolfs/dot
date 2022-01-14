@@ -48,7 +48,7 @@ function git-prune-local {
   git remote prune $remote
 
   echo "\nPruning local branches"
-  git branch -r | awk '{ print $1 }' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{ print $1 }' | xargs git branch -D
+  git branch -r | awk '{ print $1 }' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{ print $1 }' | egrep -v '^\+' | xargs git branch -D
 }
 
 # Hover
