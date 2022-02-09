@@ -10,3 +10,6 @@
 [submodule "asdf"]
 	path = asdf
 	url = git@github.com:jrolfs/asdf.git
+[submodule "home/Documents/Obsidian/Brain/.obsidian/themes/obsidian-minimal"]
+	path = home/Documents/Obsidian/Brain/.obsidian/themes/obsidian-minimal
+	url = git@github.com:jrolfs/obsidian-minimal.git
