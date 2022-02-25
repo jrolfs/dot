@@ -74,9 +74,9 @@ threshold = 15
 
 # Character
 [character]
-success_symbol = "[▸](green)"
-error_symbol = "[ᐉ](red)"
-vicmd_symbol = "[⇄](green)"
+success_symbol = "[→](green)"
+error_symbol = "[×](red)"
+vicmd_symbol = "[↔](green)"
 
 # Directory
 
