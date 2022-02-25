@@ -5,6 +5,63 @@
 
 add_newline=false
 
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$hg_branch\
+$git_commit\
+$git_status\
+$git_state\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$julia\
+$nim\
+$nodejs\
+$java\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$cmd_duration\
+$custom\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$character\
+"""
+
+#
+# ---------- Modules ----------------------------------------
+
 # Battery
 
 [battery]
@@ -94,60 +151,3 @@ threshold = 75
 symbol = " "
 style = "dimmed green"
 
-
-#
-# ---------- Format ----------------------------------------
-
-format = """
-$username\
-$hostname\
-$shlvl\
-$kubernetes\
-$directory\
-$git_branch\
-$hg_branch\
-$git_commit\
-$git_status\
-$git_state\
-$docker_context\
-$package\
-$cmake\
-$dart\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$helm\
-$java\
-$julia\
-$nim\
-$nodejs\
-$ocaml\
-$perl\
-$php\
-$purescript\
-$python\
-$ruby\
-$rust\
-$swift\
-$terraform\
-$zig\
-$nix_shell\
-$conda\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-$cmd_duration\
-$custom\
-$line_break\
-$lua\
-$jobs\
-$battery\
-$time\
-$status\
-$character
-"""
