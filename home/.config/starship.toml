@@ -1,8 +1,3 @@
-
-
-#
-# ---------- Prompt ----------------------------------------
-
 add_newline=false
 
 format = """
@@ -59,33 +54,23 @@ $status\
 $character\
 """
 
+
 #
-# ---------- Modules ----------------------------------------
+# ---------- General ----------------------------------------
 
-# Battery
-
-[battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
-
-[[battery.display]]
-threshold = 15
-
-# Character
 [character]
 success_symbol = "[→](green)"
-error_symbol = "[×](red)"
+error_symbol = "[×→](red)"
 vicmd_symbol = "[↔](green)"
-
-# Directory
 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = true
 
-# Git
+
+#
+# ---------- Context ---------------------------------------
 
 [git_branch]
 style = "purple"
@@ -116,10 +101,6 @@ stashed = "⤓"
 untracked = "?"
 # up_to_date = "✓"
 
-
-#
-# ---------- Context ---------------------------------------
-
 [package]
 disabled = true
 
@@ -142,8 +123,17 @@ symbol = " "
 [ruby]
 symbol = " "
 
+
 #
 # ---------- System ----------------------------------------
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 15
 
 [memory_usage]
 disabled = true
