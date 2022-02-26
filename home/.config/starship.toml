@@ -51,6 +51,7 @@ $jobs\
 $battery\
 $time\
 $status\
+${custom.pair}\
 $character\
 """
 
@@ -71,6 +72,12 @@ truncate_to_repo = true
 
 #
 # ---------- Context ---------------------------------------
+
+[custom.pair]
+command = "echo '--'"
+when = "$XDG_CONFIG_HOME/starship/is-pairing.sh"
+format = "[$symbol($output)]($style)"
+style = "yellow"
 
 [git_branch]
 style = "purple"
