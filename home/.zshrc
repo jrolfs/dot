@@ -36,6 +36,7 @@ zplug "$HOME/.travis", \
 
 # zplug "wulfgarpro/history-sync", as:plugin
 zplug "jrolfs/history-sync", as:plugin, at:main
+zplug "jeffreytse/zsh-vi-mode"
 
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
