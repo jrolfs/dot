@@ -1,9 +1,6 @@
 [submodule "home/.zplug"]
 	path = home/.zplug
 	url = git@github.com:zplug/zplug.git
-[submodule "jenv"]
-	path = jenv
-	url = https://github.com/gcuisinier/jenv.git
 [submodule "home/.config/kitty/themes/gruvbox-material"]
 	path = home/.config/kitty/themes/gruvbox-material
 	url = git@github.com:rsaihe/gruvbox-material-kitty.git
