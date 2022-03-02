@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Source/credit: https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8
+
 ## Change following to '0' for output to be like ls and '1' for exa defaults
 # Don't list implied . and .. by default with -a
 dot=1
