@@ -2,18 +2,20 @@
   "app:toggle-left-sidebar": [
     {
       "modifiers": [
+        "Alt",
         "Mod"
       ],
-      "key": "ArrowLeft"
+      "key": "H"
     }
   ],
   "backlink:open-backlinks": [],
   "app:toggle-right-sidebar": [
     {
       "modifiers": [
+        "Alt",
         "Mod"
       ],
-      "key": "ArrowRight"
+      "key": "L"
     }
   ]
 }
