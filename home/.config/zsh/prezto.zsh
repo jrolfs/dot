@@ -14,8 +14,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'fasd' \
   'autosuggestions' \
-  'syntax-highlighting' \
   'history-substring-search' \
+  'syntax-highlighting' \
   'prompt'
 
 zstyle ':completion:*' menu select
