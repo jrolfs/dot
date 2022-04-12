@@ -19,6 +19,10 @@ function nix-rip {
 
 function skim { nvim $(sk); }
 
+function gif {
+  ffmpeg -i $1 -pix_fmt rgb8 -r 20 -f gif "${1%.*}.gif"
+}
+
 #
 # Git
 
