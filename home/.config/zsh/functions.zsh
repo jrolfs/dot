@@ -10,7 +10,11 @@ function kill-port {
 }
 
 function yarn-latest {
-  yarn info "$1" --json | jq --raw-output '.data.versions[-1]'
+  if [[ "$2" =~ ^[0-9]+$ ]]; then
+    yarn info "$1" --json | jq --raw-output ".data.versions[-$2:][]"
+  else
+    yarn info "$1" --json | jq --raw-output '.data.versions[-1]'
+  fi
 }
 
 function nix-rip {
