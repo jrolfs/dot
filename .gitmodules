@@ -13,3 +13,6 @@
 [submodule "zinit"]
 	path = zinit
 	url = git@github.com:zdharma-continuum/zinit.git
+[submodule "base16-tridactyl"]
+	path = base16-tridactyl
+	url = git@github.com:jrolfs/base16-tridactyl.git
