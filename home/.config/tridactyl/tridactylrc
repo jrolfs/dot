@@ -30,9 +30,11 @@ bind K tabnext
 bind <C-n> ex.next_completion
 bind <C-p> ex.prev_completion
 
-" Yank repository URL as `origin` for sources and forks
+" Yank repository URL
+bind yr composite js document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+" Yank clone command for forks/sources
 bind yg composite js "gfc " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
-" Yank repository URL as `upstream`
+" Yank clone command for upstream
 bind yG composite js "gfc -o upstream " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
 
 " Make gu take you back to subreddit from comments
