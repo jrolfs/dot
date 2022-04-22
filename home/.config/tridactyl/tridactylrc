@@ -1,0 +1,64 @@
+" NB: If you want "vim-like" behaviour where removing a line from
+" here makes the setting disappear, uncomment the line below.
+sanitise tridactyllocal tridactylsync
+
+"
+" Settings
+
+colorscheme dark
+
+set smoothscroll true
+
+set allowautofocus true
+
+set hintfiltermode vimperator-reflow
+set hintuppercase false
+
+set tabopencontaineraware true
+
+set profiledir jamie
+
+
+"
+" Bindings
+
+bind <C-P> pin
+
+bind J tabprev
+bind K tabnext
+
+bind <C-n> ex.next_completion
+bind <C-p> ex.prev_completion
+
+" Git{Hub,Lab} git clone via SSH yank
+bind yg composite js "gfc -o upstream " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+
+" Make gu take you back to subreddit from comments
+bindurl reddit.com gu urlparent 4
+
+" Allow Ctrl-a to select all in the commandline
+unbind --mode=ex <C-a>
+
+
+"
+" Containers
+
+" containercreate work orange chill
+
+"
+" Contained
+
+" social
+aucon facebook\.com  social
+aucon messenger\.com social
+aucon pinterest\.com social
+aucon instagram\.com social
+aucon reddit\.com    social
+
+
+" See comments here regarding this stuff
+" https://github.com/tridactyl/tridactyl/blob/293ec5503f8a9d2784d65c57c1cf520ac3491b88/.tridactylrc#L103-L131
+" command fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
+" command fixamo js tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""').then(tri.excmds.fillcmdline_tmp(3000, "Permissions added to user.js. Please restart Firefox to make them take affect.")))
+" fixamo_quiet
+" jsb browser.webRequest.onHeadersReceived.addListener(tri.request.clobberCSP,{urls:["<all_urls>"],types:["main_frame"]},["blocking","responseHeaders"])
