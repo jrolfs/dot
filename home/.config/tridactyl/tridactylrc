@@ -5,7 +5,7 @@ sanitise tridactyllocal tridactylsync
 "
 " Settings
 
-colorscheme gruvbox-material-dark-soft
+colorscheme gruvbox-material-tridactyl/dark-soft
 
 set smoothscroll true
 
