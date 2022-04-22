@@ -45,8 +45,8 @@ $env_var\
 $crystal\
 $cmd_duration\
 $custom\
-$line_break\
 $lua\
+$line_break\
 $jobs\
 $battery\
 $time\
