@@ -16,3 +16,6 @@
 [submodule "base16-tridactyl"]
 	path = base16-tridactyl
 	url = git@github.com:jrolfs/base16-tridactyl.git
+[submodule "gruvbox-material-tridactyl"]
+	path = gruvbox-material-tridactyl
+	url = git@github.com:jrolfs/gruvbox-material-tridactyl.git
