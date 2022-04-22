@@ -30,8 +30,10 @@ bind K tabnext
 bind <C-n> ex.next_completion
 bind <C-p> ex.prev_completion
 
-" Git{Hub,Lab} git clone via SSH yank
-bind yg composite js "gfc -o upstream " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+" Yank repository URL as `origin` for sources and forks
+bind yg composite js "gfc " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+" Yank repository URL as `upstream`
+bind yG composite js "gfc -o upstream " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
 
 " Make gu take you back to subreddit from comments
 bindurl reddit.com gu urlparent 4
