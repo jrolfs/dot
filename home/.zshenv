@@ -71,6 +71,9 @@ export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME}/asdf/default-python
 export NODEJS_CONFIGURE_OPTIONS="--with-intl=full-icu --download=all"
 export NODEJS_CHECK_SIGNATURES="no"
 
+# Starship
+export STARSHIP_LOG=error
+
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
