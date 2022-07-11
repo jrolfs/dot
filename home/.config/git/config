@@ -67,7 +67,7 @@
 [diff]
   tool = ksdiff
 [merge]
-  tool = smerge
+  tool = vscode
 
 [difftool]
   prompt = false
@@ -106,7 +106,7 @@
 ; Diff Tools
 
 [difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+    cmd = code -n --wait --disable-extension=\"eamodio.gitlens\" --diff $LOCAL $REMOTE
 
 [difftool "ksdiff"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -121,7 +121,7 @@
 ; Merge Tools
 
 [mergetool "vscode"]
-    cmd = code --wait $MERGED
+  cmd = code -n --wait $MERGED --disable-extension=\"eamodio.gitlens\"
 
 [mergetool "ksdiff"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
