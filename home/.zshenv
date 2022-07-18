@@ -71,7 +71,11 @@ export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME}/asdf/default-python
 export NODEJS_CONFIGURE_OPTIONS="--with-intl=full-icu --download=all"
 export NODEJS_CHECK_SIGNATURES="no"
 
+export RUSTUP_INIT_SKIP_PATH_CHECK="yes"
+
 # Starship
+# (silence noisy timeout warnings... although I wish Node and Git wouldn't
+# timeout so much and would like to fix that)
 export STARSHIP_LOG=error
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
