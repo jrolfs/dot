@@ -94,19 +94,19 @@ bisect = "[↕ bisecting](bold yellow)"
 style = "yellow"
 
 [git_status]
-format = '([[$conflicted$stashed$deleted$renamed$modified$staged$untracked$ahead_behind](bold red)]($style) )'
+format = '([[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind$stashed](bold red)]($style) )'
 style = "red"
-ahead = "⇡"
-behind = "⇣"
+ahead = "↑"
+behind = "↓"
 conflicted = "≠"
 deleted = "×"
 diverged = "↕"
 modified = "◗"
 renamed = "»"
 staged = "+"
-stashed = "⤓"
+stashed = "⚑"
 untracked = "?"
-# up_to_date = "✓"
+# up_to_date = "✔"
 
 [package]
 disabled = true
