@@ -49,6 +49,7 @@ zplug "docker/compose", use:contrib/completion/zsh
 zplug "homebrew/brew", use:completions/zsh
 
 zplug "zsh-users/zsh-completions"
+zplug "ryutok/rust-zsh-completions"
 
 zplug "cantino/mcfly", use:mcfly.zsh, defer:3
 
