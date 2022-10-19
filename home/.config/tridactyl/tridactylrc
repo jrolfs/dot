@@ -31,11 +31,11 @@ bind <C-n> ex.next_completion
 bind <C-p> ex.prev_completion
 
 " Yank repository URL
-bind yr composite js /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@"))[0].replace("/",":").replace(/$/,".git") | clipboard yank
+bind yr composite js /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@").replace(/$/, '/'))[0].replace("/",":").replace(/$/,".git") | clipboard yank
 " Yank clone command for forks/sources
-bind yg composite js "gfc " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@"))[0].replace("/",":").replace(/$/,".git") | clipboard yank
+bind yg composite js "gfc " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@").replace(/$/, '/'))[0].replace("/",":").replace(/$/,".git") | clipboard yank
 " Yank clone command for upstream
-bind yG composite js "gfc -o upstream " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@"))[0].replace("/",":").replace(/$/,".git") | clipboard yank
+bind yG composite js "gfc -o upstream " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@").replace(/$/, '/'))[0].replace("/",":").replace(/$/,".git") | clipboard yank
 
 " Make gu take you back to subreddit from comments
 bindurl reddit.com gu urlparent 4
