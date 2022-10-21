@@ -52,13 +52,6 @@ unbind --mode=ex <C-a>
 "
 " Contained
 
-" social
-aucon facebook\.com  social
-aucon messenger\.com social
-aucon pinterest\.com social
-aucon instagram\.com social
-aucon reddit\.com    social
-
 
 " See comments here regarding this stuff
 " https://github.com/tridactyl/tridactyl/blob/293ec5503f8a9d2784d65c57c1cf520ac3491b88/.tridactylrc#L103-L131
