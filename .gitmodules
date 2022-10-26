@@ -25,3 +25,6 @@
 [submodule "kitty-grab"]
 	path = kitty-grab
 	url = https://github.com/yurikhan/kitty_grab
+[submodule "catppuccin-kitty"]
+	path = catppuccin-kitty
+	url = git@github.com:catppuccin/kitty.git
