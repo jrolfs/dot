@@ -28,3 +28,6 @@
 [submodule "catppuccin-kitty"]
 	path = catppuccin-kitty
 	url = git@github.com:catppuccin/kitty.git
+[submodule "firefox-cascade"]
+	path = firefox-cascade
+	url = git@github.com:andreasgrafen/cascade
