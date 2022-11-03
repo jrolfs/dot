@@ -12,7 +12,11 @@ alias gsxx=git-stash-drop
 # Unique commits from current branch
 alias gcu="git log --pretty=oneline --no-merges \"^\$(git-branch-current)\""
 
-# Navigation
+# Fancy Unix replacements
+
+if command -v bat >&/dev/null 2>&1; then
+  alias cat=bat
+fi
 
 if command -v exa >&/dev/null 2>&1; then
   alias ls="$XDG_DATA_HOME/exa-wrapper.sh"
