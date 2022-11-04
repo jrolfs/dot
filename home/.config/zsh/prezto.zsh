@@ -16,6 +16,7 @@ zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'history-substring-search' \
   'syntax-highlighting' \
+  'wakeonlan' \
   'prompt'
 
 zstyle ':completion:*' menu select
