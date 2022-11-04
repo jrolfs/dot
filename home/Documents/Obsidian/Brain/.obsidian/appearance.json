@@ -1,6 +1,9 @@
 {
   "baseFontSize": 16,
-  "cssTheme": "obsidian-minimal",
+  "cssTheme": "Minimal",
   "theme": "obsidian",
-  "translucency": true
+  "translucency": true,
+  "accentColor": "",
+  "showViewHeader": true,
+  "nativeMenus": true
 }
