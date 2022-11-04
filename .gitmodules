@@ -19,6 +19,7 @@
 [submodule "gruvbox-material-tridactyl"]
 	path = gruvbox-material-tridactyl
 	url = git@github.com:jrolfs/gruvbox-material-tridactyl.git
+  branch = main
 [submodule "kitty-smart-scroll"]
 	path = kitty-smart-scroll
 	url = git@github.com:yurikhan/kitty-smart-scroll.git
