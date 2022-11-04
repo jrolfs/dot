@@ -34,3 +34,9 @@ alias heic2jpg="fd --regex '(?i)heic' -x sips -s format jpeg {/} --out {/.}.jpg 
 alias hspl="history_sync_pull -y -r 91C155A78968EEE863ED8B22626AE770762AC2F3"
 alias hsps="history_sync_push -y -r 91C155A78968EEE863ED8B22626AE770762AC2F3"
 alias hss="hspl && hsps"
+
+# SSH
+
+if [[ $TERM == 'xterm-kitty' ]]; then
+  alias ssh="kitty +kitten ssh"
+fi
