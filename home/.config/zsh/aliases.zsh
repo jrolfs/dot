@@ -5,7 +5,7 @@ alias hs=homeshick
 
 # Git
 
-alias gl1="git log --pretty=oneline"
+alias gl1="COLUMNS=200 git log --pretty=oneline"
 alias gRP=git-prune-local
 alias gry="git add yarn.lock && git rebase --continue"
 alias gsxx=git-stash-drop
