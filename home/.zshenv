@@ -74,9 +74,13 @@ export NODEJS_CHECK_SIGNATURES="no"
 export RUSTUP_INIT_SKIP_PATH_CHECK="yes"
 
 # Starship
-# (silence noisy timeout warnings... although I wish Node and Git wouldn't
-# timeout so much and would like to fix that)
+# (silence noisy timeout warnings... although I wish Node and
+# Git wouldn't timeout so much and would like to fix that)
 export STARSHIP_LOG=error
+
+# Spicetify (install directory isn't currently
+# configurable but I put it in XDG manually)
+export SPICETIFY_INSTALL="${XDG_DATA_HOME}/spicetify"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then

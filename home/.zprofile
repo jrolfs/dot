@@ -35,6 +35,7 @@ path=(
   /usr/local/{bin,sbin}
   $HOME/.cargo/bin
   $GOPATH/bin
+  $SPICETIFY_INSTALL
   $path
 )
 
