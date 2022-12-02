@@ -1,0 +1,1 @@
+../../../spicetify-catppuccin/js/catppuccin-mocha.js
