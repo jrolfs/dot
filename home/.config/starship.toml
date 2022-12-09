@@ -23,8 +23,8 @@ $golang\
 $helm\
 $julia\
 $nim\
+$fill\
 $nodejs\
-$java\
 $ocaml\
 $perl\
 $php\
@@ -35,7 +35,7 @@ $rust\
 $swift\
 $terraform\
 $zig\
-$nix_shell\
+$java\
 $conda\
 $memory_usage\
 $aws\
@@ -52,9 +52,16 @@ $battery\
 $time\
 $status\
 ${custom.pair}\
+$nix_shell\
 $character\
 """
 
+right_format = """
+"""
+
+[fill]
+symbol = " "
+style = ""
 
 #
 # ---------- General ----------------------------------------
@@ -62,12 +69,15 @@ $character\
 [character]
 success_symbol = "[→](green)"
 error_symbol = "[×](red)"
-vicmd_symbol = "[↔](green)"
+vimcmd_symbol = "[↔](green)"
 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = true
+
+[cmd_duration]
+format = " · [ $duration]($style) "
 
 
 #
@@ -115,9 +125,10 @@ disabled = true
 disabled = true
 
 [nix_shell]
-impure_msg = "[⚠](bold red)"
+impure_msg = "[](bold red)"
 pure_msg = "[λ](bold green)"
-format = 'via [❄️ ($name·$state )](bold blue) '
+symbol = " "
+format = "[${symbol}](bold blue)"
 
 
 #
@@ -126,9 +137,16 @@ format = 'via [❄️ ($name·$state )](bold blue) '
 [nodejs]
 style = "green"
 symbol = " "
+format = " [${symbol}(${version})]($style)"
 
 [ruby]
 symbol = " "
+format = " [${symbol}(${version})]($style)"
+
+[java]
+symbol = " "
+format = " [${symbol}(${version})]($style)"
+
 
 
 #
