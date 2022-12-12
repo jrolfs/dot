@@ -7,6 +7,8 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
+export ZLE_RPROMPT_INDENT=0
+
 #
 # Language
 #
