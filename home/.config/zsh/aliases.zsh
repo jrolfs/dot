@@ -38,5 +38,5 @@ alias hss="hspl && hsps"
 # SSH
 
 if [[ $TERM == 'xterm-kitty' ]]; then
-  alias ssh="kitty +kitten ssh"
+  alias sshk="kitty +kitten ssh"
 fi
