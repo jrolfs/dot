@@ -50,12 +50,12 @@ $jobs\
 $battery\
 $time\
 $status\
-${custom.pair}\
 $nix_shell\
 $character\
 """
 
 right_format = """
+${custom.pair}\
 $cmd_duration
 """
 
@@ -83,17 +83,18 @@ truncate_to_repo = true
 read_only = " "
 
 [cmd_duration]
-format = "took [$duration]($style)"
+format = " took [$duration]($style)"
 
 
 #
 # ---------- Context ---------------------------------------
 
 [custom.pair]
-command = "echo '--'"
+command = "$XDG_CONFIG_HOME/starship/pair-status.sh"
+shell = ["/run/current-system/sw/bin/zsh"]
 when = "$XDG_CONFIG_HOME/starship/is-pairing.sh"
-format = "[$symbol($output)]($style)"
-style = "yellow"
+format = "[$symbol($output)]($style) [ ](purple)"
+style = ""
 
 [git_branch]
 style = "purple"
