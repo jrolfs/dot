@@ -69,7 +69,12 @@ style = ""
 [character]
 success_symbol = "[→](green)"
 error_symbol = "[×](red)"
-vimcmd_symbol = "[↔](green)"
+
+vimcmd_symbol = "[·](green)"
+# vimcmd_visual_symbol = "[⊙](green)"
+# vimcmd_replace_symbol = "[⊚](green)"
+# vimcmd_replace_one_symbol = "[⊚](green)"
+
 
 [directory]
 truncation_length = 3
