@@ -6,8 +6,8 @@ if [ $? -gt 0 ]; then
   exit 1
 fi
 
-author=$(git duet | cut -d '=' -f 2 | tail -1)
-committer=$(git duet | cut -d '=' -f 2 | tail -3 | head -1)
+author=$(echo "$duet" | cut -d '=' -f 2 | tail -1)
+committer=$(echo "$duet" | cut -d '=' -f 2 | tail -3 | head -1)
 
 echo "author: $author / committer: $committer"
 
