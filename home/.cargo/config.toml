@@ -1,5 +1,2 @@
-[alias]
-i = "install --path ."
-
 [build]
 incremental = true
