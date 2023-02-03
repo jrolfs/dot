@@ -9,11 +9,11 @@ function kill-port {
   lsof -iTCP:$1 | grep LISTEN | awk '{ print $2 }' | xargs kill $2
 }
 
-function yarn-latest {
+function npmv {
   if [[ "$2" =~ ^[0-9]+$ ]]; then
-    yarn info "$1" --json | jq --raw-output ".data.versions[-$2:][]"
+    npm info "$1" --json | jq --raw-output ".versions[-$2:][]"
   else
-    yarn info "$1" --json | jq --raw-output '.data.versions[-1]'
+    npm info "$1" --json | jq --raw-output '.versions[-1]'
   fi
 }
 
