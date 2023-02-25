@@ -30,7 +30,7 @@
   autosquash = true
 
 [core]
-  commentchar = auto
+  commentchar = "#"
   askpass = git-gui--askpass
 
 [pager]
