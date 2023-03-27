@@ -59,6 +59,10 @@ function git-prune-local {
   git branch -r | awk '{ print $1 }' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{ print $1 }' | egrep -v '^\+' | xargs git branch -D
 }
 
+function ... {
+  cd $(git rev-parse --show-cdup)
+}
+
 # Hover
 
 function unreleased {
