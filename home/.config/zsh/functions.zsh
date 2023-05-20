@@ -24,7 +24,11 @@ function nix-rip {
 function skim { nvim $(sk); }
 
 function gif {
-  ffmpeg -i $1 -pix_fmt rgb8 -r 20 -f gif "${1%.*}.gif"
+  if [[ "$2" =~ ^[0-9]+$ ]]; then
+    ffmpeg -i $1 -pix_fmt rgb8 -r 20 -f gif "${1%.*}.gif" -filter:v scale=$2:-1
+  else
+    ffmpeg -i $1 -pix_fmt rgb8 -r 20 -f gif "${1%.*}.gif"
+  fi
 }
 
 #
