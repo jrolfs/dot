@@ -102,6 +102,12 @@
   dm = duet-merge
   drb = rebase -i --exec 'git duet-commit --amend --reset-author' rum = rebase master@{u}
 
+  ; Recent branches
+  recent = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
+  recent-more = for-each-ref --sort=-committerdate --count=30 --format='%(refname:short)' refs/heads/
+  rb = recent
+  rbm = recent-more
+
 
 ; Diff Tools
 
