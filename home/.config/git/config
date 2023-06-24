@@ -108,6 +108,10 @@
   rb = recent
   rbm = recent-more
 
+  ; Local ignores
+  ignore-devbox = config core.excludesfile '~/.config/git/ignore-devbox'
+  ignore-clear = config core.excludesfile ''
+
 
 ; Diff Tools
 
