@@ -62,6 +62,11 @@ const Providers = {
 			return result;
 		}
 
+		const karaoke = await ProviderMusixmatch.getKaraoke(list);
+		if (karaoke) {
+			result.karaoke = karaoke;
+			result.copyright = list["track.lyrics.get"].message?.body?.lyrics?.lyrics_copyright?.trim();
+		}
 		const synced = ProviderMusixmatch.getSynced(list);
 		if (synced) {
 			result.synced = synced;
@@ -82,6 +87,7 @@ const Providers = {
 			karaoke: null,
 			synced: null,
 			unsynced: null,
+			neteaseTranslation: null,
 			provider: "Netease",
 			copyright: null
 		};
@@ -105,6 +111,10 @@ const Providers = {
 		const unsynced = synced || ProviderNetease.getUnsynced(list);
 		if (unsynced) {
 			result.unsynced = unsynced;
+		}
+		const translation = ProviderNetease.getTranslation(list);
+		if (translation) {
+			result.neteaseTranslation = translation;
 		}
 
 		return result;
@@ -133,5 +143,31 @@ const Providers = {
 			genius2,
 			versionIndex2
 		};
+	},
+	local: info => {
+		let result = {
+			uri: info.uri,
+			karaoke: null,
+			synced: null,
+			unsynced: null,
+			provider: "local"
+		};
+
+		try {
+			const savedLyrics = JSON.parse(localStorage.getItem("lyrics-plus:local-lyrics"));
+			const lyrics = savedLyrics[info.uri];
+			if (!lyrics) {
+				throw "";
+			}
+
+			result = {
+				...result,
+				...lyrics
+			};
+		} catch {
+			result.error = "No lyrics";
+		}
+
+		return result;
 	}
 };
