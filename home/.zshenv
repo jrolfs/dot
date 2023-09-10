@@ -75,6 +75,8 @@ export NODEJS_CHECK_SIGNATURES="no"
 
 export RUSTUP_INIT_SKIP_PATH_CHECK="yes"
 
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # Starship
 # (silence noisy timeout warnings... although I wish Node and
 # Git wouldn't timeout so much and would like to fix that)
