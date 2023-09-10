@@ -48,3 +48,5 @@ alias k=kubectl
 alias kx=kubectx
 alias kn=kubens
 
+# 1Password (it won't read symbolic links so homeshick linked config doesn't work)
+alias op="op --config $HOMESHICK_KINGDOM/private/home/.config/op"
