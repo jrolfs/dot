@@ -41,3 +41,10 @@ alias hss="hspl && hsps"
 if [[ $TERM == 'xterm-kitty' ]]; then
   alias sshk="kitty +kitten ssh"
 fi
+
+# Kubernetes
+
+alias k=kubectl
+alias kx=kubectx
+alias kn=kubens
+
