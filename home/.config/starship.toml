@@ -4,7 +4,6 @@ format = """
 $username\
 $hostname\
 $shlvl\
-$kubernetes\
 $directory\
 $git_branch\
 $hg_branch\
@@ -56,6 +55,7 @@ $character\
 
 right_format = """
 ${custom.pair}\
+$kubernetes\
 $cmd_duration
 """
 
@@ -93,7 +93,7 @@ format = " took [$duration]($style)"
 command = "$XDG_CONFIG_HOME/starship/pair-status.sh"
 shell = ["/run/current-system/sw/bin/zsh"]
 when = "$XDG_CONFIG_HOME/starship/is-pairing.sh"
-format = "[$symbol($output)]($style) [ ](purple)"
+format = "[$symbol($output)]($style) [ ](purple) ·"
 style = ""
 
 [git_branch]
@@ -130,6 +130,26 @@ disabled = true
 
 [gcloud]
 disabled = true
+format = ' [$symbol$account(@$domain)(\($project\))]($style)'
+
+[kubernetes]
+# format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+format = ' [󱃾 $context » [$namespace](bold)](blue)'
+disabled = false
+[kubernetes.context_aliases]
+# Production
+'.*app02-prod.*' = 'production'
+'.*arg01-prod .*' = 'production:arg'
+'.*shared02-prod.*' = 'production:shared'
+
+# Staging
+'.*app05-prep.*' = 'staging'
+'.*arg03-prep.*' = 'staging:arg'
+'.*shared01-prep.*' = 'staging:shared'
+
+# [kubernetes.user_aliases]
+# 'dev.local.cluster.k8s' = 'dev'
+# 'root/.*' = 'root'
 
 [nix_shell]
 impure_msg = "[](bold red)"
