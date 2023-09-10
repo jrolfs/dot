@@ -38,6 +38,7 @@ path=(
   $HOME/.cargo/bin
   $GOPATH/bin
   $SPICETIFY_INSTALL
+  $WORK_BIN
   $path
 )
 
