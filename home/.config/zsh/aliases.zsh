@@ -11,7 +11,9 @@ alias gry="git add yarn.lock && git rebase --continue"
 alias gsxx=git-stash-drop
 # Unique commits from current branch
 alias gcu="git log --pretty=oneline --no-merges \"^\$(git-branch-current)\""
+
 alias pop="git reset HEAD~1"
+alias wip="git add . && git commit --verbose --no-verify -m 'wip'"
 
 # Fancy Unix replacements
 
