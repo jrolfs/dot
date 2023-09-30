@@ -3,7 +3,7 @@
 	url = git@github.com:zplug/zplug.git
 [submodule "home/.config/kitty/themes/gruvbox-material"]
 	path = home/.config/kitty/themes/gruvbox-material
-	url = git@github.com:rsaihe/gruvbox-material-kitty.git
+	url = git@github.com:jrolfs/gruvbox-material-kitty.git
 [submodule "asdf"]
 	path = asdf
 	url = git@github.com:jrolfs/asdf.git
