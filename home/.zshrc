@@ -23,7 +23,7 @@ zplug "belak/prezto-contrib", \
 
 zplug "$XDG_CONFIG_HOME/zsh", \
   from:local, \
-  use:"!(_)*.zsh"
+  use:"*.zsh"
 
 zplug "$HOME/.homesick/repos/homeshick", \
   from:local, \
