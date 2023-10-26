@@ -34,9 +34,6 @@ zplug "$HOME/.travis", \
   defer:3, \
   use:travis.sh
 
-zplug "jrolfs/history-sync", as:plugin, at:main
-# zplug "jeffreytse/zsh-vi-mode"
-
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
@@ -50,8 +47,6 @@ zplug "homebrew/brew", use:completions/zsh
 
 zplug "zsh-users/zsh-completions"
 zplug "ryutok/rust-zsh-completions"
-
-zplug "cantino/mcfly", use:mcfly.zsh, defer:3
 
 if ! zplug check; then
   zplug install
