@@ -3,6 +3,8 @@ alias vim=nvim
 
 alias hs=homeshick
 
+alias J=fasd_cd
+
 # Git
 
 alias gl1="COLUMNS=200 git log --pretty=oneline"
