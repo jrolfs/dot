@@ -1,3 +1,6 @@
+.yalc/
+yalc.lock
+
 # Editor Droppings #
 ####################
 .idea

@@ -3,3 +3,5 @@ devbox.d/
 .envrc
 devbox.json
 devbox.lock
+flake.nix
+flake.lock
