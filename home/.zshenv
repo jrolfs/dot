@@ -75,6 +75,9 @@ export NODEJS_CHECK_SIGNATURES="no"
 
 export RUSTUP_INIT_SKIP_PATH_CHECK="yes"
 
+# 1Password
+export OP_CONFIG_DIR="${HOMESHICK_KINGDOM}/private/home/.config/op"
+
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Starship
