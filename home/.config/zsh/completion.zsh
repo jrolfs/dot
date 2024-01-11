@@ -19,4 +19,7 @@ function exists {
 # # See: https://github.com/mklabs/tabtab
 # [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
+exists op && op completion zsh >! $XDG_CONFIG_HOME/zsh/completions/_op
+chmod a+x $XDG_CONFIG_HOME/zsh/completions/_op
+
 unset exists
