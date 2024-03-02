@@ -56,3 +56,4 @@ alias kn=kubens
 alias op="op --config $HOMESHICK_KINGDOM/private/home/.config/op"
 
 alias gpg-preset-passphrase="$(gpgconf --list-dirs libexecdir)/gpg-preset-passphrase"
+alias gpgr="gpg-connect-agent reloadagent /bye"

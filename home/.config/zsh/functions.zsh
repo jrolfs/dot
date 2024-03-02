@@ -98,3 +98,7 @@ function kfs {
   /opt/homebrew/bin/kitty @ --to unix:$(/run/current-system/sw/bin/fd socket ~/.local/share/kitty | tail -1) set-font-size $1
 }
 
+#
+# GPG
+
+function gpgp { echo $1 | gpg-preset-passphrase --preset 91C155A78968EEE863ED8B22626AE770762AC2F3 }
