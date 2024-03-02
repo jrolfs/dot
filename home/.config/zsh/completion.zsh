@@ -12,6 +12,8 @@ function exists {
 # # GitHub
 # exists gh && gh completion -s zsh >! $XDG_CONFIG_HOME/zsh/completions/_gh
 
+exists fly && fly completion zsh >! $XDG_CONFIG_HOME/zsh/completions/_fly
+
 # # Infrastructure stuff
 # exists kubectl && kubectl completion zsh >! $XDG_CONFIG_HOME/zsh/completions/_kubectl
 # exists infractl && infractl completion zsh >! $XDG_CONFIG_HOME/zsh/completions/_infractl
