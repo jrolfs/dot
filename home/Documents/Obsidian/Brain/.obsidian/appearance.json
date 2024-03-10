@@ -3,7 +3,7 @@
   "cssTheme": "Minimal",
   "theme": "obsidian",
   "translucency": true,
-  "accentColor": "",
+  "accentColor": "#d3869b",
   "showViewHeader": true,
-  "nativeMenus": true
+  "nativeMenus": false
 }
