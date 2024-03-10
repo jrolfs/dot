@@ -12,12 +12,16 @@ setopt share_history
 # Environment
 #
 
-export KEYTIMEOUT=1
-
 # XDG
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
+
+# Source optional machine-specific environment first
+machine_env="${XDG_CONFIG_HOME}/zsh/env.$(hostname | tr '[:upper:]' '[:lower:]')"
+[[ -f $machine_env ]] && source $machine_env
+
+export KEYTIMEOUT=1
 
 # Dotfiles
 export HOMESHICK_KINGDOM="${HOMESHICK_DIR:-$HOME/.homesick/repos}"
