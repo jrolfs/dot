@@ -23,12 +23,21 @@ function nix-rip {
 
 function skim { nvim $(sk); }
 
+#
+# Media
+
 function gif {
   if [[ "$2" =~ ^[0-9]+$ ]]; then
     ffmpeg -i $1 -pix_fmt rgb8 -r 20 -f gif "${1%.*}.gif" -filter:v scale=$2:-1
   else
     ffmpeg -i $1 -pix_fmt rgb8 -r 20 -f gif "${1%.*}.gif"
   fi
+}
+
+function 1080 {
+  for file in *.mov; do
+    ffmpeg -i "$file" -crf 10 -vf "scale=-2:1080" "${file%.mov}_1080.mp4";
+  done
 }
 
 #
