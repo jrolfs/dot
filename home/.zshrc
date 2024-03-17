@@ -45,6 +45,8 @@ zplug "andsens/homeshick", use:completions
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "homebrew/brew", use:completions/zsh
 
+zplug "ahmetb/kubectx"
+
 zplug "zsh-users/zsh-completions"
 zplug "ryutok/rust-zsh-completions"
 
