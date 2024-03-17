@@ -8,19 +8,16 @@
 // from the command palette or from `Zed` application menu.
 {
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "ui_font_family": "JetBrains Mono",
+  "ui_font_size": 14,
+  "buffer_font_size": 13,
+  "ui_font_family": "IBM Plex Sans",
   "buffer_font_family": "JetBrains Mono",
   "language_overrides": {
     "JavaScript": {
       "formatter": {
         "external": {
           "command": "eslint",
-          "arguments": [
-            "--fix",
-            "{buffer_path}"
-          ]
+          "arguments": ["--fix", "{buffer_path}"]
         }
       }
     }
