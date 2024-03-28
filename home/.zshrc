@@ -42,7 +42,6 @@ zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/pod", from:oh-my-zsh
 
 zplug "andsens/homeshick", use:completions
-zplug "docker/compose", use:contrib/completion/zsh
 zplug "homebrew/brew", use:completions/zsh
 
 zplug "ahmetb/kubectx"
