@@ -36,7 +36,11 @@ function gif {
 
 function 1080 {
   for file in *.mov; do
-    ffmpeg -i "$file" -crf 10 -vf "scale=-2:1080" "${file%.mov}_1080.mp4";
+    if [[ $file != *_1080.mov ]]; then
+      if [[ $# -eq 0 ]] || [[ $file == *"$1"* ]]; then
+        ffmpeg -i "$file" -crf 10 -vf "scale=-2:1080" "${file%.mov}_1080.mp4"
+      fi
+    fi
   done
 }
 
