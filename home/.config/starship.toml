@@ -10,6 +10,7 @@ $hg_branch\
 $git_commit\
 $git_status\
 $git_state\
+${custom.pinentry}\
 $docker_context\
 $package\
 $fill\
@@ -88,6 +89,13 @@ format = " took [$duration]($style)"
 
 #
 # ---------- Context ---------------------------------------
+
+[custom.pinentry]
+command = "$XDG_CONFIG_HOME/starship/pinentry.sh"
+shell = ["/run/current-system/sw/bin/zsh"]
+format = "[$output](yellow)"
+when = true
+style = ""
 
 [custom.pair]
 command = "$XDG_CONFIG_HOME/starship/pair-status.sh"
