@@ -7,12 +7,30 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "theme": "Gruvbox Dark Soft",
   "vim_mode": true,
-  "ui_font_size": 14,
+  "ui_font_size": 15,
   "buffer_font_size": 13,
   "ui_font_family": "IBM Plex Sans",
   "buffer_font_family": "JetBrains Mono",
+  "format_on_save": "off",
   "language_overrides": {
+    "TSX": {
+      "formatter": {
+        "external": {
+          "command": "eslint",
+          "arguments": ["--fix", "{buffer_path}"]
+        }
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "eslint",
+          "arguments": ["--fix", "{buffer_path}"]
+        }
+      }
+    },
     "JavaScript": {
       "formatter": {
         "external": {
