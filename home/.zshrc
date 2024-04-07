@@ -53,8 +53,7 @@ zplug "tom-doerr/zsh_codex", \
   as:plugin, \
   use:"*zsh_codex*", \
   dir:"$ZSH_CUSTOM/plugins/zsh_codex", \
-  hook-build:'pip install --target=$ZSH_CUSTOM/plugins/zsh_codex openai', \
-  hook-load:'bindkey $'\''^X'\'' create_completion'
+  hook-build:'pip install --target=$ZSH_CUSTOM/plugins/zsh_codex openai'
 
 if ! zplug check; then
   zplug install
