@@ -49,6 +49,13 @@ zplug "ahmetb/kubectx"
 zplug "zsh-users/zsh-completions"
 zplug "ryutok/rust-zsh-completions"
 
+zplug "tom-doerr/zsh_codex", \
+  as:plugin, \
+  use:"*zsh_codex*", \
+  dir:"$ZSH_CUSTOM/plugins/zsh_codex", \
+  hook-build:'pip install --target=$ZSH_CUSTOM/plugins/zsh_codex openai', \
+  hook-load:'bindkey $'\''^X'\'' create_completion'
+
 if ! zplug check; then
   zplug install
 fi
