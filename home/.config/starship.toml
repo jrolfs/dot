@@ -170,7 +170,7 @@ format = "[${symbol}](bold blue)"
 # ---------- Languages -------------------------------------
 
 [nodejs]
-style = "green"
+style = "bold green"
 symbol = " "
 format = " [${symbol}(${version})]($style)"
 
