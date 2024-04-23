@@ -35,10 +35,16 @@ function gif {
 }
 
 function 1080 {
-  for file in *.mov; do
-    if [[ $file != *_1080.mov ]]; then
+  setopt local_options nullglob
+
+  for file in *.mov *.mp4; do
+    if [[ $file != *_1080.mp4 ]]; then
       if [[ $# -eq 0 ]] || [[ $file == *"$1"* ]]; then
-        ffmpeg -i "$file" -crf 10 -vf "scale=-2:1080" "${file%.mov}_1080.mp4"
+        output="${file%.*}_1080.mp4"
+
+        if [[ $file == *.mov ]] || [[ $file == *.mp4 ]]; then
+          ffmpeg -i "$file" -crf 10 -vf "scale=-2:1080" "$output"
+        fi
       fi
     fi
   done
