@@ -37,6 +37,11 @@ bind yg composite js "gfc " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.
 " Yank clone command for upstream
 bind yG composite js "gfc -o upstream " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@").replace(/$/, '/'))[0].replace("/",":").replace(/$/,".git") | clipboard yank
 
+" bind gv composite js "https://github.com/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[1] + "/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[2] + "/releases" | open
+" bind nr composite js "https://github.com/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[1] + "/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[2] + "/releases" | open
+" bind nr composite js "https://github.com" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[1] + "/releases" | open
+" bind nr composite js /https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/.exec(document.location.href)[1] + "/releases" | open
+
 " Make gu take you back to subreddit from comments
 bindurl reddit.com gu urlparent 4
 
