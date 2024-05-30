@@ -32,7 +32,6 @@ alias jj="fasd_cd -tdi"
 # Images
 
 alias icat="kitty +kitten icat"
-alias heic2jpg="fd --regex '(?i)heic' -x sips -s format jpeg {/} --out {/.}.jpg && rm *.HEIC"
 
 # History
 

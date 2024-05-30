@@ -26,6 +26,33 @@ function skim { nvim $(sk); }
 #
 # Media
 
+heic2jpg() {
+  local keep
+  local help
+  local usage=(
+    "heic2jpg [-h|--help]"
+    "heic2jpg [-k|--keep]"
+  )
+
+  zmodload zsh/zutil
+  zparseopts -D -F -K -- \
+    {h,-help}=help \
+    {k,-keep}=keep \
+    || { print -l $usage && return 1 }
+
+  [[ -z "$help" ]] || { print -l $usage && return }
+
+  local converted=()
+  while read -r file; do
+      sips -s format jpeg "$file" --out "${file:r}.jpg" &>/dev/null
+      converted+=("${file:t}")
+  done < <(fd --regex '(?i)heic')
+
+  if [[ -z "$keep" ]]; then
+      rm "${converted[@]}"
+  fi
+}
+
 function gif {
   if [[ "$2" =~ ^[0-9]+$ ]]; then
     ffmpeg -i $1 -pix_fmt rgb8 -r 20 -f gif "${1%.*}.gif" -filter:v scale=$2:-1
@@ -146,3 +173,54 @@ function pin() {
     gpg-connect-agent reloadagent /bye
 }
 
+
+
+#
+#
+# Reference
+#
+#
+
+# zparseopts
+#
+# Resources:
+# - https://xpmo.gitlab.io/post/using-zparseopts/
+# - https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html#index-zparseopts
+#
+# Features:
+# - supports short and long flags (ie: -v|--verbose)
+# - supports short and long key/value options (ie: -f <file> | --filename <file>)
+# - does NOT support short and long key/value options with equals assignment (ie: -f=<file> | --filename=<file>)
+# - supports short option chaining (ie: -vh)
+# - everything after -- is positional even if it looks like an option (ie: -f)
+# - once we hit an arg that isn't an option flag, everything after that is considered positional
+function zparseopts_demo() {
+  local flag_help flag_verbose
+  local arg_filename=(myfile)  # set a default
+  local usage=(
+    "zparseopts_demo [-h|--help]"
+    "zparseopts_demo [-v|--verbose] [-f|--filename=<file>] [<message...>]"
+  )
+
+  # -D pulls parsed flags out of $@
+  # -E allows flags/args and positionals to be mixed, which we don't want in this example
+  # -F says fail if we find a flag that wasn't defined
+  # -M allows us to map option aliases (ie: h=flag_help -help=h)
+  # -K allows us to set default values without zparseopts overwriting them
+  # Remember that the first dash is automatically handled, so long options are -opt, not --opt
+  zmodload zsh/zutil
+  zparseopts -D -F -K -- \
+    {h,-help}=flag_help \
+    {v,-verbose}=flag_verbose \
+    {f,-filename}:=arg_filename ||
+    return 1
+
+  [[ -z "$flag_help" ]] || { print -l $usage && return }
+  if (( $#flag_verbose )); then
+    print "verbose mode"
+  fi
+
+  echo "--verbose: $flag_verbose"
+  echo "--filename: $arg_filename[-1]"
+  echo "positional: $@"
+}
