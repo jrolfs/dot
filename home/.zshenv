@@ -21,7 +21,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export ZSH_CUSTOM="$HOME/.zplug/custom"
 
 # Source optional machine-specific environment first
-machine_env="${XDG_CONFIG_HOME}/zsh/env.$(hostname | tr '[:upper:]' '[:lower:]')"
+machine_env="${XDG_CONFIG_HOME}/zsh/env.$(hostname -s | tr '[:upper:]' '[:lower:]')"
 [[ -f $machine_env ]] && source $machine_env
 
 export KEYTIMEOUT=1
