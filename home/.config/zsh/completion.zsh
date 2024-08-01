@@ -9,8 +9,8 @@ function exists {
 # # Kitty
 # exists kitty && kitty + complete setup zsh | source /dev/stdin
 
-# # GitHub
-# exists gh && gh completion -s zsh >! $XDG_CONFIG_HOME/zsh/completions/_gh
+# GitHub
+exists gh && gh completion -s zsh >! $XDG_CONFIG_HOME/zsh/completions/_gh
 
 exists fly && fly completion zsh >! $XDG_CONFIG_HOME/zsh/completions/_fly
 
