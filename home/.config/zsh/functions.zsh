@@ -77,6 +77,48 @@ function 1080 {
   done
 }
 
+function video-speed {
+  setopt local_options nullglob
+
+  # Default speed factor
+  local factor=${1:-2.0}
+
+  # Check if factor is a valid number
+  if ! [[ $factor =~ ^[0-9]*\.?[0-9]+$ ]]; then
+    echo "Error: Invalid speed factor. Please use a positive number."
+    return 1
+  fi
+
+  # Determine if we're slowing down or speeding up
+  local operation
+  if (( $(echo "$factor > 1" | bc -l) )); then
+    operation="slow"
+  else
+    operation="fast"
+  fi
+
+  # Format the factor for the filename
+  local factor_str
+  if [[ $factor == *.0 || $factor == *. ]]; then
+    factor_str=$(printf "%.0f" $factor)
+  else
+    factor_str=$factor
+  fi
+
+  for file in *.mov *.mp4; do
+    if [[ $file != *_${operation}*.mp4 ]]; then
+      if [[ $# -le 1 ]] || [[ $file == *"$2"* ]]; then
+        output="${file%.*}_${operation}-${factor_str}x.mp4"
+
+        if [[ $file == *.mov ]] || [[ $file == *.mp4 ]]; then
+          ffmpeg -i "$file" -filter:v "setpts=${factor}*PTS,minterpolate='mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=60'" -crf 18 "$output"
+          echo "Processed $file with speed factor $factor"
+        fi
+      fi
+    fi
+  done
+}
+
 #
 # Git
 
