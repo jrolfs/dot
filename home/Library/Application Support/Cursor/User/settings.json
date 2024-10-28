@@ -151,5 +151,7 @@
   "playwright.reuseBrowser": true,
   "theme-to-zed.theme_importer": "~/.local/share/asdf/shims/theme_importer",
   "security.workspace.trust.untrustedFiles": "open",
-  "rubyLsp.rubyExecutablePath": "/Users/jamie/Developer/Hover/hyperion/.devbox/nix/profile/default/bin/ruby"
+  "rubyLsp.rubyExecutablePath": "/Users/jamie/Developer/Hover/hyperion/.devbox/nix/profile/default/bin/ruby",
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil"
 }
