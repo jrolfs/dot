@@ -35,3 +35,6 @@
 [submodule "spicetify-catppuccin"]
 	path = spicetify-catppuccin
 	url = git@github.com:catppuccin/spicetify.git
+[submodule "vscode"]
+	path = vscode
+	url = git@github.com:jrolfs/vscode.git
