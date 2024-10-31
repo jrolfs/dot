@@ -1,5 +1,5 @@
-" NB: If you want "vim-like" behaviour where removing a line from
-" here makes the setting disappear, uncomment the line below.
+js -r tridactyl.js
+
 sanitise tridactyllocal tridactylsync
 
 "
@@ -31,11 +31,16 @@ bind <C-n> ex.next_completion
 bind <C-p> ex.prev_completion
 
 " Yank repository URL
-bind yr composite js /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@").replace(/$/, '/'))[0].replace("/",":").replace(/$/,".git") | clipboard yank
+bind yr composite js tri.commands.getRepositoryUrl() | clipboard yank
+
 " Yank clone command for forks/sources
-bind yg composite js "gfc " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@").replace(/$/, '/'))[0].replace("/",":").replace(/$/,".git") | clipboard yank
+bind yg composite js tri.commands.getForkCloneCommand() | clipboard yank
+
 " Yank clone command for upstream
-bind yG composite js "gfc -o upstream " + /.*?\/.*?\/.*?(?=\/)/.exec(document.location.href.replace(/https?:\/\//,"git@").replace(/$/, '/'))[0].replace("/",":").replace(/$/,".git") | clipboard yank
+bind yG composite js tri.commands.getUpstreamCloneCommand() | clipboard yank
+
+" Yank pull request number
+bind yN composite js tri.commands.getPullRequestNumber() | clipboard yank
 
 " bind gv composite js "https://github.com/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[1] + "/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[2] + "/releases" | open
 " bind nr composite js "https://github.com/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[1] + "/" + document.location.href.match(/https:\/\/github\.com\/(.*?)\/(.*?)(\/|$)/)[2] + "/releases" | open
