@@ -67,7 +67,7 @@
 [diff]
   tool = ksdiff
 [merge]
-  tool = vscode
+  tool = cursor
 
 [difftool]
   prompt = false
@@ -113,41 +113,6 @@
   ignore-clear = config core.excludesfile ''
 
 
-; Diff Tools
-
-[difftool "vscode"]
-    cmd = code -n --wait --disable-extension=\"eamodio.gitlens\" --diff $LOCAL $REMOTE
-
-[difftool "ksdiff"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
-[difftool "kitty"]
-    cmd = kitty +kitten diff $LOCAL $REMOTE
-
-[difftool "kitty.gui"]
-    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
-
-
-; Merge Tools
-
-[mergetool "vscode"]
-  cmd = code -n --wait $MERGED --disable-extension=\"eamodio.gitlens\"
-
-[mergetool "ksdiff"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-
-
-[mergetool "smerge"]
-  cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-  trustExitCode = true
-
-[mergetool "nvim"]
-  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
-
-[mergetool "splice"]
-  cmd = nvim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c \"SpliceInit\"
-  trustExitCode = true
 
 
 ; Filters
@@ -183,3 +148,45 @@
 
 [url "git@github.com:"]
   insteadOf = https://github.com/
+
+; Diff Tools
+
+[difftool "vscode"]
+  cmd = code -n --wait --disable-extension=\"eamodio.gitlens\" --diff $LOCAL $REMOTE
+
+[difftool "cursor"]
+  cmd = cursor -n --wait --disable-extension=\"eamodio.gitlens\" --diff $LOCAL $REMOTE
+
+[difftool "ksdiff"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
+
+[difftool "kitty.gui"]
+    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+
+
+; Merge Tools
+
+[mergetool "vscode"]
+  cmd = code -n --wait $MERGED --disable-extension=\"eamodio.gitlens\"
+
+[mergetool "cursor"]
+  cmd = cursor -n --wait $MERGED --disable-extension=\"eamodio.gitlens\"
+
+[mergetool "ksdiff"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
+
+[mergetool "smerge"]
+  cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+  trustExitCode = true
+
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+[mergetool "splice"]
+  cmd = nvim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c \"SpliceInit\"
+  trustExitCode = true
