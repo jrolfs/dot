@@ -23,6 +23,15 @@ function nix-rip {
 
 function skim { nvim $(sk); }
 
+function ln-h {
+  if [[ -L "$1" ]]; then
+      ln -f "$(readlink "$1")" $1
+  else
+      echo "Error: '$1' is not a symbolic link"
+      return 1
+  fi
+}
+
 #
 # Media
 
