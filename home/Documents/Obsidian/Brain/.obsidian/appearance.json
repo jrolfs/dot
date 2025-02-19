@@ -1,6 +1,6 @@
 {
   "baseFontSize": 16,
-  "cssTheme": "Minimal",
+  "cssTheme": "Material Gruvbox",
   "theme": "obsidian",
   "translucency": true,
   "accentColor": "#d3869b",
