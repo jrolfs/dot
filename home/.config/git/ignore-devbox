@@ -1,4 +1,5 @@
 devbox.d/
+.devbox
 .direnv/
 .envrc
 .aliases
