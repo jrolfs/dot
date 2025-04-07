@@ -65,7 +65,7 @@
 ; Diff/Merge
 
 [diff]
-  tool = ksdiff
+  tool = cursor
 [merge]
   tool = cursor
 
