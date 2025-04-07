@@ -67,7 +67,7 @@
 [diff]
   tool = ksdiff
 [merge]
-  tool = vscode
+  tool = cursor
 
 [difftool]
   prompt = false
