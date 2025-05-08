@@ -7,3 +7,5 @@ devbox.json
 devbox.lock
 flake.nix
 flake.lock
+process-compose.yml
+process-compose.yaml
