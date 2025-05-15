@@ -43,6 +43,7 @@ zplug "plugins/pod", from:oh-my-zsh
 
 zplug "andsens/homeshick", use:completions
 zplug "homebrew/brew", use:completions/zsh
+zplug "bobthecow/launchctl-completion", use:"launchctl-completion.bash"
 
 zplug "ahmetb/kubectx"
 
