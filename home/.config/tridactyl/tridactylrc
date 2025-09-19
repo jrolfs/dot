@@ -18,6 +18,11 @@ set tabopencontaineraware true
 
 set profiledir jamie
 
+#
+# Blacklist
+
+blacklistadd app.coderpad.io
+
 
 "
 " Bindings
