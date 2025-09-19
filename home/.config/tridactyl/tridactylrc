@@ -18,6 +18,15 @@ set tabopencontaineraware true
 
 set profiledir jamie
 
+#
+# Blacklist
+
+blacklistadd app.coderpad.io
+unbindurl app.coderpad.io --mode=ignore <C-o>
+
+blacklistadd www.hackerrank.com/challenges
+unbindurl www.hackerrank.com/challenges --mode=ignore <C-o>
+
 
 "
 " Bindings
