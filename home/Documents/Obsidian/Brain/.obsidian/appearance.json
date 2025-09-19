@@ -4,6 +4,7 @@
   "theme": "obsidian",
   "translucency": true,
   "accentColor": "#d3869b",
-  "showViewHeader": true,
-  "nativeMenus": false
+  "showViewHeader": false,
+  "nativeMenus": false,
+  "showRibbon": false
 }
