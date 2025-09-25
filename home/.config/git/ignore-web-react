@@ -16,4 +16,6 @@ process-compose.yaml
 
 # ESLint
 
-jamie.eslint.config.mjs
+jamie.eslint.config.mjs*
+
+.cursor/rules/jamie.mdc
