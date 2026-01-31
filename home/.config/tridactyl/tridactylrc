@@ -27,6 +27,7 @@ unbindurl app.coderpad.io --mode=ignore <C-o>
 blacklistadd www.hackerrank.com/challenges
 unbindurl www.hackerrank.com/challenges --mode=ignore <C-o>
 
+blacklistadd excalidraw.com
 
 "
 " Bindings
