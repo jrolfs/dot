@@ -14,7 +14,7 @@
   "ui_font_family": "IBM Plex Sans",
   "buffer_font_family": "JetBrains Mono",
   "format_on_save": "off",
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "language_overrides": {
     "JavaScript": {
       "formatter": { "code_actions": { "source.fixAll.eslint": true } }
@@ -24,6 +24,40 @@
     },
     "TypeScript": {
       "formatter": { "code_actions": { "source.fixAll.eslint": true } }
+    }
+  },
+  "theme_overrides": {
+    "Gruvbox Material": {
+      "syntax": {
+        "constructor": {
+          "color": "#d8a657"
+        },
+        "keyword": {
+          "color": "#ea6962"
+        },
+        // "type": {
+        //   "color": "#d8a657"
+        // },
+        // "variable": {
+        //   "color": "#d8a657"
+        // },
+        "string": {
+          "color": "#d8a657"
+        },
+        "function": {
+          "color": "#a9b665",
+          "font_weight": 700
+        },
+        "property": {
+          "color": "#7daea3"
+        },
+        "label": {
+          "color": "#7daea3"
+        },
+        "operator": {
+          "color": "#e78a4e"
+        }
+      }
     }
   }
 }
