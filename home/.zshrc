@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 preztorc="${XDG_CONFIG_HOME}/zsh/prezto.zsh"
 platformrc="${HOME}/.zshrc.$(uname | tr '[:upper:]' '[:lower:]')"
 
@@ -63,3 +65,5 @@ zplug load
 if [[ -v STARSHIP_ENABLED ]] then
   eval "$(starship init zsh)"
 fi
+
+# zprof
