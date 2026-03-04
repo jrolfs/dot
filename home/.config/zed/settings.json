@@ -33,7 +33,8 @@
           "color": "#d8a657"
         },
         "keyword": {
-          "color": "#ea6962"
+          "color": "#ea6962",
+          "font_style": "normal"
         },
         // "type": {
         //   "color": "#d8a657"
