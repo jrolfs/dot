@@ -1,0 +1,7 @@
+[tools]
+java = "openjdk-17.0.1"
+nodejs = "lts"
+python = "3.9.7"
+ruby = "3.2.2"
+rust = "1.64.0"
+go = "1.21.1"

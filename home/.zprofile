@@ -28,21 +28,19 @@ typeset -gU cdpath fpath mailpath path
 fpath+=(
   $XDG_CONFIG_HOME/zsh/themes
   $XDG_CONFIG_HOME/zsh/completions
-  $ASDF_DATA_DIR/completions
 )
 
 # Executable search path
 path=(
   /opt/homebrew/bin
   /usr/local/{bin,sbin}
-  $HOME/.cargo/bin
   $GOPATH/bin
   $SPICETIFY_INSTALL
   $WORK_BIN
   $path
 )
 
-source "${ASDF_DATA_DIR}/asdf.sh"
+eval "$(mise activate zsh)"
 
 #
 # Less
