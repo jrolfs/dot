@@ -38,7 +38,7 @@ glide.keymaps.set(
  */
 glide.keymaps.set(
   'normal',
-  '<C-l>',
+  '<leader><C-l>',
   async () => glide.excmds.execute('clear'),
   { description: 'Clear alert notifications' },
 );
@@ -48,7 +48,7 @@ glide.keymaps.set(
  */
 glide.keymaps.set(
   'normal',
-  '<C-r>',
+  '<leader><C-r>',
   async () => glide.excmds.execute('config_reload'),
   { description: 'Reload configuration' },
 );
