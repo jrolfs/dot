@@ -1,20 +1,18 @@
+/**
+ * Default keymappings: https://github.com/glide-browser/glide/blob/main/src/glide/browser/base/content/plugins/keymaps.mts
+ */
+
 // Commands
 
-glide.keymaps.set(
-  "command",
-  "<C-n>",
-  "commandline_focus_next",
-);
-glide.keymaps.set(
-  "command",
-  "<C-p>",
-  "commandline_focus_back",
-);
-
-
+glide.keymaps.set('command', '<C-n>', 'commandline_focus_next');
+glide.keymaps.set('command', '<C-p>', 'commandline_focus_back');
 
 //
 // Tabs
+
+glide.keymaps.set('normal', '<leader>t', 'tab_new', {
+  description: 'Open a new tab',
+});
 
 /**
  * Toggle tab pinning
