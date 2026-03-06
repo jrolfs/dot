@@ -9,3 +9,6 @@ flake.nix
 flake.lock
 process-compose.yml
 process-compose.yaml
+
+.env.devbox
+.npmrc.devbox
