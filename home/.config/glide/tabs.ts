@@ -38,8 +38,8 @@ const tabPinToggle = glide.excmds.create(
   async ({ args_arr: [arg] }) => {
     const active = await glide.tabs.active();
 
-    const argsId = arg && /\d+/.test(arg) ? parseInt(arg, 10) : null;
-    const id = argsId ?? active.id;
+    const argId = arg && /\d+/.test(arg) ? parseInt(arg, 10) : null;
+    const id = argId ?? active.id;
 
     const { pinned } = await browser.tabs.get(id);
 
@@ -48,3 +48,34 @@ const tabPinToggle = glide.excmds.create(
 );
 // oxfmt-ignore
 declare global { interface ExcmdRegistry { tab_pin_toggle: typeof tabPinToggle; } }
+
+const tabMove = glide.excmds.create(
+  {
+    name: 'tab_move',
+    description: 'Move a ',
+  },
+  async ({ args_arr: [arg] }) => {
+    const { id: tabId } = await glide.tabs.active();
+
+    const argId = arg && /\d+/.test(arg) ? parseInt(arg, 10) : null;
+
+    const window = argId ? await browser.windows.get(argId) : await browser.windows.create();
+    const { id: windowId } = window;
+
+    assert(windowId);
+
+    await browser.tabs.move(tabId, { windowId, index: 0 });
+
+    // If we're opening a new window, it opens with an empty tab open to the new
+    // tab page by default, but we only want the moved tab in that window
+    if (!argId) {
+      const emptyTab = window.tabs?.at(-1);
+
+      if (!emptyTab?.id) return;
+
+      await browser.tabs.remove(emptyTab.id);
+    }
+  }
+);
+// oxfmt-ignore
+declare global { interface ExcmdRegistry { tab_move: typeof tabMove; } }
