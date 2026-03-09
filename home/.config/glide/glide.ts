@@ -7,5 +7,6 @@
 
 glide.include('keymaps.ts');
 glide.include('tabs.ts');
+glide.include('windows.ts');
 
 glide.include('google-signin.ts');
