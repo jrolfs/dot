@@ -202,7 +202,7 @@ function gpgp { echo $1 | gpg-preset-passphrase --preset 91C155A78968EEE863ED8B2
 
 function pin() {
     local gpg_agent_conf="$HOME/.gnupg/gpg-agent.conf"
-    local pinentry_program_mac="/run/current-system/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac"
+    local pinentry_program_mac="/run/current-system/sw/bin/pinentry-mac"
     local pinentry_program_default="/run/current-system/sw/bin/pinentry"
     local temp_file="/tmp/gpg-agent.conf.tmp"
 
