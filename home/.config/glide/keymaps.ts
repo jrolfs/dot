@@ -1,52 +1,31 @@
+import type { SimpleKeymapTuple } from './types';
+
 /**
  * Default keymappings: https://github.com/glide-browser/glide/blob/main/src/glide/browser/base/content/plugins/keymaps.mts
  */
 
-// Commands
+(
+  [
+    //
+    // Command
 
-glide.keymaps.set('command', '<C-n>', 'commandline_focus_next');
-glide.keymaps.set('command', '<C-p>', 'commandline_focus_back');
+    ['command', '<C-n>', 'commandline_focus_next', 'Focus next command' ],
+    ['command', '<C-p>', 'commandline_focus_back', 'Focus previous command'],
 
-//
-// Tabs
+    //
+    // Normal
 
-glide.keymaps.set('normal', '<leader>t', 'tab_new', {
-  description: 'Open a new tab',
-});
+    // Tabs
+    ['normal', 'q', 'tab_close', 'Close current tab'],
+    ['normal', '<S-q>', 'tab_reopen', 'Reopen last closed tab'],
+    ['normal', 't', 'tab_new', 'Open a new tab'],
+    ['normal', '<leader>td', 'tab_duplicate', 'Duplicate the active tab'],
+    ['normal', '<leader>tp', 'tab_pin_toggle', 'Toggle pinning the active tab'],
 
-/**
- * Toggle tab pinning
- */
-glide.keymaps.set(
-  'normal',
-  '<C-S-p>',
-  async () => {
-    const { pinned } = await glide.tabs.active();
-
-    await glide.excmds.execute(pinned ? 'tab_unpin' : 'tab_pin');
-  },
-  { description: 'Toggle pinned state of the current tab' },
-);
-
-//
-// Glide
-
-/**
- * Clear alert notifications
- */
-glide.keymaps.set(
-  'normal',
-  '<leader><C-l>',
-  async () => glide.excmds.execute('clear'),
-  { description: 'Clear alert notifications' },
-);
-
-/**
- * Reload configuration
- */
-glide.keymaps.set(
-  'normal',
-  '<leader><C-r>',
-  async () => glide.excmds.execute('config_reload'),
-  { description: 'Reload configuration' },
+    // Glide
+    ['normal', '<leader><C-l>', 'clear', 'Clear alert notifications'],
+    ['normal', '<leader><C-r>', 'config_reload', 'Reload configuration'],
+  ] satisfies SimpleKeymapTuple[]
+).map(([mode, map, command, description]) =>
+  glide.keymaps.set(mode, map, command, { description }),
 );

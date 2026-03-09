@@ -6,7 +6,8 @@
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "DOM.AsyncIterable", "ESNext"],
     "types": [
-      "./glide.d.ts"
+      "./glide.d.ts",
+      "@total-typescript/ts-reset"
     ],
     "target": "esnext",
     "module": "esnext",
