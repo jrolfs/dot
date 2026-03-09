@@ -32,7 +32,6 @@ browser.webRequest.onBeforeRequest.addListener(
   },
   {
     urls: ['*://accounts.google.com/gsi/*'],
-    types: ['script'],
   },
   ['blocking'],
 );
