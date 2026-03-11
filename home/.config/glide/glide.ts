@@ -6,7 +6,13 @@
  */
 
 glide.include('keymaps.ts');
+
+// Commands
+
+glide.include('settings.ts');
 glide.include('tabs.ts');
 glide.include('windows.ts');
+
+// Miscellaneous
 
 glide.include('google-signin.ts');
