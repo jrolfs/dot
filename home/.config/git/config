@@ -193,8 +193,8 @@
   cmd = nvim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c \"SpliceInit\"
   trustExitCode = true
 [credential "https://github.com"]
-	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
+  helper =
+  helper = !/run/current-system/sw/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
+  helper =
+  helper = !/run/current-system/sw/bin/gh auth git-credential
