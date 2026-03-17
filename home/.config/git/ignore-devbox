@@ -1,3 +1,5 @@
+jamie.*.code-workspace
+
 devbox.d/
 .devbox
 .direnv/
