@@ -1,14 +1,14 @@
 {
   "name": "glide-config",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
   "description": "",
+  "keywords": [],
+  "license": "",
+  "author": "",
   "scripts": {
     "tsc": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "",
   "dependencies": {
     "@total-typescript/ts-reset": "^0.6.1",
     "typescript": "^5.9.2"
