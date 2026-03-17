@@ -25,7 +25,7 @@ const tabDuplicate = glide.excmds.create(
     assert(id);
 
     await browser.tabs.duplicate(id);
-  }
+  },
 );
 // oxfmt-ignore
 declare global { interface ExcmdRegistry { tab_duplicate: typeof tabDuplicate; } }
