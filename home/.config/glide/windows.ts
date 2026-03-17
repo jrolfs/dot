@@ -16,3 +16,24 @@ const windowClose = glide.excmds.create(
 );
 // oxfmt-ignore
 declare global { interface ExcmdRegistry { window_close: typeof windowClose; } }
+
+const windowList = glide.excmds.create(
+  {
+    name: 'window_list',
+    description: 'List open windows with their IDs',
+  },
+  async () => {
+    const windows = await browser.windows.getAll();
+
+    glide.commandline.show({
+      options: windows.map(({ id, title }) => ({
+        label: `${id}: ${title}`,
+        execute() {
+          console.log(`window ${id} was selected`);
+        },
+      })),
+    });
+  },
+);
+// oxfmt-ignore
+declare global { interface ExcmdRegistry { window_list: typeof windowList; } }
