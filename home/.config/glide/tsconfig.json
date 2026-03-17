@@ -1,14 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "DOM.AsyncIterable", "ESNext"],
-    "types": [
-      "./glide.d.ts",
-      "@total-typescript/ts-reset"
-    ],
+    "types": ["./glide.d.ts", "@total-typescript/ts-reset"],
     "target": "esnext",
     "module": "esnext",
     "moduleDetection": "force",
