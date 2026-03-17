@@ -9,7 +9,7 @@ import type { SimpleKeymapTuple } from './types';
     //
     // Command
 
-    ['command', '<C-n>', 'commandline_focus_next', 'Focus next command' ],
+    ['command', '<C-n>', 'commandline_focus_next', 'Focus next command'],
     ['command', '<C-p>', 'commandline_focus_back', 'Focus previous command'],
 
     //
