@@ -20,7 +20,7 @@ const tabDuplicate = glide.excmds.create(
     description: 'Duplicate the active tab',
   },
   async () => {
-    const { id } = await browser.tabs.getCurrent();
+    const { id } = await glide.tabs.active()
 
     assert(id);
 

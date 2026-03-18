@@ -22,6 +22,23 @@ import type { SimpleKeymapTuple } from './types';
     ['normal', '<leader>td', 'tab_duplicate', 'Duplicate the active tab'],
     ['normal', '<leader>tp', 'tab_pin_toggle', 'Toggle pinning the active tab'],
 
+    // Windows
+    ['normal', '<leader>wl', 'window_list', 'List open windows with their IDs'],
+
+    // Settings
+    [
+      'normal',
+      '<leader>ss',
+      'scale_toggle 1.6 2.0',
+      'Toggle pixel density for all windows between 1.6 and 2.0',
+    ],
+    [
+      'normal',
+      '<leader>sS',
+      'scale',
+      'Scale pixel density to specified decimal value',
+    ],
+
     // Glide
     ['normal', '<leader><C-l>', 'clear', 'Clear alert notifications'],
     ['normal', '<leader><C-r>', 'config_reload', 'Reload configuration'],
