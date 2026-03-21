@@ -5,19 +5,21 @@ def main(args):
     pass
 
 
-def _count_leaves(node):
+def _count_same_axis(node, horizontal):
     from kitty.layout.splits import Pair
 
-    if isinstance(node, Pair):
-        return _count_leaves(node.one) + _count_leaves(node.two)
+    if not isinstance(node, Pair):
+        return 1
+    if node.horizontal == horizontal:
+        return _count_same_axis(node.one, horizontal) + _count_same_axis(node.two, horizontal)
     return 1
 
 
 def _equalize(pair):
     from kitty.layout.splits import Pair
 
-    left = _count_leaves(pair.one)
-    right = _count_leaves(pair.two)
+    left = _count_same_axis(pair.one, pair.horizontal)
+    right = _count_same_axis(pair.two, pair.horizontal)
     pair.bias = left / (left + right)
 
     if isinstance(pair.one, Pair):
