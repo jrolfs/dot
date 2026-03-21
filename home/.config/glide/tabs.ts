@@ -20,7 +20,7 @@ const tabDuplicate = glide.excmds.create(
     description: 'Duplicate the active tab',
   },
   async () => {
-    const { id } = await glide.tabs.active()
+    const { id } = await glide.tabs.active();
 
     assert(id);
 
@@ -49,8 +49,12 @@ const tabPinToggle = glide.excmds.create(
 // oxfmt-ignore
 declare global { interface ExcmdRegistry { tab_pin_toggle: typeof tabPinToggle; } }
 
-const hasId = <T extends { id?: number }>(entity: T): entity is T & { id: number } =>
-  typeof entity.id !== 'undefined';
+const hasId = <T extends { id?: number }>(
+  entity: T,
+): entity is T & { id: number } => typeof entity.id !== 'undefined';
+
+const truncate = (value: string, length: number) =>
+  value.length > length ? `${value}…` : value;
 
 const tabMove = glide.excmds.create(
   {
@@ -60,18 +64,24 @@ const tabMove = glide.excmds.create(
   async ({ args_arr: [arg] }) => {
     const { id: tabId } = await glide.tabs.active();
 
-    const move = async (windowId: number) => await browser.tabs.move(tabId, {
-      windowId,
-      index: 0,
+    const move = async (windowId: number, index: number = -1) =>
+      await browser.tabs.move(tabId, {
+        windowId,
+        index,
+      });
 
-    });
+    // Interactive list
 
     if (arg === 'list') {
       const windows = await browser.windows.getAll();
 
       glide.commandline.show({
-        options: windows.filter(hasId).map(({ id, title }) => ({
-          label: `${id}: ${title}`,
+        options: windows.filter(hasId).map(({ id, title, tabs }) => ({
+          label: `${id}: ${title} ${tabs
+            ?.map(t => t.title)
+            .filter(Boolean)
+            .map(title => `⎡${truncate(title, 15)}⎤`)
+            .join('')}`,
           execute: async () => move(id),
         })),
       });
@@ -79,27 +89,34 @@ const tabMove = glide.excmds.create(
       return;
     }
 
+    // Target window ID
+
     const argId = arg && /\d+/.test(arg) ? parseInt(arg, 10) : null;
 
-    const window = argId
-      ? await browser.windows.get(argId)
-      : await browser.windows.create();
+    if (argId) {
+      const { id } = await browser.windows.get(argId);
 
-    const { id: windowId } = window;
+      assert(id);
+      await move(id);
 
-    assert(windowId);
-
-    await move(windowId);
-
-    // If we're opening a new window, it opens with an empty tab open to the new
-    // tab page by default, but we only want the moved tab in that window
-    if (!argId) {
-      const emptyTab = window.tabs?.at(-1);
-
-      if (!emptyTab?.id) return;
-
-      await browser.tabs.remove(emptyTab.id);
+      return;
     }
+
+    // New window
+
+    const window = await browser.windows.create();
+    const { id } = window;
+
+    assert(id);
+    await move(id, 1);
+
+    // When opening a new window, it opens with an empty tab open to the new
+    // tab page by default, but we only want the moved tab in that window
+    const emptyId = window.tabs?.at(-1)?.id;
+
+    if (typeof emptyId !== 'number') return;
+
+    await browser.tabs.remove(emptyId);
   },
 );
 // oxfmt-ignore
