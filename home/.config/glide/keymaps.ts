@@ -24,6 +24,7 @@ import type { SimpleKeymapTuple } from './types';
 
     // Windows
     ['normal', '<leader>wl', 'window_list', 'List open windows with their IDs'],
+    ['normal', '<leader>wq', 'window_close', 'Close window'],
 
     // Settings
     [
