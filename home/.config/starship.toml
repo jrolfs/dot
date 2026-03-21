@@ -54,9 +54,15 @@ $nix_shell\
 $character\
 """
 
+# right_format = """
+# ${custom.pair}\
+# $kubernetes\
+# $cmd_duration
+# """
+
 right_format = """
 ${custom.pair}\
-$kubernetes\
+$direnv
 $cmd_duration
 """
 
