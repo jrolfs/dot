@@ -30,8 +30,8 @@ import type { SimpleKeymapTuple } from './types';
     [
       'normal',
       '<leader>ss',
-      'scale_toggle 1.6 2.0',
-      'Toggle pixel density for all windows between 1.6 and 2.0',
+      'scale_toggle 1.8 2.0',
+      'Toggle pixel density for all windows between 1.8 and 2.0',
     ],
     [
       'normal',
