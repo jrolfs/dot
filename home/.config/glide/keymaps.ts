@@ -21,6 +21,8 @@ import type { SimpleKeymapTuple } from './types';
     ['normal', 't', 'tab_new', 'Open a new tab'],
     ['normal', '<leader>td', 'tab_duplicate', 'Duplicate the active tab'],
     ['normal', '<leader>tp', 'tab_pin_toggle', 'Toggle pinning the active tab'],
+    ['normal', '<leader>tD', 'tab_move', 'Detach current tab into a new window'],
+    ['normal', '<leader>tm', 'tab_move list', 'Move tab to another window'],
 
     // Windows
     ['normal', '<leader>wl', 'window_list', 'List open windows with their IDs'],
