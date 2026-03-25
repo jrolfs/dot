@@ -35,3 +35,6 @@
 [submodule "vscode"]
 	path = vscode
 	url = git@github.com:jrolfs/vscode.git
+[submodule "spicetify-gruvbox-material"]
+	path = spicetify-gruvbox-material
+	url = git@github.com:whiterqbbit/spicetify-gruvbox-material.git
