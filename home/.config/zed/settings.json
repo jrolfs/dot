@@ -1,8 +1,13 @@
 {
-  "theme": "Gruvbox Material",
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "theme": "Gruvbox Material Custom Dark",
   "vim_mode": true,
   "ui_font_size": 15,
-  "buffer_font_size": 14,
+  "buffer_font_size": 13,
   "ui_font_family": "IBM Plex Sans",
   "buffer_font_family": "JetBrains Mono",
   "format_on_save": "off",
@@ -12,60 +17,4 @@
     "font_size": 13,
     "font_fallbacks": ["JetBrainsMono Nerd Font", "FiraCode Nerd Font"]
   },
-  "theme_overrides": {
-    "Gruvbox Material": {
-      "syntax": {
-        "constructor": {
-          "color": "#89b482"
-        },
-        "keyword": {
-          "color": "#ea6962",
-          "font_style": "normal"
-        },
-        "type": {
-          "color": "#7daea3"
-        },
-        "type.builtin": {
-          "color": "#7daea3"
-        },
-        "boolean": {
-          "color": "#d3869b"
-        },
-        "number": {
-          "color": "#d3869b"
-        },
-        "constant": {
-          "color": "#d4be98"
-        },
-        "enum": {
-          "color": "#d3869b"
-        },
-        "variable.special":  {
-          "color": "#e78a4e"
-        },
-        "string": {
-          "color": "#d8a657"
-        },
-        "function": {
-          "color": "#a9b665",
-          "font_weight": 400
-        },
-        "property": {
-          "color": "#d4be98"
-        },
-        "label": {
-          "color": "#000000"
-        },
-        "operator": {
-          "color": "#e78a4e"
-        },
-        "tag": {
-          "color": "#e78a4e"
-        },
-        "attribute": {
-          "color": "#a9b665"
-        }
-      }
-    }
-  }
 }
