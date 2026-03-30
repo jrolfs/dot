@@ -62,7 +62,7 @@ zinit light bobthecow/launchctl-completion
 zinit ice wait lucid
 zinit light ahmetb/kubectx
 
-# Replay completions after Turbo-loaded plugins register theirs
+# Initialize completions after Turbo-loaded plugins register theirs
 zinit ice wait lucid atload"zicompinit; zicdreplay"
 zinit light zdharma-continuum/null
 

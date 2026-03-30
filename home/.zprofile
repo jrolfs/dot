@@ -27,6 +27,7 @@ typeset -gU cdpath fpath mailpath path
 
 # ZSH function search path
 fpath+=(
+  ${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions
   $XDG_CONFIG_HOME/zsh/themes
   $XDG_CONFIG_HOME/zsh/completions
 )
