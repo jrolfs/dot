@@ -1,6 +1,7 @@
 setopt extendedglob
 
-for config in $XDG_CONFIG_HOME/zsh/(^(prezto|completion)).zsh; source $config
+mkdir -p $XDG_CONFIG_HOME/zsh/completions
+source $XDG_CONFIG_HOME/zsh/starship.zsh
 
 # Editors
 export EDITOR='nvim'

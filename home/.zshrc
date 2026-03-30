@@ -9,57 +9,65 @@ platformrc="${HOME}/.zshrc.$(uname | tr '[:upper:]' '[:lower:]')"
 unset preztorc platformrc
 
 #
-# <zplug>
+# <zinit>
 #
 
-source ~/.zplug/init.zsh
+source "$HOMESHICK_KINGDOM/dot/zinit/zinit.zsh"
 
-zplug "sorin-ionescu/prezto", \
-  as:plugin, \
-  use:init.zsh, \
-  hook-build:"pwd | xargs -I {} ln -fs {} $HOME/.zprezto"
+# Prezto (synchronous — must load before interactive features)
+zinit ice pick"init.zsh" \
+  atclone"git clone git@github.com:belak/prezto-contrib.git contrib" \
+  atpull"cd contrib && git pull"
+zinit light sorin-ionescu/prezto
 
-zplug "belak/prezto-contrib", \
-  as:plugin, \
-  hook-build:"pwd | xargs -I {} ln -fs {} $HOME/.zprezto/contrib"
+# Local configs
+for config in $XDG_CONFIG_HOME/zsh/init/(^_*).zsh; zinit snippet "$config"
 
-zplug "$XDG_CONFIG_HOME/zsh", \
-  from:local, \
-  use:"*.zsh"
+# Post-Prezto hooks (order-sensitive — must load after Prezto's editor module)
+zinit ice atload'
+  eval "$(atuin init zsh --disable-up-arrow)"
+  bindkey "^[[A" up-line-or-search
+  bindkey "^[[B" down-line-or-search
+'
+zinit light zdharma-continuum/null
 
-zplug "$HOME/.homesick/repos/homeshick", \
-  from:local, \
-  use:homeshick.sh
+zinit ice atload'eval "$(direnv hook zsh)"'
+zinit light zdharma-continuum/null
 
-zplug "$HOME/.travis", \
-  from:local, \
-  defer:3, \
-  use:travis.sh
+# Homeshick
+zinit snippet "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/gem", from:oh-my-zsh
-zplug "plugins/golang", from:oh-my-zsh
-zplug "plugins/mosh", from:oh-my-zsh
-zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/pod", from:oh-my-zsh
+# OMZ plugins (Turbo — mostly completions)
+zinit wait lucid for \
+  OMZ::plugins/gem/gem.plugin.zsh \
+  OMZ::plugins/golang/golang.plugin.zsh \
+  OMZ::plugins/mosh/mosh.plugin.zsh \
+  OMZ::plugins/pip/pip.plugin.zsh
 
-zplug "andsens/homeshick", use:completions
-zplug "homebrew/brew", use:completions/zsh
-zplug "bobthecow/launchctl-completion", use:"launchctl-completion.bash"
+# Completions (Turbo)
+zinit wait lucid for \
+  zsh-users/zsh-completions \
+  ryutok/rust-zsh-completions
 
-zplug "ahmetb/kubectx"
+zinit ice wait lucid pick"completions"
+zinit light andsens/homeshick
 
-zplug "zsh-users/zsh-completions"
-zplug "ryutok/rust-zsh-completions"
+zinit ice wait lucid pick"completions/zsh"
+zinit light homebrew/brew
 
-if ! zplug check; then
-  zplug install
-fi
+zinit ice wait lucid pick"launchctl-completion.bash"
+zinit light bobthecow/launchctl-completion
 
-zplug load
+# Kubectx
+zinit ice wait lucid
+zinit light ahmetb/kubectx
+
+# Replay completions after Turbo-loaded plugins register theirs
+zinit ice wait lucid atload"zicompinit; zicdreplay"
+zinit light zdharma-continuum/null
 
 #
-# </zplug>
+# </zinit>
 #
 
 if [[ -v STARSHIP_ENABLED ]] then
