@@ -195,7 +195,8 @@
       "globals": {
         "assert": "readonly",
         "glide": "readonly",
-        "browser": "readonly"
+        "browser": "readonly",
+        "DOM": "readonly"
       },
       "env": {
         "browser": true,
