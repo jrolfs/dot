@@ -23,6 +23,13 @@ import type { SimpleKeymapTuple } from './types';
     ['normal', '<leader>tp', 'tab_pin_toggle', 'Toggle pinning the active tab'],
     ['normal', '<leader>tD', 'tab_move', 'Detach current tab into a new window'],
     ['normal', '<leader>tm', 'tab_move list', 'Move tab to another window'],
+    // Groups
+    ['normal', '<leader>tg', 'tab_group_move list', 'Move tab into a group'],
+    ['normal', '<leader>tG', 'tab_group_move', 'Move tab into a new group'],
+    ['normal', '<leader>tr', 'tab_group_rename', 'Rename the active tab group'],
+    ['normal', '<leader>tc', 'tab_group_collapse_toggle', 'Toggle collapse of the active tab group'],
+
+    ['normal', '<leader><leader>', 'tab_search_all', 'Fuzzy search tabs across all windows'],
 
     // Windows
     ['normal', '<leader>wl', 'window_list', 'List open windows with their IDs'],
