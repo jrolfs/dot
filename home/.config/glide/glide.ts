@@ -12,6 +12,7 @@ glide.include('keymaps.ts');
 glide.include('settings.ts');
 glide.include('tabs.ts');
 glide.include('tab-activity.ts');
+glide.include('tab-pip.ts');
 glide.include('windows.ts');
 
 // Miscellaneous

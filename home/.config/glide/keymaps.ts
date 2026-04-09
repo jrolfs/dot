@@ -30,6 +30,8 @@ import type { SimpleKeymapTuple } from './types';
     ['normal', '<leader>tc', 'tab_group_collapse_toggle', 'Toggle collapse of the active tab group'],
     // Activity
     ['normal', '<leader>ta', 'tab_activity toggle', 'Toggle activity capture on the active tab'],
+    // PiP
+    ['normal', '<leader>tf', 'tab_pip toggle', 'Toggle floating PiP window for the active tab'],
 
     ['normal', '<leader><leader>', 'tab_search_all', 'Fuzzy search tabs across all windows'],
 
