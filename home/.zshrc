@@ -31,7 +31,10 @@ zinit ice atload'
 '
 zinit light zdharma-continuum/null
 
-zinit ice atload'eval "$(direnv hook zsh)"'
+zinit ice nocd atload'eval "$(direnv hook zsh)"'
+zinit light zdharma-continuum/null
+
+zinit ice nocd atload'eval "$(command wt config shell init zsh)"' if'command -v wt'
 zinit light zdharma-continuum/null
 
 # Homeshick
