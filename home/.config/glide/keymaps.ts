@@ -28,6 +28,8 @@ import type { SimpleKeymapTuple } from './types';
     ['normal', '<leader>tG', 'tab_group_move', 'Move tab into a new group'],
     ['normal', '<leader>tr', 'tab_group_rename', 'Rename the active tab group'],
     ['normal', '<leader>tc', 'tab_group_collapse_toggle', 'Toggle collapse of the active tab group'],
+    // Activity
+    ['normal', '<leader>ta', 'tab_activity toggle', 'Toggle activity capture on the active tab'],
 
     ['normal', '<leader><leader>', 'tab_search_all', 'Fuzzy search tabs across all windows'],
 
