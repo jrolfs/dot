@@ -55,6 +55,8 @@
     "bindings": {
       "] w": "pane::ActivateNextItem",
       "[ w": "pane::ActivatePreviousItem",
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPreviousHunk",
     },
   },
 
