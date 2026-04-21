@@ -162,6 +162,9 @@
 [difftool "ksdiff"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
+[difftool "zed"]
+  cmd = zed --wait --diff $LOCAL $REMOTE
+
 [difftool "kitty"]
     cmd = kitty +kitten diff $LOCAL $REMOTE
 
