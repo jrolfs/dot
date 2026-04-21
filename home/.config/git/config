@@ -125,6 +125,10 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 
+[filter "spicetify"]
+	clean = ~/.config/git/filters/spicetify-clean
+	smudge = cat
+
 
 ; Delta
 
