@@ -1,5 +1,5 @@
 {
-  "semantic_tokens": "off",
+  "semantic_tokens": "combined",
   "agent_servers": {
     "claude-acp": {
       "type": "registry"
