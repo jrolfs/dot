@@ -66,6 +66,11 @@
 #
 # See LLM commits docs (https://worktrunk.dev/llm-commits/) for setup and Custom prompt templates (#custom-prompt-templates) for template customization.
 #
+# ## Step config
+
+[step.copy-ignored]
+exclude = ["node_modules/"]
+
 # ## Command config
 #
 # ### List
@@ -234,3 +239,10 @@
 #
 # """
 # <!-- DEFAULT_SQUASH_TEMPLATE_END -->
+
+[pre-start]
+copy = "wt step copy-ignored"
+
+[projects."github.com/meterup/frontends"]
+post-create.direnv = "direnv allow"
+post-create.deps = "pnpm install"
