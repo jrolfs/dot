@@ -42,15 +42,14 @@ _ktt_detect_project() {
   fi
 }
 
+typeset -g _ktt_max_title_len=30
+
 _ktt_set_title() {
   _ktt_detect_project
-  print -Pn "\e]2;${_ktt_icon}%1~\a"
-}
-
-_ktt_preexec() {
-  print -n "\e]2;${_ktt_icon}${1%% *}\a"
+  local title="${(%):-%1~}"
+  (( ${#title} > _ktt_max_title_len )) && title="${title:0:$((_ktt_max_title_len - 1))}…"
+  print -n "\e]2;${_ktt_icon}${title}\a"
 }
 
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _ktt_set_title
-add-zsh-hook preexec _ktt_preexec
