@@ -169,9 +169,6 @@
 [difftool "cursor"]
   cmd = cursor -n --wait --disable-extension=\"eamodio.gitlens\" --diff $LOCAL $REMOTE
 
-[difftool "ksdiff"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
 [difftool "zed"]
   cmd = zed --wait --diff $LOCAL $REMOTE
 
@@ -190,24 +187,10 @@
 [mergetool "cursor"]
   cmd = cursor -n --wait $MERGED --disable-extension=\"eamodio.gitlens\"
 
-[mergetool "ksdiff"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-
-[mergetool "smerge"]
-  cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-  trustExitCode = true
-
 [mergetool "zed"]
   cmd = zed --wait --new --diff "$LOCAL" "$MERGED"
   trustExitCode = false
 
-[mergetool "nvim"]
-  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
-
-[mergetool "splice"]
-  cmd = nvim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c \"SpliceInit\"
-  trustExitCode = true
 [credential "https://github.com"]
   helper =
   helper = !/run/current-system/sw/bin/gh auth git-credential
