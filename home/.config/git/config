@@ -67,13 +67,19 @@
 [diff]
   tool = cursor
 [merge]
-  tool = cursor
+  tool = zed
+  conflictstyle = zdiff3
 
 [difftool]
   prompt = false
 [mergetool]
-  prompt = false
+  prompt = true
   keepBackup = false
+  hideResolved = true
+
+[rerere]
+  enabled = true
+  autoUpdate = true
 
 
 ; Aliases
@@ -188,10 +194,13 @@
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
 
-
 [mergetool "smerge"]
   cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
   trustExitCode = true
+
+[mergetool "zed"]
+  cmd = zed --wait --new --diff "$LOCAL" "$MERGED"
+  trustExitCode = false
 
 [mergetool "nvim"]
   cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
