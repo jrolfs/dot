@@ -360,6 +360,132 @@ const windowDivider = (
     }),
 });
 
+const DEFAULT_RECENTLY_CLOSED_COUNT = 10;
+
+const closedTabOption = (
+  session: Browser.Sessions.Session & { tab: Browser.Tabs.Tab },
+): glide.CommandLineCustomOption => {
+  const { tab } = session;
+  const title = tab.title ?? '';
+  const url = tab.url ?? '';
+  const closedAt = new Date(session.lastModified * 1000);
+  const timeAgo = formatTimeAgo(closedAt);
+
+  return {
+    label: title,
+    description: url,
+    render: () =>
+      DOM.create_element('div', {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          width: '100%',
+        },
+        children: [
+          ...(tab.favIconUrl
+            ? [
+                DOM.create_element('img', {
+                  src: tab.favIconUrl,
+                  style: { width: '16px', height: '16px', flexShrink: '0' },
+                }),
+              ]
+            : [
+                DOM.create_element('span', {
+                  style: { width: '16px', flexShrink: '0' },
+                }),
+              ]),
+          DOM.create_element('span', {
+            style: {
+              flexShrink: '1',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            },
+            children: [title],
+          }),
+          DOM.create_element('span', {
+            style: {
+              marginLeft: 'auto',
+              opacity: '0.5',
+              flexShrink: '0',
+              fontSize: '0.85em',
+            },
+            children: [timeAgo],
+          }),
+          DOM.create_element('span', {
+            style: {
+              opacity: '0.5',
+              flexShrink: '1',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            },
+            children: [url],
+          }),
+        ],
+      }),
+    matches: ({ input }) => {
+      if (!input) return true;
+
+      const lower = input.toLowerCase();
+
+      return (
+        title.toLowerCase().includes(lower) || url.toLowerCase().includes(lower)
+      );
+    },
+    execute: async () => {
+      assert(tab.sessionId);
+      await browser.sessions.restore(tab.sessionId);
+    },
+  };
+};
+
+const formatTimeAgo = (date: Date): string => {
+  const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+
+  if (seconds < 60) return 'just now';
+
+  const minutes = Math.floor(seconds / 60);
+
+  if (minutes < 60) return `${minutes}m ago`;
+
+  const hours = Math.floor(minutes / 60);
+
+  if (hours < 24) return `${hours}h ago`;
+
+  const days = Math.floor(hours / 24);
+
+  return `${days}d ago`;
+};
+
+const hasTab = (
+  session: Browser.Sessions.Session,
+): session is Browser.Sessions.Session & { tab: Browser.Tabs.Tab } =>
+  session.tab != null;
+
+const tabRecentlyClosed = glide.excmds.create(
+  {
+    name: 'tab_recently_closed',
+    description: 'Browse and restore recently closed tabs',
+  },
+  async ({ args_arr: [arg] }) => {
+    const count = arg && /^\d+$/.test(arg)
+      ? parseInt(arg, 10)
+      : DEFAULT_RECENTLY_CLOSED_COUNT;
+
+    const sessions = await browser.sessions.getRecentlyClosed({ maxResults: count });
+    const tabSessions = sessions.filter(hasTab);
+
+    glide.commandline.show({
+      title: 'recently closed tabs',
+      options: tabSessions.map(closedTabOption),
+    });
+  },
+);
+// oxfmt-ignore
+declare global { interface ExcmdRegistry { tab_recently_closed: typeof tabRecentlyClosed; } }
+
 const tabSearchAll = glide.excmds.create(
   {
     name: 'tab_search_all',

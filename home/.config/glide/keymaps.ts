@@ -34,6 +34,7 @@ import type { SimpleKeymapTuple } from './types';
     ['normal', '<leader>tf', 'tab_pip toggle', 'Toggle floating PiP window for the active tab'],
 
     ['normal', '<leader><leader>', 'tab_search_all', 'Fuzzy search tabs across all windows'],
+    ['normal', '<leader>tQ', 'tab_recently_closed', 'List recently closed tabs'],
 
     // Windows
     ['normal', '<leader>wl', 'window_list', 'List open windows with their IDs'],
