@@ -47,7 +47,17 @@ typeset -g _ktt_max_title_len=30
 _ktt_set_title() {
   _ktt_detect_project
   local title="${(%):-%1~}"
-  (( ${#title} > _ktt_max_title_len )) && title="${title:0:$((_ktt_max_title_len - 1))}…"
+
+  # Shorten worktree prefixes: frontends.branch-name → f.branch-name
+  if [[ "$title" == *.* ]]; then
+    local prefix="${title%%.*}"
+    local rest="${title#*.}"
+    if [[ -d "${PWD:h}/${prefix}" ]]; then
+      title="${prefix[1]}.${rest}"
+    fi
+  fi
+
+  (( ${#title} > _ktt_max_title_len )) && title="${title:0:$((_ktt_max_title_len - 1))} "
   print -n "\e]2;${_ktt_icon}${title}\a"
 }
 
