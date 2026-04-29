@@ -42,7 +42,7 @@ _ktt_detect_project() {
   fi
 }
 
-typeset -g _ktt_max_title_len=30
+typeset -g _ktt_max_title_len=24
 
 _ktt_set_title() {
   _ktt_detect_project
@@ -53,6 +53,7 @@ _ktt_set_title() {
     local prefix="${title%%.*}"
     local rest="${title#*.}"
     if [[ -d "${PWD:h}/${prefix}" ]]; then
+      rest="${rest#jamie-}"
       title="${prefix[1]}.${rest}"
     fi
   fi
