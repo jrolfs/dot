@@ -4,7 +4,7 @@ format = """
 $username\
 $hostname\
 $shlvl\
-$directory\
+${custom.directory}\
 $git_branch\
 $hg_branch\
 $git_commit\
@@ -84,6 +84,7 @@ vimcmd_symbol = "[·](green)"
 
 
 [directory]
+disabled = true
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = true
@@ -95,6 +96,12 @@ format = " took [$duration]($style)"
 
 #
 # ---------- Context ---------------------------------------
+
+[custom.directory]
+command = "$XDG_CONFIG_HOME/starship/directory.zsh"
+when = true
+format = "[$output](cyan bold) "
+shell = ["zsh", "--no-rcs"]
 
 [custom.pinentry]
 command = "$XDG_CONFIG_HOME/starship/pinentry.sh"
