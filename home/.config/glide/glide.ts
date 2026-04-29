@@ -14,6 +14,7 @@ glide.include('tabs.ts');
 glide.include('tab-activity.ts');
 glide.include('tab-pip.ts');
 glide.include('windows.ts');
+glide.include('cookies.ts');
 
 // Miscellaneous
 
