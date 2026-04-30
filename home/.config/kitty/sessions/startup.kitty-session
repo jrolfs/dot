@@ -1,5 +1,8 @@
 # vim:fileencoding=utf-8:ft=conf
 
+# Pre-start gpg-agent so parallel shells don't race to start it, then load work session
+launch /run/current-system/sw/bin/zsh --login -c "gpgconf --launch gpg-agent 2>/dev/null; sleep 1 && kitty @ action goto_session $HOME/.config/kitty/sessions/work.kitty-session && kitty @ action goto_session $HOME/.config/kitty/sessions/startup.kitty-session && kitty @ close-window --self"
+
 # Dot
 
 new_tab  dot
