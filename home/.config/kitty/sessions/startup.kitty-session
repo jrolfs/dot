@@ -1,11 +1,11 @@
-# vim:fileencoding=utf-8:ft=conf
+# vim:fileencoding=utf-8:ft=kitty
 
-# Pre-start gpg-agent so parallel shells don't race to start it, then load work session
-launch /run/current-system/sw/bin/zsh --login -c "gpgconf --launch gpg-agent 2>/dev/null; sleep 1 && kitty @ action goto_session $HOME/.config/kitty/sessions/work.kitty-session && kitty @ action goto_session $HOME/.config/kitty/sessions/startup.kitty-session && kitty @ close-window --self"
+# Pre-start gpg-agent so parallel shells don't race to start it, then load other sessions
+launch /run/current-system/sw/bin/zsh --login -c "gpgconf --launch gpg-agent 2>/dev/null; sleep 1 && kitty @ action goto_session $HOME/.config/kitty/sessions/work.kitty-session && kitty @ action goto_session $HOME/.config/kitty/sessions/personal.kitty-session && kitty @ action goto_session $HOME/.config/kitty/sessions/startup.kitty-session && kitty @ close-window --self"
 
 # Dot
 
-new_tab  dot
+new_tab  dot
 layout splits
 
 cd ~/.homesick/repos/dot
@@ -16,7 +16,7 @@ launch --location=hsplit /run/current-system/sw/bin/zsh --login
 
 # macOS
 
-new_tab  macos
+new_tab  macos
 layout splits
 
 cd ~/.homesick/repos/macos
@@ -27,7 +27,7 @@ launch --location=hsplit /run/current-system/sw/bin/zsh --login
 
 # Neovim
 
-new_tab  neovim
+new_tab  neovim
 layout splits
 
 cd ~/.homesick/repos/neovim
@@ -38,7 +38,7 @@ launch --location=hsplit /run/current-system/sw/bin/zsh --login
 
 # Private
 
-new_tab  private
+new_tab  private
 layout splits
 
 cd ~/.homesick/repos/private
