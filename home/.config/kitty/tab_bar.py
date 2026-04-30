@@ -17,7 +17,7 @@ def draw_tab(
     )
 
     if is_last and tab.active_session_name:
-        session_label = f"  {tab.active_session_name}  "
+        session_label = f"   {tab.active_session_name}  "
         label_len = len(session_label)
         cells_available = screen.columns - end
 
