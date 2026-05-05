@@ -73,4 +73,13 @@
       "cmd-ctrl-l": "agent::Toggle"
     }
   },
+
+  // Standard macOS bindings
+  {
+    "use_key_equivalents": true,
+    "bindings": {
+      "shift-escape": null,
+      "ctrl-w z": "workspace::ToggleZoom",
+    },
+  },
 ]
