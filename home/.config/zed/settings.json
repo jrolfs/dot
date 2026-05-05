@@ -86,6 +86,7 @@
     "dock": "right"
   },
   "agent": {
+    "show_turn_stats": true,
     "sidebar_side": "right",
     "dock": "right",
     "favorite_models": [],
