@@ -19,7 +19,7 @@
   "use_system_path_prompts": false,
   "active_pane_modifiers": {
     "border_size": 0.0,
-    "inactive_opacity": 0.8
+    "inactive_opacity": 0.85
   },
   "preview_tabs": {
     "enable_preview_file_from_code_navigation": false
