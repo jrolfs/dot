@@ -35,6 +35,9 @@ import type { SimpleKeymapTuple } from './types';
 
     ['normal', '<leader><leader>', 'tab_search_all', 'Fuzzy search tabs across all windows'],
     ['normal', '<leader>tQ', 'tab_recently_closed', 'List recently closed tabs'],
+    ['normal', '<leader>t~', 'tab_close_other', 'Close all other tabs'],
+    ['normal', '<leader>t>', 'tab_close_right', 'Close tabs to the right'],
+    ['normal', '<leader>t<', 'tab_close_left', 'Close tabs to the left'],
 
     // Windows
     ['normal', '<leader>wl', 'window_list', 'List open windows with their IDs'],

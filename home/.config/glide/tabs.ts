@@ -49,9 +49,10 @@ const tabPinToggle = glide.excmds.create(
 // oxfmt-ignore
 declare global { interface ExcmdRegistry { tab_pin_toggle: typeof tabPinToggle; } }
 
-const hasId = <T extends { id?: number }>(
-  entity: T,
-): entity is T & { id: number } => typeof entity.id !== 'undefined';
+type HasId<T> = T & { id: number };
+
+const hasId = <T extends { id?: number }>(entity: T): entity is HasId<T> =>
+  typeof entity.id !== 'undefined';
 
 const truncate = (value: string, length: number) =>
   value.length > length ? `${value}…` : value;
@@ -148,7 +149,7 @@ const tabGroupMove = glide.excmds.create(
       glide.commandline.show({
         title: 'tab groups',
         options: [
-          ...groups.map((group) => ({
+          ...groups.map(group => ({
             label: formatGroup(group),
             execute: async () => addToGroup(group.id),
           })),
@@ -159,7 +160,9 @@ const tabGroupMove = glide.excmds.create(
               const groupId = await browser.tabs.group({ tabIds: tabId });
 
               if (input.trim()) {
-                await browser.tabGroups.update(groupId, { title: input.trim() });
+                await browser.tabGroups.update(groupId, {
+                  title: input.trim(),
+                });
               }
             },
           },
@@ -254,7 +257,7 @@ const tabGroupCollapseToggle = glide.excmds.create(
 declare global { interface ExcmdRegistry { tab_group_collapse_toggle: typeof tabGroupCollapseToggle; } }
 
 const tabOption = (
-  tab: Browser.Tabs.Tab & { id: number },
+  tab: HasId<Browser.Tabs.Tab>,
   isOtherWindow: boolean,
 ): glide.CommandLineCustomOption => {
   const title = tab.title ?? '';
@@ -349,12 +352,15 @@ const windowDivider = (
       },
       children: [
         DOM.create_element('span', {
-          children: [
-            `Window ${window.id}${isCurrent ? ' (current)' : ''}`,
-          ],
+          children: [`Window ${window.id}${isCurrent ? ' (current)' : ''}`],
         }),
         DOM.create_element('hr', {
-          style: { flex: '1', border: 'none', borderTop: '1px solid currentColor', opacity: '0.3' },
+          style: {
+            flex: '1',
+            border: 'none',
+            borderTop: '1px solid currentColor',
+            opacity: '0.3',
+          },
         }),
       ],
     }),
@@ -470,11 +476,14 @@ const tabRecentlyClosed = glide.excmds.create(
     description: 'Browse and restore recently closed tabs',
   },
   async ({ args_arr: [arg] }) => {
-    const count = arg && /^\d+$/.test(arg)
-      ? parseInt(arg, 10)
-      : DEFAULT_RECENTLY_CLOSED_COUNT;
+    const count =
+      arg && /^\d+$/.test(arg)
+        ? parseInt(arg, 10)
+        : DEFAULT_RECENTLY_CLOSED_COUNT;
 
-    const sessions = await browser.sessions.getRecentlyClosed({ maxResults: count });
+    const sessions = await browser.sessions.getRecentlyClosed({
+      maxResults: count,
+    });
     const tabSessions = sessions.filter(hasTab);
 
     glide.commandline.show({
@@ -485,6 +494,53 @@ const tabRecentlyClosed = glide.excmds.create(
 );
 // oxfmt-ignore
 declare global { interface ExcmdRegistry { tab_recently_closed: typeof tabRecentlyClosed; } }
+
+const closeTabsMatching = async (
+  predicate: (
+    tab: HasId<Browser.Tabs.Tab>,
+    active: Browser.Tabs.Tab,
+  ) => boolean,
+): Promise<void> => {
+  const active = await glide.tabs.active();
+  const tabs = await browser.tabs.query({ currentWindow: true });
+
+  await browser.tabs.remove(
+    tabs
+      .filter(hasId)
+      .filter(tab => !tab.pinned && predicate(tab, active))
+      .map(tab => tab.id),
+  );
+};
+
+const tabCloseOther = glide.excmds.create(
+  {
+    name: 'tab_close_other',
+    description: 'Close all tabs except the active tab',
+  },
+  async () => closeTabsMatching((tab, active) => tab.id !== active.id),
+);
+// oxfmt-ignore
+declare global { interface ExcmdRegistry { tab_close_other: typeof tabCloseOther; } }
+
+const tabCloseRight = glide.excmds.create(
+  {
+    name: 'tab_close_right',
+    description: 'Close all tabs to the right of the active tab',
+  },
+  async () => closeTabsMatching((tab, active) => tab.index > active.index),
+);
+// oxfmt-ignore
+declare global { interface ExcmdRegistry { tab_close_right: typeof tabCloseRight; } }
+
+const tabCloseLeft = glide.excmds.create(
+  {
+    name: 'tab_close_left',
+    description: 'Close all tabs to the left of the active tab',
+  },
+  async () => closeTabsMatching((tab, active) => tab.index < active.index),
+);
+// oxfmt-ignore
+declare global { interface ExcmdRegistry { tab_close_left: typeof tabCloseLeft; } }
 
 const tabSearchAll = glide.excmds.create(
   {
@@ -497,19 +553,20 @@ const tabSearchAll = glide.excmds.create(
       browser.windows.getCurrent(),
     ]);
 
-    const tabsByWindow = Map.groupBy(allTabs.filter(hasId), (tab) => tab.windowId);
-
-    const options = [...tabsByWindow.entries()].flatMap(
-      ([windowId, tabs]) => {
-        const isCurrent = windowId === currentWindow.id;
-        const window = { id: windowId } as Browser.Windows.Window;
-
-        return [
-          windowDivider(window, isCurrent),
-          ...tabs.map((tab) => tabOption(tab, !isCurrent)),
-        ];
-      },
+    const tabsByWindow = Map.groupBy(
+      allTabs.filter(hasId),
+      tab => tab.windowId,
     );
+
+    const options = [...tabsByWindow.entries()].flatMap(([windowId, tabs]) => {
+      const isCurrent = windowId === currentWindow.id;
+      const window = { id: windowId } as Browser.Windows.Window;
+
+      return [
+        windowDivider(window, isCurrent),
+        ...tabs.map(tab => tabOption(tab, !isCurrent)),
+      ];
+    });
 
     glide.commandline.show({ title: 'tabs (all windows)', options });
   },
