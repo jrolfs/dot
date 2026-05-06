@@ -69,7 +69,7 @@
   "auto_signature_help": true,
   "vertical_scroll_margin": 5.0,
   "scroll_beyond_last_line": "vertical_scroll_margin",
-  "expand_excerpt_lines": 4,
+  "expand_excerpt_lines": 6,
   "which_key": {
     "delay_ms": 500,
     "enabled": true
