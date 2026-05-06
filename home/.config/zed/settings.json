@@ -1,6 +1,7 @@
 {
+  "excerpt_context_lines": 4,
   "file_finder": {
-    "modal_max_width": "large"
+    "modal_max_width": "xlarge"
   },
   "show_wrap_guides": true,
   "indent_guides": {
