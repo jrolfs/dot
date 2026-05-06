@@ -64,3 +64,7 @@ fi
 #
 
 TMPPREFIX="$(mktemp -d)/zsh"
+
+# If installed, make OrbStack `docker` CLI etc. available
+# on `$PATH` and add associated completions to `$fpath`
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
