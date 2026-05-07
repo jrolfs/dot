@@ -88,5 +88,5 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
     $path
   )
 
-  eval "$(mise activate zsh)"
+  source $XDG_CONFIG_HOME/zsh/mise.zsh
 fi

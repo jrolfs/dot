@@ -42,7 +42,7 @@ path=(
   $path
 )
 
-eval "$(mise activate zsh)"
+source $XDG_CONFIG_HOME/zsh/mise.zsh
 
 #
 # Less
