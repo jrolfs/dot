@@ -119,4 +119,8 @@
     "font_fallbacks": ["JetBrainsMono Nerd Font", "FiraCode Nerd Font"]
   },
   "wrap_guides": [100, 120],
+  "edit_predictions": {
+    "mode": "eager",
+    "provider": "mercury"
+  }
 }
