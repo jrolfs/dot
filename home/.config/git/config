@@ -191,9 +191,14 @@
   cmd = zed --wait --new --diff "$LOCAL" "$MERGED"
   trustExitCode = false
 
+; GitHub's gh CLI adds this stuff without even asking
+
 [credential "https://github.com"]
   helper =
   helper = !/run/current-system/sw/bin/gh auth git-credential
 [credential "https://gist.github.com"]
   helper =
   helper = !/run/current-system/sw/bin/gh auth git-credential
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
