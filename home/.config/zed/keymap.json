@@ -1,5 +1,5 @@
 // Zed keymap
-//
+
 // For information on binding keys, see the Zed
 // documentation: https://zed.dev/docs/key-bindings
 //
@@ -57,6 +57,7 @@
       "[ w": "pane::ActivatePreviousItem",
       "] c": "editor::GoToHunk",
       "[ c": "editor::GoToPreviousHunk",
+      "g w": "vim::HelixJumpToWord",
     },
   },
 
