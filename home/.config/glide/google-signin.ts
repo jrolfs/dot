@@ -2,6 +2,7 @@ const GOOGLE_SIGNIN_ALLOW = [
   'accounts.google.com',
   'mail.google.com',
   'claude.ai',
+  'claude.com'
 ] as const satisfies string[];
 
 const isGoogleSigninAllowed = (url: string): boolean => {
