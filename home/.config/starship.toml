@@ -182,6 +182,10 @@ format = "[${symbol}](bold blue)"
 #
 # ---------- Languages -------------------------------------
 
+[docker_context]
+symbol = " "
+format = " [${symbol}(${context})]($style)"
+
 [nodejs]
 style = "bold green"
 symbol = " "
