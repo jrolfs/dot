@@ -34,6 +34,9 @@ zinit light zdharma-continuum/null
 zinit ice nocd atload'eval "$(direnv hook zsh)"'
 zinit light zdharma-continuum/null
 
+zinit ice nocd atload'eval "$(devenv hook zsh)"'
+zinit light zdharma-continuum/null
+
 zinit ice nocd atload'eval "$(command wt config shell init zsh)"' if'command -v wt >/dev/null 2>&1'
 zinit light zdharma-continuum/null
 
