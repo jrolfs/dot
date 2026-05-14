@@ -83,4 +83,13 @@
       "ctrl-w z": "workspace::ToggleZoom",
     },
   },
+
+
+  {
+    "context": "Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-k": null,
+    },
+  }
 ]
