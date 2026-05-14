@@ -8,11 +8,9 @@ local -a __mise_nix_markers=(
 )
 
 __mise_in_nix_dir() {
-  local directory=$PWD
+  local directory=$PWD marker
 
   while [[ $directory != "/" ]]; do
-    local marker
-
     for marker in $__mise_nix_markers; do
       [[ -f "$directory/$marker" ]] && return 0
     done
