@@ -11,9 +11,9 @@ $git_commit\
 $git_status\
 $git_state\
 ${custom.pinentry}\
-$docker_context\
 $package\
 $fill\
+$docker_context\
 $cmake\
 $dart\
 $dotnet\
