@@ -1,19 +1,6 @@
-[submodule "home/.config/kitty/themes/gruvbox-material"]
-	path = home/.config/kitty/themes/gruvbox-material
-	url = git@github.com:jrolfs/gruvbox-material-kitty.git
 [submodule "home/Documents/Obsidian/Brain/.obsidian/themes/obsidian-minimal"]
 	path = home/Documents/Obsidian/Brain/.obsidian/themes/obsidian-minimal
 	url = git@github.com:jrolfs/obsidian-minimal.git
-[submodule "zinit"]
-	path = zinit
-	url = git@github.com:zdharma-continuum/zinit.git
-[submodule "gruvbox-material-tridactyl"]
-	path = gruvbox-material-tridactyl
-	url = git@github.com:jrolfs/gruvbox-material-tridactyl.git
-  branch = main
 [submodule "vscode"]
 	path = vscode
 	url = git@github.com:jrolfs/vscode.git
-[submodule "spicetify-gruvbox-material"]
-	path = spicetify-gruvbox-material
-	url = git@github.com:whiterqbbit/spicetify-gruvbox-material.git
