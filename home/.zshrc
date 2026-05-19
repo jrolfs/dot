@@ -12,6 +12,10 @@ unset preztorc platformrc
 # <zinit>
 #
 
+declare -A ZINIT
+
+ZINIT[NO_ALIASES]=1
+
 source "$HOMESHICK_KINGDOM/dot/zinit/zinit.zsh"
 
 # Prezto (synchronous — must load before interactive features)
@@ -30,6 +34,8 @@ zinit ice atload'
   bindkey "^[[B" down-line-or-search
 '
 zinit light zdharma-continuum/null
+
+zinit ice has'zoxide'; zinit light ajeetdsouza/zoxide
 
 zinit ice nocd atload'eval "$(direnv hook zsh)"'
 zinit light zdharma-continuum/null
