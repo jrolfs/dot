@@ -1,12 +1,17 @@
-def main(args):
-    # Runs in an overlay window, so it can read interactive input.
+from kittens.tui.operations import styled
+
+
+def main(_):
     try:
-        return input("z ")
+        return input(
+            styled("󰩷 ", fg="cyan")
+            + styled("z➝ ", fg="black", fg_intense=True, bold=True)
+        )
     except (EOFError, KeyboardInterrupt):
         return ""
 
 
-def handle_result(args, answer, target_window_id, boss):
+def handle_result(_, answer, target_window_id, boss):
     query = answer.strip()
     if not query:
         return
