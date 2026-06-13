@@ -20,5 +20,8 @@
   },
   "autoMemoryEnabled": true,
   "editorMode": "vim",
-  "preferredNotifChannel": "kitty"
+  "preferredNotifChannel": "kitty",
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  }
 }
