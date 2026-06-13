@@ -110,6 +110,10 @@
       "type": "registry"
     },
     "claude-acp": {
+      "default_config_options": {
+        "effort": "xhigh",
+        "mode": "auto"
+      },
       "type": "registry"
     }
   },
