@@ -70,7 +70,7 @@
   "gutter": {
     "min_line_number_digits": 3
   },
-  "show_signature_help_after_edits": true,
+  "show_signature_help_after_edits": false,
   "auto_signature_help": true,
   "vertical_scroll_margin": 5.0,
   "scroll_beyond_last_line": "vertical_scroll_margin",
