@@ -1,4 +1,9 @@
 {
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
   "excerpt_context_lines": 4,
   "file_finder": {
     "modal_max_width": "xlarge"
