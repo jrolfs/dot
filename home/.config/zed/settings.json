@@ -106,6 +106,9 @@
   },
   "semantic_tokens": "combined",
   "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    },
     "claude-acp": {
       "type": "registry"
     }
