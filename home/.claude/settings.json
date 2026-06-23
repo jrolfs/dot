@@ -25,5 +25,6 @@
   "autoMemoryEnabled": true,
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
+  "autoCompactEnabled": false,
   "model": "claude-opus-4-8[1m]"
 }
