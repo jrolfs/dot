@@ -18,11 +18,12 @@
     ],
     "defaultMode": "default"
   },
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
+  },
   "autoMemoryEnabled": true,
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
-  "enabledPlugins": {
-    "clangd-lsp@claude-plugins-official": true
-  }
   "model": "claude-opus-4-8[1m]"
 }
