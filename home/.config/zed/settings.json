@@ -115,6 +115,15 @@
         "mode": "auto"
       },
       "type": "registry"
+    },
+    "Claude Foundry": {
+      "type": "custom",
+      "command": "npx",
+      "args": ["@zed-industries/claude-code-acp"],
+      "env": {
+        "CLAUDE_CODE_USE_FOUNDRY": "1",
+        "ANTHROPIC_FOUNDRY_RESOURCE": "abhijeet-3779"
+      }
     }
   },
   "theme": {
