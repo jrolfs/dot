@@ -18,6 +18,7 @@
     ],
     "defaultMode": "default"
   },
+  "model": "claude-opus-4-8[1m]",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true
@@ -26,5 +27,5 @@
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
   "autoCompactEnabled": false,
-  "model": "claude-opus-4-8[1m]"
+  "effortLevel": "xhigh"
 }
