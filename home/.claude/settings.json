@@ -22,11 +22,23 @@
   "model": "claude-opus-4-8[1m]",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "worktrunk@worktrunk": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "worktrunk": {
+      "source": {
+        "source": "github",
+        "repo": "max-sixty/worktrunk"
+      }
+    }
+  },
+  "effortLevel": "xhigh",
+  "tui": "default",
   "autoMemoryEnabled": true,
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
-  "autoCompactEnabled": false,
-  "effortLevel": "xhigh"
+  "autoCompactEnabled": true
 }
