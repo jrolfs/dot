@@ -145,6 +145,6 @@
   "wrap_guides": [100],
   "edit_predictions": {
     "mode": "eager",
-    "provider": "mercury"
+    "provider": "zed"
   }
 }
