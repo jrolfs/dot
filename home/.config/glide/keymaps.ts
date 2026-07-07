@@ -60,6 +60,10 @@ import type { SimpleKeymapTuple } from './types';
     // Cookies
     ['normal', '<leader>cc', 'cookie_copy COOKIE_DEV_DASHBOARD_FRONTEND_V3=dashboard.frontend.v3,COOKIE_DEV_DASHBOARD_V3=dashboard.v3', 'Copy Meter staging cookies to clipboard'],
 
+    // 1Password
+    ['normal', '<leader><Tab>', 'op_fill', 'Autofill from 1Password (fill + submit)'],
+    ['normal', '<leader><S-Tab>', 'op_fill_no_submit', 'Autofill from 1Password (fill only)'],
+
     // Glide
     ['normal', '<leader><C-l>', 'clear', 'Clear alert notifications'],
     ['normal', '<leader><C-r>', 'config_reload', 'Reload configuration'],
