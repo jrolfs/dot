@@ -133,14 +133,13 @@
   },
   "vim_mode": true,
   "ui_font_size": 15,
-  "buffer_font_size": 13,
+  "buffer_font_size": 13.0,
   "ui_font_family": "IBM Plex Sans",
   "buffer_font_family": "JetBrains Mono",
   "format_on_save": "off",
   "relative_line_numbers": "enabled",
   "terminal": {
     "font_family": "JetBrains Mono",
-    "font_size": 13,
     "font_fallbacks": ["JetBrainsMono Nerd Font", "FiraCode Nerd Font"]
   },
   "wrap_guides": [100, 120],
