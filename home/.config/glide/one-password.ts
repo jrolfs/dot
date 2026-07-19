@@ -28,8 +28,11 @@
 // ---------------------------------------------------------------------------
 
 /** Phosphor Icons `password` glyph (weight: fill), tinted at runtime. */
-const PASSWORD_ICON_DATA_URL =
-  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjQsNDhIMzJBMTYsMTYsMCwwLDAsMTYsNjRWMTkyYTE2LDE2LDAsMCwwLDE2LDE2SDIyNGExNiwxNiwwLDAsMCwxNi0xNlY2NEExNiwxNiwwLDAsMCwyMjQsNDhabS0xOS40Miw5NC43MWE4LDgsMCwxLDEtMTMsOS40MUwxODQsMTQxLjYxbC03LjYzLDEwLjUxYTgsOCwwLDEsMS0xMy05LjQxbDcuNjQtMTAuNS0xMi4zNi00YTgsOCwwLDEsMSw1LTE1LjIxTDE3NiwxMTdWMTA0YTgsOCwwLDAsMSwxNiwwdjEzbDEyLjM1LTRhOCw4LDAsMCwxLDUsMTUuMjFsLTEyLjM2LDRabS03MiwwYTgsOCwwLDEsMS0xMyw5LjQxTDExMiwxNDEuNjFsLTcuNjMsMTAuNTFhOCw4LDAsMSwxLTEzLTkuNDFsNy42NC0xMC41LTEyLjM2LTRhOCw4LDAsMSwxLDUtMTUuMjFMMTA0LDExN1YxMDRhOCw4LDAsMCwxLDE2LDB2MTNsMTIuMzUtNGE4LDgsMCwxLDEsNSwxNS4yMWwtMTIuMzYsNFpNNjQsODh2ODBhOCw4LDAsMCwxLTE2LDBWODhhOCw4LDAsMCwxLDE2LDBaIj48L3BhdGg+PC9zdmc+';
+const icons = {
+  password: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xMjgsMjRBMTA0LDEwNCwwLDEsMCwyMzIsMTI4LDEwNC4xMSwxMDQuMTEsMCwwLDAsMTI4LDI0Wm0yOS41MiwxNDYuMzlhNCw0LDAsMCwxLTMuNjYsNS42MUgxMDIuMTRhNCw0LDAsMCwxLTMuNjYtNS42MUwxMTIsMTM5LjcyYTMyLDMyLDAsMSwxLDMyLDBaIj48L3BhdGg+PC9zdmc+',
+  vault: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMTYsNDJINDBBMTQsMTQsMCwwLDAsMjYsNTZWMTkyYTE0LDE0LDAsMCwwLDE0LDE0SDU4djE4YTYsNiwwLDAsMCwxMiwwVjIwNkgxODZ2MThhNiw2LDAsMCwwLDEyLDBWMjA2aDE4YTE0LDE0LDAsMCwwLDE0LTE0VjU2QTE0LDE0LDAsMCwwLDIxNiw0MlptMCwxNTJINDBhMiwyLDAsMCwxLTItMlY1NmEyLDIsMCwwLDEsMi0ySDIxNmEyLDIsMCwwLDEsMiwydjY2SDE5Ny42YTQ2LDQ2LDAsMSwwLDAsMTJIMjE4djU4QTIsMiwwLDAsMSwyMTYsMTk0Wm0tNTEuMzctNzJhMTQsMTQsMCwxLDAsMCwxMmgyMC44M2EzNCwzNCwwLDEsMSwwLTEyWiI+PC9wYXRoPjwvc3ZnPg==',
+  account: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xNzIsMTIwYTQ0LDQ0LDAsMSwxLTQ0LTQ0QTQ0LDQ0LDAsMCwxLDE3MiwxMjBabTYwLTY0VjIwMGExNiwxNiwwLDAsMS0xNiwxNkg0MGExNiwxNiwwLDAsMS0xNi0xNlY1NkExNiwxNiwwLDAsMSw0MCw0MEgyMTZBMTYsMTYsMCwwLDEsMjMyLDU2Wk0yMTYsMjAwVjU2SDQwVjIwMEg1NC42OGE4MCw4MCwwLDAsMSwyOS40MS0zNC44NCw0LDQsMCwwLDEsNC44My4zMSw1OS44Miw1OS44MiwwLDAsMCw3OC4xNiwwLDQsNCwwLDAsMSw0LjgzLS4zMUE4MCw4MCwwLDAsMSwyMDEuMzIsMjAwSDIxNloiPjwvcGF0aD48L3N2Zz4='
+}
 
 interface HaloConfig {
   /** Transparent gap (px) between the input's edge and the halo band. */
@@ -61,22 +64,28 @@ const DECORATION: HaloConfig = {
   buttonWidth: 22,
   color: 'rgba(37, 99, 235, 0.14)',
   iconColor: 'rgba(37, 99, 235, 0.95)',
-  iconDataUrl: PASSWORD_ICON_DATA_URL,
+  iconDataUrl: icons.password,
 };
 
 // ---------------------------------------------------------------------------
 // `op` CLI integration (main process)
 // ---------------------------------------------------------------------------
 
-/** 1Password account shorthands, from `op account list`. */
-const ACCOUNTS = ['meter', 'my'] as const;
+interface OpAccount {
+  readonly url: string;
+  readonly email: string;
+  readonly user_uuid: string;
+  readonly account_uuid: string;
+}
 
-type Account = (typeof ACCOUNTS)[number];
-
-const ACCOUNT_LABELS: Record<Account, string> = {
-  meter: 'Work',
-  my: 'Personal',
-};
+/**
+ * Short human label for an account, derived from its email domain.
+ *
+ * Avoids hardcoding account shorthands (which can go stale — `op` account
+ * shorthands aren't guaranteed to match the registered accounts).
+ */
+const accountLabel = (account: OpAccount): string =>
+  account.email.toLowerCase().endsWith('@meter.com') ? 'Work' : 'Personal';
 
 /**
  * Environment for spawned `op` processes.
@@ -91,10 +100,46 @@ const OP_ENV: Record<string, string> = {
   OP_CONFIG_DIR: `${glide.path.home_dir}/.homesick/repos/private/home/.config/op`,
 };
 
+/**
+ * Host permission needed to inject into pages (both the fill and the field
+ * decoration go through `glide.content.execute`, which requires it).
+ */
+const HOST_PERMISSION: Browser.Permissions.Permissions = {
+  origins: ['<all_urls>'],
+};
+
+/** True if we already hold the `<all_urls>` host permission. */
+const hasHostPermission = (): Promise<boolean> =>
+  browser.permissions.contains(HOST_PERMISSION);
+
+/**
+ * Ensure the `<all_urls>` host permission, requesting it if missing.
+ *
+ * `browser.permissions.request` needs a user gesture, so this must be called
+ * synchronously off a keypress / click (e.g. from the fill excmds), not from a
+ * background autocmd.
+ */
+const ensureHostPermission = async (): Promise<boolean> => {
+  if (await hasHostPermission()) return true;
+
+  try {
+    return await browser.permissions.request(HOST_PERMISSION);
+  } catch (error) {
+    console.error('op-fill: could not request host permission', error);
+
+    return false;
+  }
+};
+
 interface OpUrl {
   readonly label?: string;
   readonly primary?: boolean;
   readonly href: string;
+}
+
+interface OpVaultRef {
+  readonly id: string;
+  readonly name: string;
 }
 
 interface OpListItem {
@@ -102,6 +147,7 @@ interface OpListItem {
   readonly title: string;
   readonly additional_information?: string;
   readonly urls?: readonly OpUrl[];
+  readonly vault?: OpVaultRef;
 }
 
 interface OpField {
@@ -120,9 +166,42 @@ interface OpItemDetail {
 
 /** A list item enriched with its account and normalised hostnames. */
 interface IndexedItem extends OpListItem {
-  readonly account: Account;
+  /** Stable account identifier (`user_uuid`) used as the `--account` filter. */
+  readonly accountId: string;
+  readonly accountLabel: string;
   readonly hosts: readonly string[];
 }
+
+/**
+ * Candidate absolute paths for the `op` binary.
+ *
+ * Glide resolves a bare command name against its *own* (sparse, GUI-app)
+ * `PATH` — not the `env` we pass to the child — so a bare `"op"` isn't found.
+ * Using an absolute path skips that lookup entirely.
+ */
+const OP_BINARY_CANDIDATES = [
+  '/opt/homebrew/bin/op',
+  '/usr/local/bin/op',
+  '/usr/bin/op',
+] as const;
+
+let opBinaryPromise: Promise<string> | null = null;
+
+/** Resolve (and cache) the absolute path to `op`, falling back to `PATH`. */
+const resolveOpBinary = (): Promise<string> => {
+  opBinaryPromise ??= (async () => {
+    const checks = await Promise.all(
+      OP_BINARY_CANDIDATES.map(async path => ({
+        path,
+        exists: await glide.fs.exists(path),
+      })),
+    );
+
+    return checks.find(check => check.exists)?.path ?? 'op';
+  })();
+
+  return opBinaryPromise;
+};
 
 /**
  * Run `op` with the given args and return its stdout.
@@ -130,12 +209,31 @@ interface IndexedItem extends OpListItem {
  * Throws (via `check_exit_code`) on a non-zero exit.
  */
 const runOp = async (args: readonly string[]): Promise<string> => {
-  const proc = await glide.process.execute('op', [...args], {
+  const binary = await resolveOpBinary();
+  // Use spawn + drain both pipes concurrently, then wait. `execute` waits for
+  // exit up front, which can deadlock when a large stdout (1000+ items) fills
+  // the pipe before anyone reads it. `check_exit_code: false` lets us read
+  // stderr and throw op's real error instead of the opaque non-zero message.
+  const proc = await glide.process.spawn(binary, [...args], {
     env: OP_ENV,
     extend_env: true,
+    check_exit_code: false,
   });
 
-  return await proc.stdout.text();
+  const [stdout, stderr] = await Promise.all([
+    proc.stdout.text(),
+    proc.stderr?.text() ?? Promise.resolve(''),
+  ]);
+  const { exit_code } = await proc.wait();
+
+  if (exit_code !== 0) {
+    throw new Error(
+      `op ${args.join(' ')} exited ${exit_code}: ` +
+        (stderr.trim() || stdout.trim() || 'no output'),
+    );
+  }
+
+  return stdout;
 };
 
 /**
@@ -152,13 +250,68 @@ const hostFromHref = (href: string): string => {
   }
 };
 
-/** Loose host match: exact, or one is a subdomain of the other. */
-const hostMatches = (itemHost: string, pageHost: string): boolean => {
-  if (!itemHost || !pageHost) return false;
-  if (itemHost === pageHost) return true;
+/**
+ * Common two-label public suffixes, so `example.co.uk` resolves to
+ * `example.co.uk` rather than `co.uk`. Not the full Public Suffix List, but
+ * covers the suffixes most likely to show up in saved logins.
+ */
+const MULTI_PART_TLDS = new Set([
+  'co.uk',
+  'org.uk',
+  'me.uk',
+  'ac.uk',
+  'gov.uk',
+  'co.jp',
+  'co.nz',
+  'co.in',
+  'co.za',
+  'com.au',
+  'net.au',
+  'org.au',
+  'com.br',
+  'com.mx',
+  'com.sg',
+]);
 
-  return pageHost.endsWith(`.${itemHost}`) || itemHost.endsWith(`.${pageHost}`);
+/**
+ * Best-effort registrable ("base") domain — the scope 1Password matches by
+ * default, collapsing all subdomains (so `mydoctor.kaiserpermanente.org` and
+ * `www.kaiserpermanente.org` both match `kaiserpermanente.org`).
+ */
+const baseDomain = (host: string): string => {
+  const parts = host.split('.').filter(part => part.length > 0);
+  if (parts.length <= 2) return parts.join('.');
+
+  const lastTwo = parts.slice(-2).join('.');
+
+  return MULTI_PART_TLDS.has(lastTwo) ? parts.slice(-3).join('.') : lastTwo;
 };
+
+/** Match an item URL host to the page host by base domain (1Password default). */
+const hostMatches = (itemHost: string, pageHost: string): boolean => {
+  const pageBase = baseDomain(pageHost);
+
+  return pageBase.length > 0 && baseDomain(itemHost) === pageBase;
+};
+
+/** Discover the configured `op` accounts. */
+const listAccounts = async (): Promise<readonly OpAccount[]> => {
+  try {
+    return JSON.parse(
+      await runOp(['account', 'list', '--format=json']),
+    ) as readonly OpAccount[];
+  } catch (error) {
+    console.warn('op-fill: failed to list accounts', error);
+
+    return [];
+  }
+};
+
+/** `op item list` caps its output; a full count of this many is likely cut. */
+const OP_LIST_CAP = 1000;
+
+/** Max options rendered in the picker at once (protects the commandline). */
+const MAX_MENU_ITEMS = 50;
 
 /**
  * In-memory index of Login items across all accounts.
@@ -168,39 +321,61 @@ const hostMatches = (itemHost: string, pageHost: string): boolean => {
  */
 let indexCache: readonly IndexedItem[] | null = null;
 
+/** Fetch and index one account's Login items. */
+const loadAccountItems = async (
+  account: OpAccount,
+): Promise<readonly IndexedItem[]> => {
+  try {
+    const json = await runOp([
+      'item',
+      'list',
+      '--account',
+      account.user_uuid,
+      '--categories',
+      'Login',
+      '--format=json',
+    ]);
+    const items = JSON.parse(json) as readonly OpListItem[];
+
+    if (items.length >= OP_LIST_CAP) {
+      console.warn(
+        `op-fill: "${account.url}" returned ${items.length} items ` +
+          `(op's list cap) — some logins may be missing from the index`,
+      );
+    }
+
+    const label = accountLabel(account);
+
+    return items.map(item => ({
+      ...item,
+      accountId: account.user_uuid,
+      accountLabel: label,
+      hosts: (item.urls ?? [])
+        .map(url => hostFromHref(url.href))
+        .filter(host => host.length > 0),
+    }));
+  } catch (error) {
+    console.warn(`op-fill: failed to list items for "${account.url}"`, error);
+
+    return [];
+  }
+};
+
 const loadIndex = async (force = false): Promise<readonly IndexedItem[]> => {
   if (indexCache && !force) return indexCache;
 
-  const perAccount = await Promise.all(
-    ACCOUNTS.map(async (account): Promise<readonly IndexedItem[]> => {
-      try {
-        const json = await runOp([
-          'item',
-          'list',
-          '--account',
-          account,
-          '--categories',
-          'Login',
-          '--format=json',
-        ]);
-        const items = JSON.parse(json) as readonly OpListItem[];
+  const accounts = await listAccounts();
 
-        return items.map(item => ({
-          ...item,
-          account,
-          hosts: (item.urls ?? [])
-            .map(url => hostFromHref(url.href))
-            .filter(host => host.length > 0),
-        }));
-      } catch (error) {
-        console.warn(`op-fill: failed to list items for "${account}"`, error);
+  // Sequential, NOT Promise.all: concurrent `op` calls each raise their own
+  // biometric prompt, and two simultaneous prompts deadlock the 1Password
+  // desktop-app integration. The first call unlocks the session; the rest
+  // reuse it without prompting.
+  const collected: IndexedItem[] = [];
+  for (const account of accounts) {
+    collected.push(...(await loadAccountItems(account)));
+  }
 
-        return [];
-      }
-    }),
-  );
-
-  indexCache = perAccount.flat();
+  indexCache = collected;
 
   return indexCache;
 };
@@ -587,24 +762,130 @@ interface OpFillMessages {
   readonly op_fill_requested: null;
 }
 
-const accountChip = (account: Account): HTMLElement =>
+/** Deterministic hue (0–359) from a string, for tinting monograms. */
+const hueFromString = (value: string): number => {
+  const hash = [...value].reduce(
+    (accumulator, character) =>
+      (accumulator * 31 + character.charCodeAt(0)) >>> 0,
+    0,
+  );
+
+  return hash % 360;
+};
+
+/**
+ * A small rounded monogram tile for an item, tinted from its title.
+ *
+ * `op` exposes no favicons/icons, so this stands in for 1Password's item art.
+ */
+const monogram = (title: string): HTMLElement => {
+  const hue = hueFromString(title);
+
+  return DOM.create_element('div', {
+    style: {
+      flexShrink: '0',
+      width: '32px',
+      height: '32px',
+      borderRadius: '7px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '0.9em',
+      fontWeight: '600',
+      color: `hsl(${hue}, 70%, 85%)`,
+      backgroundColor: `hsl(${hue}, 40%, 32%)`,
+    },
+    children: [(title.trim()[0] ?? '?').toUpperCase()],
+  });
+};
+
+/**
+ * Item icon: the monogram, with `faviconUrl` overlaid when provided.
+ *
+ * We use the *active tab's* favicon (the site the user is on) for host-matched
+ * items — a real icon with no third-party request. If it fails to load, the
+ * `error` handler removes the image and the monogram shows through.
+ */
+const itemIcon = (item: IndexedItem, faviconUrl?: string): HTMLElement => {
+  const tile = monogram(item.title);
+
+  if (!faviconUrl) return tile;
+
+  tile.style.position = 'relative';
+
+  const image = DOM.create_element('img', {
+    src: faviconUrl,
+    style: {
+      position: 'absolute',
+      inset: '0',
+      width: '100%',
+      height: '100%',
+      borderRadius: '7px',
+      objectFit: 'cover',
+    },
+  });
+  image.addEventListener('error', () => image.remove());
+  tile.appendChild(image);
+
+  return tile;
+};
+
+/**
+ * A small icon tinted to the current text colour via CSS mask.
+ *
+ * `backgroundColor: currentColor` makes the glyph follow the row's text colour,
+ * so it reads correctly on both dark (unselected) and white (selected) rows.
+ * Sized in `em` so it tracks the surrounding font size.
+ */
+const tintedIcon = (dataUrl: string): HTMLElement =>
   DOM.create_element('span', {
     style: {
-      fontSize: '0.7em',
-      textTransform: 'uppercase',
-      letterSpacing: '0.05em',
-      opacity: '0.6',
+      width: '1em',
+      height: '1em',
       flexShrink: '0',
+      backgroundColor: 'currentColor',
+      maskImage: `url("${dataUrl}")`,
+      maskRepeat: 'no-repeat',
+      maskPosition: 'center',
+      maskSize: 'contain',
     },
-    children: [ACCOUNT_LABELS[account]],
   });
+
+/** Small, dimmed metadata label (vault / account) with a leading icon. */
+const metaChip = (iconDataUrl: string, text: string): HTMLElement =>
+  DOM.create_element('span', {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
+      fontSize: '0.72em',
+      opacity: '0.7',
+      whiteSpace: 'nowrap',
+    },
+    children: [tintedIcon(iconDataUrl), text],
+  });
+
+const primaryHostOf = (item: IndexedItem): string => {
+  const primary = item.urls?.find(url => url.primary) ?? item.urls?.[0];
+
+  return primary ? hostFromHref(primary.href) : '';
+};
 
 const itemOption = (
   item: IndexedItem,
   tab: glide.TabWithID,
   options: FillOptions,
+  faviconUrl?: string,
 ): glide.CommandLineCustomOption => {
   const username = item.additional_information ?? '';
+  const host = primaryHostOf(item);
+  const vaultName = item.vault?.name ?? '';
+  const subtitle = [username, host]
+    .filter(part => part.length > 0)
+    .join('  ·  ');
+  const haystack = [item.title, username, host, vaultName]
+    .join(' ')
+    .toLowerCase();
 
   return {
     label: item.title,
@@ -614,43 +895,62 @@ const itemOption = (
         style: {
           display: 'flex',
           alignItems: 'center',
-          gap: '8px',
+          gap: '10px',
           width: '100%',
+          boxSizing: 'border-box',
+          padding: '4px 12px',
         },
         children: [
-          accountChip(item.account),
-          DOM.create_element('span', {
+          itemIcon(item, faviconUrl),
+          DOM.create_element('div', {
             style: {
-              flexShrink: '1',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              whiteSpace: 'nowrap',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1px',
+              flex: '1',
+              minWidth: '0',
             },
-            children: [item.title],
+            children: [
+              DOM.create_element('span', {
+                style: {
+                  lineHeight: '1.3',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                },
+                children: [item.title],
+              }),
+              DOM.create_element('span', {
+                style: {
+                  fontSize: '0.82em',
+                  lineHeight: '1.3',
+                  opacity: '0.55',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                },
+                children: [subtitle],
+              }),
+            ],
           }),
-          DOM.create_element('span', {
+          DOM.create_element('div', {
             style: {
-              marginLeft: 'auto',
-              opacity: '0.5',
-              flexShrink: '1',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              whiteSpace: 'nowrap',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-end',
+              gap: '2px',
+              flexShrink: '0',
+              marginLeft: '8px',
             },
-            children: [username],
+            children: [
+              ...(vaultName ? [metaChip(icons.vault, vaultName)] : []),
+              metaChip(icons.account, item.accountLabel),
+            ],
           }),
         ],
       }),
-    matches: ({ input }) => {
-      if (!input) return true;
-
-      const lower = input.toLowerCase();
-
-      return (
-        item.title.toLowerCase().includes(lower) ||
-        username.toLowerCase().includes(lower)
-      );
-    },
+    matches: ({ input }) =>
+      input ? haystack.includes(input.toLowerCase()) : true,
     execute: async () => {
       await fillFromItem(item, tab, options);
     },
@@ -670,7 +970,7 @@ const fillFromItem = async (
         'get',
         item.id,
         '--account',
-        item.account,
+        item.accountId,
         '--format=json',
       ]),
     ) as OpItemDetail;
@@ -690,7 +990,11 @@ const fillFromItem = async (
       args: [credentials, { submit }],
     });
   } catch (error) {
-    console.error('op-fill: failed to fill item', error);
+    console.error(
+      'op-fill: failed to fill item (if this is a permission error, grant ' +
+        'the host-access prompt on the next fill)',
+      error,
+    );
   }
 };
 
@@ -699,16 +1003,28 @@ const openMenu = async (
   tab: glide.TabWithID,
   options: FillOptions,
 ): Promise<void> => {
+  // Request the host permission now, while we still hold the user gesture that
+  // triggered the menu — the later fill (content injection) needs it.
+  await ensureHostPermission();
+
   const pageHost = glide.ctx.url.hostname.toLowerCase();
   const index = await loadIndex();
   const matches = index.filter(item =>
     item.hosts.some(host => hostMatches(host, pageHost)),
   );
   const showAll = matches.length === 0;
-  const items = showAll ? index : matches;
+  // Cap the option count — rendering the entire index (~1000s) into the
+  // commandline at once can make it fail to open.
+  const items = (showAll ? index : matches).slice(0, MAX_MENU_ITEMS);
+  // Matched items are all the current site, so the active tab's already-loaded
+  // favicon is their real icon (no third-party request). Arbitrary "show all"
+  // items are different sites, so they fall back to monograms.
+  const faviconUrl = showAll ? undefined : tab.favIconUrl;
 
   if (items.length === 0) {
-    await glide.commandline.show({
+    // Not awaited: `commandline.show` resolves on close, and awaiting it stalls
+    // the excmd (and breaks re-opening from command mode). Fire and return.
+    void glide.commandline.show({
       title: '1Password',
       options: [
         {
@@ -722,11 +1038,11 @@ const openMenu = async (
     return;
   }
 
-  await glide.commandline.show({
+  void glide.commandline.show({
     title: showAll
-      ? '1Password — no host match, showing all'
+      ? `1Password — no match for ${pageHost} (${index.length} items)`
       : `1Password — ${pageHost}`,
-    options: items.map(item => itemOption(item, tab, options)),
+    options: items.map(item => itemOption(item, tab, options, faviconUrl)),
   });
 };
 
@@ -777,31 +1093,45 @@ const opReload = glide.excmds.create(
 declare global { interface ExcmdRegistry { op_reload: typeof opReload; } }
 
 // Re-apply decorations and (idempotently) wire badge clicks on every
-// navigation. Injection fails on non-web pages (about:, view-source:); ignore.
-glide.autocmds.create('UrlEnter', /.*/, ({ tab_id }) => {
-  void glide.content
-    .execute(applyDecoration, { tab_id, args: [DECORATION] })
-    .catch(() => {});
+// navigation. Skips non-web pages and no-ops until the host permission is
+// granted (a background autocmd can't request it — that happens on first fill).
+glide.autocmds.create('UrlEnter', /.*/, ({ tab_id, url }) => {
+  if (!/^https?:/i.test(url)) return;
 
-  fillMessenger.content.execute(
-    messenger => {
-      const wiredWindow = window as unknown as { __opFillClickWired?: boolean };
-      if (wiredWindow.__opFillClickWired) return;
-      wiredWindow.__opFillClickWired = true;
+  void (async () => {
+    if (!(await hasHostPermission())) return;
 
-      document.addEventListener(
-        'click',
-        event => {
-          const target = event.target as Element | null;
-          if (!target?.closest('[data-op-fill-button]')) return;
+    try {
+      await glide.content.execute(applyDecoration, {
+        tab_id,
+        args: [DECORATION],
+      });
 
-          event.preventDefault();
-          event.stopPropagation();
-          messenger.send('op_fill_requested');
+      fillMessenger.content.execute(
+        messenger => {
+          const wiredWindow = window as unknown as {
+            __opFillClickWired?: boolean;
+          };
+          if (wiredWindow.__opFillClickWired) return;
+          wiredWindow.__opFillClickWired = true;
+
+          document.addEventListener(
+            'click',
+            event => {
+              const target = event.target as Element | null;
+              if (!target?.closest('[data-op-fill-button]')) return;
+
+              event.preventDefault();
+              event.stopPropagation();
+              messenger.send('op_fill_requested');
+            },
+            true,
+          );
         },
-        true,
+        { tab_id },
       );
-    },
-    { tab_id },
-  );
+    } catch {
+      // Injection can still fail on privileged pages — ignore.
+    }
+  })();
 });
