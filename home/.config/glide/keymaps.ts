@@ -57,6 +57,11 @@ import type { SimpleKeymapTuple } from './types';
       'Scale pixel density to specified decimal value',
     ],
 
+    // Devtools
+    ['normal', '<leader>db', 'tools_place bottom', 'Dock devtools to the bottom'],
+    ['normal', '<leader>dr', 'tools_place right', 'Dock devtools to the right'],
+    ['normal', '<leader>dw', 'tools_place window', 'Detach devtools into its own window'],
+
     // Cookies
     ['normal', '<leader>cc', 'cookie_copy COOKIE_DEV_DASHBOARD_FRONTEND_V3=dashboard.frontend.v3,COOKIE_DEV_DASHBOARD_V3=dashboard.v3', 'Copy Meter staging cookies to clipboard'],
 
