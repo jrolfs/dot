@@ -139,7 +139,7 @@ def sessions(directory: str, scope: str) -> list[tuple[float, str, str, str]]:
     return found
 
 
-TAG_WIDTH = 28
+TAG_WIDTH = 25
 
 
 def project_tag(cwd: str) -> str:
