@@ -1,4 +1,13 @@
 {
+  "close_on_file_delete": false,
+  "seed_search_query_from_cursor": "selection",
+  "use_smartcase_search": false,
+  "search": {
+    "button": true,
+    "center_on_match": false,
+    "regex": false,
+    "case_sensitive": true
+  },
   "minimum_split_diff_width": 200.0,
   "diff_view_style": "split",
   "proxy": "",
@@ -51,6 +60,8 @@
     "show_branch_status_icon": true
   },
   "vim": {
+    "show_edit_predictions_in_normal_mode": true,
+    "use_regex_search": false,
     "use_system_clipboard": "never",
     "cursor_shape": {
       "visual": "hollow",
@@ -71,6 +82,7 @@
     "show": "never"
   },
   "scrollbar": {
+    "search_results": true,
     "show": "auto"
   },
   "gutter": {
