@@ -19,7 +19,6 @@
     ],
     "defaultMode": "default"
   },
-  "model": "claude-opus-4-8[1m]",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
@@ -40,5 +39,6 @@
   "autoMemoryEnabled": true,
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
-  "autoCompactEnabled": true
+  "autoCompactEnabled": true,
+  "model": "opus"
 }
