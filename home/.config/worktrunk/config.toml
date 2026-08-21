@@ -244,8 +244,8 @@ exclude = ["node_modules/"]
 copy = "wt step copy-ignored"
 
 [projects."github.com/meterup/frontends"]
-post-create.direnv = "direnv allow"
-post-create.deps = "pnpm install"
+post-start.direnv = "direnv allow && direnv exec . true"
+post-start.deps = "pnpm install"
 
 # [projects."github.com/meterup/frontends".post-start]
 # direnv = "direnv allow"
