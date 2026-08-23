@@ -144,8 +144,12 @@
       "command": "/bin/zsh",
       "args": [
         "-c",
-        "source ~/.config/zsh/init/keys.zsh && exec npx @zed-industries/claude-code-acp"
+        "source ~/.config/zsh/init/keys.zsh && exec npx -y @agentclientprotocol/claude-agent-acp"
       ],
+      "default_config_options": {
+        "effort": "xhigh",
+        "mode": "auto"
+      },
       "env": {
         "ANTHROPIC_MODEL": "claude-opus-5"
       }
