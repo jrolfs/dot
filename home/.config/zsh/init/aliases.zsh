@@ -3,8 +3,6 @@ alias vim=nvim
 
 alias hs=homeshick
 
-alias J=fasd_cd
-alias jj="fasd_cd -tdi"
 alias zz=__zoxide_zi
 
 # Git
