@@ -17,8 +17,9 @@
       "Bash(gh search code:*)",
       "Bash(git check-ignore:*)"
     ],
-    "defaultMode": "default"
+    "defaultMode": "auto"
   },
+  "model": "claude-opus-5",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
@@ -39,6 +40,5 @@
   "autoMemoryEnabled": true,
   "editorMode": "vim",
   "preferredNotifChannel": "kitty",
-  "autoCompactEnabled": true,
-  "model": "opus"
+  "autoCompactEnabled": true
 }
