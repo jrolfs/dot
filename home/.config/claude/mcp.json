@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "linear": {
+      "type": "http",
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "nixos": {
+      "type": "stdio",
+      "command": "mcp-nixos",
+      "args": [],
+      "env": {}
+    }
+  }
+}
