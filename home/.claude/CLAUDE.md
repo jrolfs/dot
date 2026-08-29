@@ -1,7 +1,14 @@
 # Global Claude Code Guidelines
 
+## Prose (this applies to comments as well)
+- Use em dashes judiciously, and when you do use them, do not pad them with a space:
+  - DON'T: `some statement - some clause`
+  - DO (sparingly): `some statement-some clause`
+- Use semicolons sparingly. Prefer wording in complete sentences where possible.
+
 ## Comments
 - Do not write organizational or comments that summarize the code. Comments should only be written in order to explain "why" the code is written in some way in the case there is a reason that is tricky / non-obvious.
+- See above section on prose
 
 ## TypeScript / JavaScript Conventions
 
