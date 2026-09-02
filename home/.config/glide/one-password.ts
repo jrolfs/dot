@@ -206,7 +206,7 @@ const resolveOpBinary = (): Promise<string> => {
 /**
  * Run `op` with the given args and return its stdout.
  *
- * Throws (via `check_exit_code`) on a non-zero exit.
+ * Throws on a non-zero exit, with `op`'s own stderr in the message.
  */
 const runOp = async (args: readonly string[]): Promise<string> => {
   const binary = await resolveOpBinary();
@@ -310,8 +310,15 @@ const listAccounts = async (): Promise<readonly OpAccount[]> => {
 /** `op item list` caps its output; a full count of this many is likely cut. */
 const OP_LIST_CAP = 1000;
 
-/** Max options rendered in the picker at once (protects the commandline). */
-const MAX_MENU_ITEMS = 50;
+/**
+ * How many rows the picker shows before anything is typed.
+ *
+ * `commandline.show` takes a static `options` array — there's no dynamic
+ * provider and no input-change hook — so every candidate has to be handed over
+ * up front for typing to be able to find it. Capping what an *empty* input
+ * matches keeps opening the picker cheap while leaving the index searchable.
+ */
+const INITIAL_MENU_ITEMS = 50;
 
 /**
  * In-memory index of Login items across all accounts.
@@ -871,12 +878,23 @@ const primaryHostOf = (item: IndexedItem): string => {
   return primary ? hostFromHref(primary.href) : '';
 };
 
-const itemOption = (
-  item: IndexedItem,
-  tab: glide.TabWithID,
-  options: FillOptions,
-  faviconUrl?: string,
-): glide.CommandLineCustomOption => {
+interface ItemOptionProps {
+  readonly item: IndexedItem;
+  readonly tab: glide.TabWithID;
+  readonly fill: FillOptions;
+  /** Real favicon shown in place of the monogram, when we have one. */
+  readonly faviconUrl?: string;
+  /** Whether this row is among those shown before anything is typed. */
+  readonly visibleWhenEmpty: boolean;
+}
+
+const itemOption = ({
+  item,
+  tab,
+  fill,
+  faviconUrl,
+  visibleWhenEmpty,
+}: ItemOptionProps): glide.CommandLineCustomOption => {
   const username = item.additional_information ?? '';
   const host = primaryHostOf(item);
   const vaultName = item.vault?.name ?? '';
@@ -950,9 +968,9 @@ const itemOption = (
         ],
       }),
     matches: ({ input }) =>
-      input ? haystack.includes(input.toLowerCase()) : true,
+      input ? haystack.includes(input.toLowerCase()) : visibleWhenEmpty,
     execute: async () => {
-      await fillFromItem(item, tab, options);
+      await fillFromItem(item, tab, fill);
     },
   };
 };
@@ -998,10 +1016,63 @@ const fillFromItem = async (
   }
 };
 
+interface MenuEmptyState {
+  readonly label: string;
+  readonly description: string;
+}
+
+const DEFAULT_EMPTY_STATE: MenuEmptyState = {
+  label: 'No 1Password items found',
+  description: 'Check the `op` CLI / Touch ID, then :op_reload',
+};
+
+interface ShowItemMenuProps {
+  readonly title: string;
+  readonly items: readonly IndexedItem[];
+  readonly tab: glide.TabWithID;
+  readonly fill: FillOptions;
+  readonly faviconUrl?: string;
+  readonly emptyState?: MenuEmptyState;
+}
+
+/** Show a picker over `items`, filling the tab when one is selected. */
+const showItemMenu = ({
+  title,
+  items,
+  tab,
+  fill,
+  faviconUrl,
+  emptyState = DEFAULT_EMPTY_STATE,
+}: ShowItemMenuProps): void => {
+  // Not awaited: `commandline.show` resolves on close, and awaiting it stalls
+  // the excmd (and breaks re-opening from command mode). Fire and return.
+  if (items.length === 0) {
+    void glide.commandline.show({
+      title: '1Password',
+      options: [{ ...emptyState, execute: () => {} }],
+    });
+
+    return;
+  }
+
+  void glide.commandline.show({
+    title,
+    options: items.map((item, index) =>
+      itemOption({
+        item,
+        tab,
+        fill,
+        faviconUrl,
+        visibleWhenEmpty: index < INITIAL_MENU_ITEMS,
+      }),
+    ),
+  });
+};
+
 /** Build and show the item picker for the active tab's host. */
 const openMenu = async (
   tab: glide.TabWithID,
-  options: FillOptions,
+  fill: FillOptions,
 ): Promise<void> => {
   // Request the host permission now, while we still hold the user gesture that
   // triggered the menu — the later fill (content injection) needs it.
@@ -1013,36 +1084,55 @@ const openMenu = async (
     item.hosts.some(host => hostMatches(host, pageHost)),
   );
   const showAll = matches.length === 0;
-  // Cap the option count — rendering the entire index (~1000s) into the
-  // commandline at once can make it fail to open.
-  const items = (showAll ? index : matches).slice(0, MAX_MENU_ITEMS);
-  // Matched items are all the current site, so the active tab's already-loaded
-  // favicon is their real icon (no third-party request). Arbitrary "show all"
-  // items are different sites, so they fall back to monograms.
-  const faviconUrl = showAll ? undefined : tab.favIconUrl;
 
-  if (items.length === 0) {
-    // Not awaited: `commandline.show` resolves on close, and awaiting it stalls
-    // the excmd (and breaks re-opening from command mode). Fire and return.
-    void glide.commandline.show({
-      title: '1Password',
-      options: [
-        {
-          label: 'No 1Password items found',
-          description: 'Check the `op` CLI / Touch ID, then :op_reload',
-          execute: () => {},
-        },
-      ],
-    });
-
-    return;
-  }
-
-  void glide.commandline.show({
+  showItemMenu({
     title: showAll
       ? `1Password — no match for ${pageHost} (${index.length} items)`
       : `1Password — ${pageHost}`,
-    options: items.map(item => itemOption(item, tab, options, faviconUrl)),
+    items: showAll ? index : matches,
+    tab,
+    fill,
+    // Matched items are all the current site, so the active tab's already-loaded
+    // favicon is their real icon (no third-party request). The unmatched
+    // fallback spans arbitrary sites, so those keep their monograms.
+    faviconUrl: showAll ? undefined : tab.favIconUrl,
+  });
+};
+
+/**
+ * Show every indexed login, ignoring host matching, optionally narrowed to one
+ * account by label prefix (e.g. `op_list personal`).
+ *
+ * Never submits: this exists to browse the index and exercise the menu on pages
+ * that have no saved login at all.
+ */
+const openBrowseMenu = async (
+  tab: glide.TabWithID,
+  accountQuery: string,
+): Promise<void> => {
+  await ensureHostPermission();
+
+  const index = await loadIndex();
+  const query = accountQuery.trim().toLowerCase();
+  const items = query
+    ? index.filter(item => item.accountLabel.toLowerCase().startsWith(query))
+    : index;
+  const shown = [...new Set(items.map(item => item.accountLabel))];
+  const available = [...new Set(index.map(item => item.accountLabel))];
+
+  showItemMenu({
+    title: query
+      ? `1Password — ${shown.join(', ')} (${items.length} items)`
+      : `1Password — all items (${items.length})`,
+    items,
+    tab,
+    fill: { submit: false },
+    emptyState: query
+      ? {
+          label: `No 1Password items for "${accountQuery.trim()}"`,
+          description: `Available accounts: ${available.join(', ') || 'none'}`,
+        }
+      : undefined,
   });
 };
 
@@ -1082,6 +1172,20 @@ const opFillNoSubmit = glide.excmds.create(
 );
 // oxfmt-ignore
 declare global { interface ExcmdRegistry { op_fill_no_submit: typeof opFillNoSubmit; } }
+
+const opList = glide.excmds.create(
+  {
+    name: 'op_list',
+    description:
+      'Browse all 1Password logins, optionally by account (e.g. op_list personal)',
+  },
+  async ({ args_arr: args }) => {
+    const tab = await glide.tabs.active();
+    await openBrowseMenu(tab, args.join(' '));
+  },
+);
+// oxfmt-ignore
+declare global { interface ExcmdRegistry { op_list: typeof opList; } }
 
 const opReload = glide.excmds.create(
   { name: 'op_reload', description: 'Reload the cached 1Password item index' },

@@ -68,6 +68,7 @@ import type { SimpleKeymapTuple } from './types';
     // 1Password
     ['normal', '<leader><Tab>', 'op_fill', 'Autofill from 1Password (fill + submit)'],
     ['normal', '<leader><S-Tab>', 'op_fill_no_submit', 'Autofill from 1Password (fill only)'],
+    ['normal', '<leader>op', 'op_list', 'Browse all 1Password logins'],
 
     // Glide
     ['normal', '<leader><C-l>', 'clear', 'Clear alert notifications'],
