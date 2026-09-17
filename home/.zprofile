@@ -1,6 +1,6 @@
 setopt extendedglob
 
-mkdir -p $XDG_CONFIG_HOME/zsh/completions
+mkdir -p $ZSH_EXTRA_COMPLETIONS
 source $XDG_CONFIG_HOME/zsh/starship.zsh
 
 # Editors

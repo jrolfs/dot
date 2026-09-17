@@ -68,9 +68,6 @@ zinit light andsens/homeshick
 zinit ice wait lucid pick"completions/zsh"
 zinit light homebrew/brew
 
-zinit ice wait lucid pick"launchctl-completion.bash"
-zinit light bobthecow/launchctl-completion
-
 # Kubectx
 zinit ice wait lucid
 zinit light ahmetb/kubectx
