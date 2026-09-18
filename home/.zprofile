@@ -45,6 +45,10 @@ path=(
   /opt/homebrew/bin
   /usr/local/{bin,sbin}
   $HOME/.local/bin
+  # Here the Claude Code helpers are homeshick symlinks in a directory nothing
+  # else puts on PATH. Machines the flake manages install them as a package
+  # (claude-helpers) and leave this line out, which is the one difference
+  # between that copy of this file and this one.
   $HOME/.claude/bin
   $GOPATH/bin
   $SPICETIFY_INSTALL
